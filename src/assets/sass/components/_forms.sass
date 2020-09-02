@@ -1,0 +1,84 @@
+/* ----- Forms ------------------------- */
+.form-group
+  margin-bottom: 30px
+
+.field-item
+  &__label
+    margin-bottom: 10px
+    font-size: 16px
+    line-height: 20px
+    color: #0B3954
+
+.form-group_animate-js
+  position: relative
+  padding-top: 20px
+
+  .field-item
+    &__label
+      position: absolute
+      z-index: 3
+      left: 0
+      top: 20px
+      transform: translateY(0)
+      width: 100%
+      padding: 0 15px
+      font-size: 16px
+      line-height: 50px
+      cursor: text
+      transition: all 0.3s ease
+      margin: 0
+      color: #37393A
+
+.form-group
+  &_focused
+    .field-item__label
+      transform: translateY(-40px)
+      padding: 0
+      font-size: 14px
+      line-height: 40px
+
+
+/* Min width 740 pixels */
+@media only screen and (min-width: 740px)
+  .form-group-grid
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+  .form-group
+    &_half-col,
+    &_four-col
+      width: 48.5%
+
+    &_three-col
+      width: 31.3%
+
+  .field-item
+    &_inline
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      .field-item__label
+        min-width: 140px
+        flex-basis: 140px
+        margin-bottom: 0
+        margin-right: 10px
+
+      .field-item__field
+        flex-grow: 1
+/* end media min width 740 pixels */
+
+
+
+/* Min width 960 pixels */
+@media only screen and (min-width: 960px)
+  .form-group
+    &_four-col
+      width: 22.8%
+/* end media min width 960 pixels */
+
+
+/* ----- END Forms --------------------- */
+
+

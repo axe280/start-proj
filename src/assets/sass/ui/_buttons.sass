@@ -1,0 +1,106 @@
+button
+  display: inline-block
+  vertical-align: middle
+  margin: 0
+  padding: 0
+  background: none
+  border: none
+  outline: none
+  cursor: pointer
+  box-shadow: none
+
+.btn
+  position: relative
+  display: inline-block
+  margin: 0
+  padding: 8px 15px
+  border: none
+
+  text-align: center
+  font: normal normal 14px/24px $site-font-family, Arial, sans-serif
+  text-decoration: none
+
+  color: #fff
+  background-color: $base-color
+  border-radius: 5px
+  outline: none
+  cursor: pointer
+  transition: $transDefault
+
+  &:hover
+    text-decoration: none
+    color: #fff
+    background-color: lighten($base-color, 5%)
+
+  &_second-st
+    background-color: $second-color
+
+    &:hover
+      background-color: lighten($second-color, 5%)
+
+  &__icon-text
+    display: inline-block
+    vertical-align: middle
+
+  &__icon
+    width: 20px
+    height: 20px
+    display: inline-block
+    vertical-align: middle
+    border: 1px solid #000
+    font-style: normal
+
+    &_right
+      margin-left: 5px
+
+    &_left
+      margin-right: 5px
+
+  &_border
+    border: 2px solid $base-color
+    background: transparent
+    color: #444
+    line-height: 20px
+
+    &:hover
+      color: #fff
+      border-color: lighten($base-color, 5%)
+
+    &.btn_second-st
+      border-color: $second-color
+      color: #444
+
+      &:hover
+        color: #fff
+        border-color: lighten($second-color, 5%)
+
+  &[disabled]
+    cursor: default
+    background-color: rgba(#000, 0.4)
+
+  &_min-width
+    min-width: 110px
+
+  &_max
+    width: 100%
+
+  &_sm
+    padding: 5px 10px
+    font-size: 12px
+
+    &.btn_min-width
+      min-width: 80px
+
+  &_md
+    padding: 16px 25px
+    font-size: 18px
+
+    &.btn_min-width
+      min-width: 140px
+
+  &_lg
+    padding: 22px 30px
+    font-size: 24px
+
+    &.btn_min-width
+      min-width: 180px

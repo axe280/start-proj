@@ -1,0 +1,384 @@
+/* ----- Navigation -------------------- */
+/* -- Bread crumbs ------------------ */
+.bread-crumbs
+  padding: 0
+  list-style-type: none
+
+  li
+    display: inline-block
+    vertical-align: middle
+    margin: 0
+
+    &:before
+      content: '/ '
+
+    &:first-child
+      &:before
+        display: none
+
+
+/* -- Pagination -------------------- */
+.active
+  .pagination
+    background-color: red
+
+.pagination
+  list-style-type: none
+
+  li
+    display: inline-block
+    vertical-align: middle
+    margin: 10px 5px
+
+  a
+    display: block
+    width: 30px
+    height: 30px
+    border-radius: 2px
+    background-color: #f3f3f3
+    line-height: 30px
+    text-align: center
+    text-decoration: none
+
+    &:hover
+      background-color: $base-color
+      color: #fff
+
+  &__prev,
+  &__next
+    a
+      width: auto
+      height: auto
+      border-radius: 0
+      background: none
+
+      &:hover
+        background: none
+        color: #000
+
+  &__active
+    a
+      background-color: $base-color
+      color: #fff
+
+
+/* -- Main menu --------------------- */
+.burger-menu
+  display: block
+  position: absolute
+  right: 7px
+  top: 10px
+  z-index: 10
+  cursor: pointer
+  padding: 10px
+  user-select: none
+
+.burger-menu-box
+  display: block
+  width: 26px
+  padding: 8px 0
+  transition: padding 0.3s ease
+
+.burger-menu-inner
+  display: block
+  position: relative
+  height: 3px
+  background-color: $base-color
+  border-radius: 3px
+  transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1)
+
+  &:before,
+  &:after
+    content: ' '
+    position: absolute
+    left: 0
+    top: 0
+    height: 3px
+    background-color: $base-color
+    width: 100%
+    border-radius: 3px
+
+  &:before
+    transform: translateY(-8px)
+    transition: transform 0.3s ease 0.2s, opacity 0.1s ease
+
+  &:after
+    top: auto
+    bottom: -8px
+    transition: bottom 0.3s ease 0.2s, transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1)
+
+.menu-wrapper-fixed
+  position: fixed
+  bottom: 0
+  z-index: 30
+  width: 100%
+  left: 0
+  max-width: 240px
+  transform: translateX(-100%)
+  transition: transform 0.4s ease-in-out
+
+.menu-open-wrapper
+  padding: 30px
+  height: 100%
+  background-color: $base-color
+  overflow: auto
+  -webkit-overflow-scrolling: touch
+
+// opened menu
+body
+  position: relative
+
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    width: 0
+    height: 0
+    z-index: 8
+    transition: background-color 0.5s ease-out
+
+.menu_opened
+  overflow: hidden
+
+  &:before
+    width: 100%
+    height: 100%
+    background-color: rgba(#fff, 0.7)
+
+  &.sticky_header
+    .burger-menu-box
+      top: -40px
+
+  .site-wrapper
+    height: 100%
+
+  .menu-wrapper-fixed
+    transform: translateX(0)
+
+  .burger-menu
+    position: fixed
+    left: 0
+    bottom: 0
+    z-index: 25
+    width: 100%
+    height: 100%
+
+  .burger-menu-box
+    position: absolute
+    top: -50px
+    right: 17px
+
+  .burger-menu-inner
+    transform: rotate(45deg)
+    // background-color: #fff
+    transition-duration: 0.1s
+    transition-delay: 0.3s
+    transition: transform 0.1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s, background-color 1s ease 0.5s
+
+    &:before
+      transform: translateY(0)
+      opacity: 0
+      transition: transform 0.3s ease, opacity 0.1s ease 0.3s
+
+    &:after
+      top: auto
+      bottom: 0
+      // background-color: #fff
+      transform: rotate(-90deg)
+      transition: bottom 0.3s ease, transform 0.1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s, background-color 1s ease 0.5s
+
+  .burger-menu-box
+    padding-left: 1px
+    padding-right: 1px
+
+.menu
+  margin: 0
+  padding: 0
+  list-style: none
+
+.menu-item
+  position: relative
+  margin-bottom: 15px
+  padding: 0
+  list-style-type: none
+  font-size: 16px
+  line-height: 20px
+  color: #fff
+
+  &__link
+    color: #fff
+    text-decoration: none
+
+    &:hover
+      color: #fff
+
+
+/* - Drop down main menu -------- */
+.menu-item__link_dd
+  cursor: pointer
+  user-select: none
+
+  &:after
+    content: ' '
+    border-top-color: #fff
+    margin: 0 0 0 10px
+
+.menu-dd
+  display: none
+  margin: 0
+  padding: 5px 0
+  list-style: none
+
+.menu-dd-item
+  line-height: 20px
+  margin: 10px 0
+  padding-left: 20px
+  position: relative
+
+  &__link
+    color: #fff
+    text-decoration: none
+    font-size: 14px
+
+    &:hover
+      color: #fff
+
+.menu-item.open
+  .menu-dd
+    display: block
+
+  .menu-item__link_dd
+    &:after
+      transform: rotate(180deg)
+
+.menu-item.active
+  .menu-item__link
+    color: $second-color
+
+
+/* Min width 375 pixels */
+@media only screen and (min-width: 375px)
+  .menu-wrapper-fixed
+    max-width: 260px
+  /* end media min width 375 pixels */
+
+
+/* Min width 740 pixels */
+@media only screen and (min-width: 740px)
+  .menu-wrapper-fixed
+    left: auto
+    right: 0
+    max-width: 340px
+    transform: translateX(100%)
+
+  .burger-menu
+    top: 6px
+
+  .menu_opened
+    &.sticky_header
+      .burger-menu-box
+        top: -49px
+
+    .burger-menu-box
+      top: -39px
+/* end media min width 740 pixels */
+
+
+/* Min width 960 pixels */
+@media only screen and (min-width: 960px)
+  body
+    &:before
+      display: none
+
+  .menu_opened
+    overflow: visible
+
+    .site-wrapper
+      height: auto
+
+  .menu-wrapper-fixed
+    position: relative
+    height: auto
+    transition: none
+    width: auto
+    top: 0
+    max-width: 100%
+    transform: translateX(0)
+
+  .menu-open-wrapper
+    background: none
+    padding: 0
+    height: auto
+    overflow: visible
+
+  .burger-menu
+    display: none
+
+  .header-nav
+    display: block
+
+  .menu
+    display: flex
+    flex-wrap: wrap
+    text-align: left
+    background-color: $base-color
+    border-radius: 3px
+
+  .menu-item
+    width: auto
+    margin: 0
+
+    &.active
+      .menu-item__link
+        color: #fff
+        background-color: $second-color
+
+        &:hover
+          background-color: $second-color
+
+    &__link
+      display: block
+      padding: 15px 20px
+      transition: background-color 0.2s ease
+
+      &:hover
+        background-color: darken($base-color, 5%)
+
+  /* - Drop down main menu -------- */
+  .menu-item.open
+    .menu-dd
+      display: none
+
+    .menu-item__link_dd
+      &:after
+        transform: rotate(0)
+
+  .menu-dd
+    position: absolute
+    display: none
+    top: 100%
+    width: 270px
+    text-align: left
+    background-color: darken($base-color, 5%)
+    padding: 10px 20px
+    border-radius: 0 0 5px 5px
+
+  .menu-dd-item
+    margin: 10px 0
+    padding-left: 0
+
+    &__link
+      &:hover
+        text-decoration: underline
+
+  .menu-item
+    &:hover
+      .menu-item__link_dd
+        background-color: darken($base-color, 5%)
+
+      .menu-dd
+        display: block
+  /* end media min width 960 pixels */
+
+/* ----- END Navigation ---------------- */
