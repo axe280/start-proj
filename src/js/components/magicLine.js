@@ -9,7 +9,7 @@ $(function() {
     var $magicLine = $magicLineWrap.find('.magic-line');
 
     if (magicEventName === 'click') {
-      var $targetElems = $magicLineWrap.children('li');
+      var $targetElems = $magicLineWrap.children('li:not(.magic-line)');
       magicLineAnimate($targetElems.first());
       
       $targetElems.click(function() {
