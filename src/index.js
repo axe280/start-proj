@@ -12,8 +12,6 @@ req.keys().forEach(function(key){
 
 // JS
 import './js/index.js'
-import './assets/sass/shapes/shapes.js'
-import './assets/sass/textWork/textwork.js'
 
 // SCSS
 import './assets/sass/main.sass'
