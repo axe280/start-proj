@@ -15,8 +15,7 @@ const PATHS = {
 }
 
 // Pages const for HtmlWebpackPlugin
-// const PAGES_DIR = PATHS.src
-const PAGES_DIR = PATHS.src
+const PAGES_DIR = `${PATHS.src}/pages`
 const PAGES = fs
   .readdirSync(PAGES_DIR)
   .filter(fileName => fileName.endsWith(".html"))
@@ -49,13 +48,13 @@ module.exports = {
   },
   module: {
     rules: [
-      // {
-      //   test: require.resolve('jquery'),
-      //   loader: 'expose-loader',
-      //   options: {
-      //     exposes: ['$', 'jQuery'],
-      //   },
-      // },
+      {
+        test: require.resolve('jquery'),
+        loader: 'expose-loader',
+        options: {
+          exposes: ['$', 'jQuery'],
+        },
+      },
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -114,6 +113,12 @@ module.exports = {
     }
   },
   plugins: [
+
+    // new webpack.ProvidePlugin({
+    //   $: 'jquery',
+    //   jQuery: 'jquery'
+    // }),
+
     new SpriteLoaderPlugin(),
 
     new SpritesmithPlugin({
@@ -144,12 +149,13 @@ module.exports = {
     ]),
 
     // Automatic creation any html pages (Don't forget to RERUN dev server)
-    ...PAGES.map( 
-      page =>
-        new HtmlWebpackPlugin({
+    ...PAGES.map(
+      page => {
+        return new HtmlWebpackPlugin({
           template: `${PAGES_DIR}/${page}`,
           filename: `./${page}`
         })
+      }
     )
   ]
 }

@@ -1,5 +1,5 @@
 const pieDiagram = document.querySelectorAll('.pie-diagram')
-if (pieDiagram) {
+if (pieDiagram.length) {
   pieDiagram.forEach(pie => {
     var p = parseFloat(pie.textContent)
     var NS = "http://www.w3.org/2000/svg"

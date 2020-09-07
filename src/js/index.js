@@ -1,4 +1,6 @@
 import $ from 'jquery'
+import Swiper from 'swiper/swiper-bundle.esm.js'
+
 
 import './components/tabs.js'
 import './components/magicLine.js'
@@ -13,5 +15,121 @@ $(function() {
   $('.burger-menu').click(function() {
     $('body').toggleClass('menu_opened');
   });
+
+  // data-lity is ready
+  $(document).on('lity:ready', function(event, instance) {
+    var el = instance.element();
+    el.find('.lity-close').html(
+      '<svg class="icon icon-close"><use xlink:href="assets/img/sprite.svg#close"></use></svg>'
+    );
+  });
+
+  // magnific popup
+  // $('.open-popup-link').magnificPopup({
+  //   type:'inline',
+  //   midClick: true
+  // });
+  
+  // owl carousel
+  $('.owl-carousel').owlCarousel({
+    margin: 10,
+    nav: true,
+    navText: [
+      '<svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg>',
+      '<svg class="icon icon-arrow-next"><use xlink:href="assets/img/sprite.svg#arrow-next"></use></svg>'
+    ],
+    responsive: {
+      0: {
+        items: 1
+      },
+      640: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      1000: {
+        items:5
+      }
+    }
+  });
+
+  // sliders
+  new Swiper('.st-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      740: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      980: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+      1200: {
+        slidesPerView: 5,
+        spaceBetween: 20,
+      },
+    }
+  });
+
+  // swiper-outside-navi
+  var swiperCollections = document.querySelectorAll('.st-swiper-outside-navi');
+
+  swiperCollections.forEach(element => {
+    console.log(element);
+  });
+
+  for (var i = 0; i < swiperCollections.length; i++) {
+    var elem = swiperCollections[i],
+        elemSwiper = elem.querySelector('.swiper-container'),
+        elemSwiperNext = elem.querySelector('.swiper-button-next'),
+        elemSwiperPrev = elem.querySelector('.swiper-button-prev'),
+        elemSwiperPagination = elem.querySelector('.swiper-pagination');
+
+    new Swiper(elemSwiper, {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: elemSwiperNext,
+        prevEl: elemSwiperPrev,
+      },
+      pagination: {
+        el: elemSwiperPagination,
+        clickable: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        740: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        980: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+        1200: {
+          slidesPerView: 5,
+          spaceBetween: 20,
+        },
+      }
+    });
+  }
 
 });

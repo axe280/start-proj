@@ -1,0 +1,54 @@
+.swiper-container
+  margin-bottom: 50px
+
+  .swiper-slide
+    // flex-basis: 300px for autowidth slides
+    background-color: #d9d9d9
+    height: 100px
+    line-height: 100px 
+    text-align: center
+
+.st-swiper-outside-navi
+  position: relative
+  margin-bottom: 50px
+
+  .swiper-pagination
+    bottom: auto
+    top: 100%
+    margin-top: 20px
+
+.swiper-button-next,
+.swiper-button-prev
+  outline: none
+  width: 30px
+  height: 80px
+  margin-top: -40px
+  background-color: #007aff
+  transition: $transDefault
+
+  &:hover
+    background-color: #333
+
+    .icon
+      fill: white
+
+  .icon
+    width: 30px
+    height: 30px
+    fill: white
+    transition: $transDefault
+
+  &::after
+    display: none
+
+.swiper-pagination
+  bottom: 10px
+  left: 0
+  width: 100%
+  line-height: 20px
+
+.swiper-pagination-bullet
+  width: 10px
+  height: 10px
+  margin: 0 4px
+  outline: none
