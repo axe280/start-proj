@@ -1,5 +1,6 @@
 import $ from 'jquery'
 import Swiper from 'swiper/swiper-bundle.esm.js'
+import toggleDocumentScrollBlocker from './helpers/toggleDocumentScrollBlocker.js'
 
 
 import './components/tabs.js'
@@ -14,21 +15,67 @@ $(function() {
   // open mobile menu
   $('.burger-menu').click(function() {
     $('body').toggleClass('menu_opened');
+    toggleDocumentScrollBlocker();
   });
 
   // data-lity is ready
   $(document).on('lity:ready', function(event, instance) {
+    toggleDocumentScrollBlocker();
+
     var el = instance.element();
     el.find('.lity-close').html(
       '<svg class="icon icon-close"><use xlink:href="assets/img/sprite.svg#close"></use></svg>'
     );
   });
 
+  $(document).on('lity:close', function() {
+    toggleDocumentScrollBlocker();
+  });
+
   // magnific popup
-  // $('.open-popup-link').magnificPopup({
-  //   type:'inline',
-  //   midClick: true
-  // });
+  $('.open-popup-link').magnificPopup({
+    type:'inline',
+    midClick: true,
+    mainClass: 'mfp-zoom',
+    removalDelay: 300,
+    cursor: null,
+    callbacks: {
+      open: function() {
+        toggleDocumentScrollBlocker();
+        $('.mfp-close').html('<svg class="icon icon-close"><use xlink:href="assets/img/sprite.svg#close"></use></svg>');
+      },
+      close: function() {
+        toggleDocumentScrollBlocker();
+      }
+    }
+  });
+
+  $('.magnific-gallery').magnificPopup({
+    delegate: 'button',
+    type: 'image',
+    midClick: true,
+    cursor: null,
+    gallery:{
+      enabled: true,
+      arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"><svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg></button>',
+      tCounter: '<span class="mfp-counter">%curr% / %total%</span>'
+    },
+    mainClass: 'mfp-zoom',
+    removalDelay: 300,
+    callbacks: {
+      open: function() {
+        toggleDocumentScrollBlocker();
+        $('.mfp-close').html('<svg class="icon icon-close"><use xlink:href="assets/img/sprite.svg#close"></use></svg>');
+      },
+      close: function() {
+        toggleDocumentScrollBlocker();
+      }
+    }
+  });
+
+  // <svg class="icon icon-close">
+  //               <use xlink:href="assets/img/sprite.svg#close"></use>
+  //             </svg>
   
   // owl carousel
   $('.owl-carousel').owlCarousel({

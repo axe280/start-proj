@@ -36,12 +36,6 @@
     &:hover
       background-color: red
 
-  &:hover
-    background-color: #333
-
-    .icon
-      fill: white
-
   .icon
     width: 30px
     height: 30px
@@ -75,3 +69,14 @@
 
   &.active
     background-color: red
+
+/* Min width 980 pixels */
+@media only screen and (min-width: 980px)
+  .owl-prev,
+  .owl-next
+    &:hover
+      background-color: #333
+
+      .icon
+        fill: white
+/* end media min width 980 pixels */

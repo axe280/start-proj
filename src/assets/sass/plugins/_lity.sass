@@ -1,3 +1,6 @@
+.lity-active
+  overflow: hidden
+
 .lity
   background-color: rgba(#000, .7)
 
@@ -11,7 +14,6 @@
 .lity-container
   width: 100%
   margin: 40px 0
-  max-width: 340px
   max-height: none
 
 .lity-content
@@ -22,6 +24,14 @@
 
   .st-modal
     max-height: none !important
+
+.lity-inline
+  .lity-close
+    display: none
+
+.st-modal
+  .lity-close
+    display: flex
 
 .lity-close
   position: absolute
@@ -58,3 +68,13 @@
 
   &:active
     top: -35px
+
+/* Min width 375 pixels */
+@media only screen and (min-width: 375px)
+  .lity-container
+    width: auto
+
+    .st-modal
+      max-width: 100%
+      width: 340px
+/* end media min width 375 pixels */
