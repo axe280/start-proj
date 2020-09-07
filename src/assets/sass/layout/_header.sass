@@ -1,96 +1,45 @@
-.site-wrapper
-  padding-top: 80px
-
-.menu-wrapper-fixed,
-.menu_opened .burger-menu
-  top: 80px
-
-.menu_opened.sticky_header
-  .burger-menu
-    top: 60px
-
 .header
-  position: fixed
-  top: 0
-  left: 0
-  width: 100%
-  z-index: 40
-  padding: 10px 0
-  height: 80px
-  background-color: #e6e6e6
-  transition: all 0.2s linear
+  position: relative
+  z-index: 200
+  height: 70px
+
+.header-main
+  height: 70px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 5px 55px 5px 0
+  background-color: #333
+  transition: $transDefault
 
   .container
-    position: relative
-    padding-right: 70px
+    width: 100%
 
-.sticky_header
-  .header
-    padding: 0
-    height: 60px
-    background-color: #dbdbdb
+.header-sticky
+  .header-main
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
     box-shadow: 0 0 10px rgba(#000, 0.7)
-
-  .menu-wrapper-fixed
-    top: 60px
+    animation: .25s slideInDown ease
+    transition: none
 
 .logo
+  max-width: 80px
+
   a
     display: block
     outline: none
-    max-width: 160px
 
-/* Min width 740 pixels */
-@media only screen and (min-width: 740px)
-  .site-wrapper
-    padding-top: 100px
-
-  .menu-wrapper-fixed,
-  .menu_opened .burger-menu
-    top: 100px
-
-  .menu_opened.sticky_header
-    .burger-menu
-      top: 80px
-
+/* Min width 980 pixels */
+@media only screen and (min-width: 980px)
   .header
-    height: 100px
-    display: flex
-    align-items: center
+    height: 90px
 
-    .container
-      width: 100%
-      display: flex
-      align-items: center
-      justify-content: space-between
-      padding-right: 15px
+  .header-main
+    padding-right: 0
 
-  .sticky_header
-    .header
-      height: 80px
-      padding-top: 10px
-      padding-bottom: 10px
-
-    .menu-wrapper-fixed
-      top: 80px
-/* end media min width 740 pixels */
-
-/* Min width 960 pixels */
-@media only screen and (min-width: 960px)
-  .site-wrapper
-    padding-top: 120px
-
-  .menu-wrapper-fixed
-    top: 120px
-
-  .header
-    padding: 20px 0
-    height: 120px
-
-    .container
-      padding-right: 15px
-
-  .sticky_header
-    .menu-wrapper-fixed
-      top: 0
-/* end media min width 960 pixels */
+  .head-menu
+    min-width: 1px // for safari
+/* end media min width 980 pixels */

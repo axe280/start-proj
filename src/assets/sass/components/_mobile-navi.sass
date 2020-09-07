@@ -1,0 +1,161 @@
+.menu-wrapper-fixed
+  top: 70px
+
+.burger-menu
+  display: block
+  position: absolute
+  right: 7px
+  top: 15px
+  z-index: 10
+  cursor: pointer
+  padding: 10px
+  user-select: none
+
+.burger-menu-box
+  display: block
+  width: 26px
+  padding: 8px 0
+  transition: padding .3s ease
+
+.burger-menu-inner
+  display: block
+  position: relative
+  height: 3px
+  background-color: #fff
+  border-radius: 3px
+  transition: transform .2s cubic-bezier(.215, .61, .355, 1)
+
+  &:before,
+  &:after
+    content: ' '
+    position: absolute
+    left: 0
+    top: 0
+    height: 3px
+    background-color: #fff
+    width: 100%
+    border-radius: 3px
+
+  &:before
+    transform: translateY(-8px)
+    transition: transform .3s ease .2s, opacity .1s ease
+
+  &:after
+    top: auto
+    bottom: -8px
+    transition: bottom .3s ease .2s, transform .2s cubic-bezier(.215, .61, .355, 1)
+
+.menu-wrapper-fixed
+  position: fixed
+  bottom: 0
+  z-index: 30
+  width: 100%
+  left: 0
+  max-width: 260px
+  transform: translateX(-100%)
+  transition: transform .2s ease-in-out
+
+.menu-open-wrapper
+  padding: 30px
+  height: 100%
+  background-color: #333
+  overflow: auto
+  -webkit-overflow-scrolling: touch
+
+// opened menu
+body
+  position: relative
+
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    width: 0
+    height: 0
+    z-index: 8
+    transition: background-color .5s ease-out
+
+.menu_opened
+  overflow: hidden
+
+  &:before
+    width: 100%
+    height: 100%
+    background-color: rgba(#fff, .7)
+
+  .site-wrapper
+    height: 100%
+
+  .menu-wrapper-fixed
+    transform: translateX(0)
+    transition: transform .35s ease-in-out
+
+  .burger-menu
+    position: fixed
+    top: 70px
+    left: 0
+    bottom: 0
+    z-index: 25
+    width: 100%
+    height: 100%
+
+  .burger-menu-box
+    position: absolute
+    top: -45px
+    right: 17px
+
+  .burger-menu-inner
+    transform: rotate(45deg)
+    // background-color: #fff
+    transition: transform .1s cubic-bezier(.215, .61, .355, 1) .3s, background-color 1s ease .5s
+
+    &:before
+      transform: translateY(0)
+      opacity: 0
+      transition: transform .3s ease, opacity .1s ease .3s
+
+    &:after
+      top: auto
+      bottom: 0
+      // background-color: #fff
+      transform: rotate(-90deg)
+      transition: bottom .3s ease, transform .1s cubic-bezier(.215, .61, .355, 1) .3s, background-color 1s ease .5s
+
+  .burger-menu-box
+    padding-left: 1px
+    padding-right: 1px
+
+/* Min width 980 pixels */
+@media only screen and (min-width: 980px)
+  body
+    &:before
+      display: none
+
+  .menu_opened
+    overflow: visible
+
+    .site-wrapper
+      height: auto
+
+  .menu-wrapper-fixed
+    position: relative
+    top: 0
+    height: auto
+    width: auto
+    max-width: none
+    transform: none
+    transition: none
+
+  .menu-open-wrapper
+    background: none
+    padding: 0
+    height: auto
+    overflow: visible
+
+  .burger-menu
+    display: none
+
+  .header-nav
+    display: block
+/* end media min width 980 pixels */

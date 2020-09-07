@@ -3,3 +3,12 @@ body.document-scroll-blocker
   overscroll-behavior: none
   -webkit-overflow-scrolling: auto
   overflow: hidden
+
+/* Min width 980 pixels */
+@media only screen and (min-width: 980px)
+  body.document-scroll-blocker
+    &.menu_opened
+      touch-action: auto
+      overscroll-behavior: auto
+      overflow: visible
+/* end media min width 980 pixels */

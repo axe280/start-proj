@@ -1,7 +1,7 @@
 import $ from 'jquery'
 import Swiper from 'swiper/swiper-bundle.esm.js'
 import toggleDocumentScrollBlocker from './helpers/toggleDocumentScrollBlocker.js'
-
+import stickyHeader from './components/headerSticky.js'
 
 import './components/tabs.js'
 import './components/magicLine.js'
@@ -18,7 +18,11 @@ $(function() {
     toggleDocumentScrollBlocker();
   });
 
-  // data-lity is ready
+  // sticky header
+  stickyHeader();
+
+
+  // data-lity
   $(document).on('lity:ready', function(event, instance) {
     toggleDocumentScrollBlocker();
 
@@ -72,10 +76,6 @@ $(function() {
       }
     }
   });
-
-  // <svg class="icon icon-close">
-  //               <use xlink:href="assets/img/sprite.svg#close"></use>
-  //             </svg>
   
   // owl carousel
   $('.owl-carousel').owlCarousel({

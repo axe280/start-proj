@@ -63,135 +63,6 @@
 
 
 /* -- Main menu --------------------- */
-.burger-menu
-  display: block
-  position: absolute
-  right: 7px
-  top: 10px
-  z-index: 10
-  cursor: pointer
-  padding: 10px
-  user-select: none
-
-.burger-menu-box
-  display: block
-  width: 26px
-  padding: 8px 0
-  transition: padding 0.3s ease
-
-.burger-menu-inner
-  display: block
-  position: relative
-  height: 3px
-  background-color: $base-color
-  border-radius: 3px
-  transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1)
-
-  &:before,
-  &:after
-    content: ' '
-    position: absolute
-    left: 0
-    top: 0
-    height: 3px
-    background-color: $base-color
-    width: 100%
-    border-radius: 3px
-
-  &:before
-    transform: translateY(-8px)
-    transition: transform 0.3s ease 0.2s, opacity 0.1s ease
-
-  &:after
-    top: auto
-    bottom: -8px
-    transition: bottom 0.3s ease 0.2s, transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1)
-
-.menu-wrapper-fixed
-  position: fixed
-  bottom: 0
-  z-index: 30
-  width: 100%
-  left: 0
-  max-width: 240px
-  transform: translateX(-100%)
-  transition: transform 0.4s ease-in-out
-
-.menu-open-wrapper
-  padding: 30px
-  height: 100%
-  background-color: $base-color
-  overflow: auto
-  -webkit-overflow-scrolling: touch
-
-// opened menu
-body
-  position: relative
-
-  &:before
-    content: ''
-    position: absolute
-    left: 0
-    top: 0
-    width: 0
-    height: 0
-    z-index: 8
-    transition: background-color 0.5s ease-out
-
-.menu_opened
-  overflow: hidden
-
-  &:before
-    width: 100%
-    height: 100%
-    background-color: rgba(#fff, 0.7)
-
-  &.sticky_header
-    .burger-menu-box
-      top: -40px
-
-  .site-wrapper
-    height: 100%
-
-  .menu-wrapper-fixed
-    transform: translateX(0)
-
-  .burger-menu
-    position: fixed
-    left: 0
-    bottom: 0
-    z-index: 25
-    width: 100%
-    height: 100%
-
-  .burger-menu-box
-    position: absolute
-    top: -50px
-    right: 17px
-
-  .burger-menu-inner
-    transform: rotate(45deg)
-    // background-color: #fff
-    transition-duration: 0.1s
-    transition-delay: 0.3s
-    transition: transform 0.1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s, background-color 1s ease 0.5s
-
-    &:before
-      transform: translateY(0)
-      opacity: 0
-      transition: transform 0.3s ease, opacity 0.1s ease 0.3s
-
-    &:after
-      top: auto
-      bottom: 0
-      // background-color: #fff
-      transform: rotate(-90deg)
-      transition: bottom 0.3s ease, transform 0.1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s, background-color 1s ease 0.5s
-
-  .burger-menu-box
-    padding-left: 1px
-    padding-right: 1px
-
 .menu
   margin: 0
   padding: 0
@@ -257,76 +128,15 @@ body
     color: $second-color
 
 
-/* Min width 375 pixels */
-@media only screen and (min-width: 375px)
-  .menu-wrapper-fixed
-    max-width: 260px
-  /* end media min width 375 pixels */
-
-
-/* Min width 740 pixels */
-@media only screen and (min-width: 740px)
-  .menu-wrapper-fixed
-    left: auto
-    right: 0
-    max-width: 340px
-    transform: translateX(100%)
-
-  .burger-menu
-    top: 6px
-
-  .menu_opened
-    &.sticky_header
-      .burger-menu-box
-        top: -49px
-
-    .burger-menu-box
-      top: -39px
-/* end media min width 740 pixels */
-
-
-/* Min width 960 pixels */
-@media only screen and (min-width: 960px)
-  body
-    &:before
-      display: none
-
-  .menu_opened
-    overflow: visible
-
-    .site-wrapper
-      height: auto
-
-  .menu-wrapper-fixed
-    position: relative
-    height: auto
-    transition: none
-    width: auto
-    top: 0
-    max-width: 100%
-    transform: translateX(0)
-
-  .menu-open-wrapper
-    background: none
-    padding: 0
-    height: auto
-    overflow: visible
-
-  .burger-menu
-    display: none
-
-  .header-nav
-    display: block
-
+/* Min width 980 pixels */
+@media only screen and (min-width: 980px)
   .menu
-    display: flex
-    flex-wrap: wrap
-    text-align: left
     background-color: $base-color
     border-radius: 3px
 
   .menu-item
-    width: auto
+    display: inline-block
+    vertical-align: top
     margin: 0
 
     &.active
@@ -379,6 +189,6 @@ body
 
       .menu-dd
         display: block
-  /* end media min width 960 pixels */
+  /* end media min width 980 pixels */
 
 /* ----- END Navigation ---------------- */
