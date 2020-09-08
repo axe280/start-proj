@@ -1,7 +1,5 @@
 import $ from 'jquery'
 import Swiper from 'swiper/swiper-bundle.esm.js'
-import toggleDocumentScrollBlocker from './helpers/toggleDocumentScrollBlocker.js'
-import stickyHeader from './components/headerSticky.js'
 
 import './components/tabs.js'
 import './components/magicLine.js'
@@ -19,8 +17,50 @@ $(function() {
   });
 
   // sticky header
+  function stickyHeader() {
+    var $header = $('#header');
+    var $body = $('body');
+    var headerStickyTimer = null;
+  
+    if($header.length) {
+      headerStickyCalc();
+  
+      $(window).on('scroll', function() {
+        headerStickyCalc();
+      });
+    }
+  
+    function headerStickyCalc() {
+      clearTimeout(headerStickyTimer);
+  
+      headerStickyTimer = setTimeout(function() {
+        var headerHeight = $header.outerHeight();
+        var headerOffsetTop = $header.offset().top;
+        var scroll = $(window).scrollTop();
+  
+        if (scroll >= headerOffsetTop + headerHeight) {
+          $body.addClass('header-sticky');
+        }
+        else {
+          $body.removeClass('header-sticky');
+        }
+      }, 50);
+    }
+  }
+
   stickyHeader();
 
+  // page scroll blocker
+  function toggleDocumentScrollBlocker() {
+    var body = document.body;
+  
+    if (body.classList.contains('document-scroll-blocker')) {
+      body.classList.remove('document-scroll-blocker');
+    }
+    else {
+      body.classList.add('document-scroll-blocker');
+    }
+  }
 
   // data-lity
   $(document).on('lity:ready', function(event, instance) {
@@ -136,13 +176,8 @@ $(function() {
   // swiper-outside-navi
   var swiperCollections = document.querySelectorAll('.st-swiper-outside-navi');
 
-  swiperCollections.forEach(element => {
-    console.log(element);
-  });
-
-  for (var i = 0; i < swiperCollections.length; i++) {
-    var elem = swiperCollections[i],
-        elemSwiper = elem.querySelector('.swiper-container'),
+  swiperCollections.forEach(elem => {
+    var elemSwiper = elem.querySelector('.swiper-container'),
         elemSwiperNext = elem.querySelector('.swiper-button-next'),
         elemSwiperPrev = elem.querySelector('.swiper-button-prev'),
         elemSwiperPagination = elem.querySelector('.swiper-pagination');
@@ -177,6 +212,6 @@ $(function() {
         },
       }
     });
-  }
+  });
 
 });

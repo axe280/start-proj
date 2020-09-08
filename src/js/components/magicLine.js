@@ -10,7 +10,6 @@ $(function() {
     var $magicLine = $magicLineWrap.find('.magic-line');
     magicLineAnimate($magicLineWrap.children().first());
     
-    
     if (magicEventName === 'click') {
       $magicLineWrap.on('click', 'li:not(.magic-line)', function() {
         magicLineAnimate($(this));
