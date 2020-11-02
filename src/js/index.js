@@ -10,6 +10,10 @@ import '../assets/sass/textWork/textwork.js'
 
 $(function() {
 
+  //for ie 11
+  svg4everybody();
+  picturefill();
+
   // open mobile menu
   $('.burger-menu').click(function() {
     $('body').toggleClass('menu_opened');
@@ -54,11 +58,11 @@ $(function() {
   function toggleDocumentScrollBlocker() {
     var body = document.body;
   
-    if (body.classList.contains('document-scroll-blocker')) {
-      body.classList.remove('document-scroll-blocker');
+    if (body.classList.contains('scroll-page-locked')) {
+      body.classList.remove('scroll-page-locked');
     }
     else {
-      body.classList.add('document-scroll-blocker');
+      body.classList.add('scroll-page-locked');
     }
   }
 

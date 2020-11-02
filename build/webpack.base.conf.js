@@ -1,11 +1,12 @@
+const glob = require('glob').sync
 const path = require('path')
 const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
-const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
-const SpritesmithPlugin = require('webpack-spritesmith')
+// const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
+// const SpritesmithPlugin = require('webpack-spritesmith')
 
 // Main const
 const PATHS = {
@@ -26,8 +27,7 @@ module.exports = {
     paths: PATHS
   },
   entry: {
-    app: PATHS.src,
-    // module: `${PATHS.src}/your-module.js`,
+    app: PATHS.src
   },
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
@@ -60,13 +60,19 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
-      {
-        test: /icons\/(-?\w\/?){0,}\.svg(\?.*)?$/,
-        use: [
-          { loader: 'svg-sprite-loader', options: { extract: true, outputPath: 'assets/img/', publicPath: 'assets/img' } },
-          'svgo-loader'
-        ]
-      },
+      // {
+      //   test: /icons\/(-?\w\/?){0,}\.svg(\?.*)?$/,
+      //   use: [
+      //     {
+      //       loader: 'svg-sprite-loader',
+      //       options: {
+      //         extract: true,
+      //         spriteFilename: 'assets/img/sprite.svg'
+      //       }
+      //     },
+      //     'svgo-loader'
+      //   ]
+      // },
       {
         test: /\.sass$/,
         use: [
@@ -113,30 +119,29 @@ module.exports = {
     }
   },
   plugins: [
-
     // new webpack.ProvidePlugin({
     //   $: 'jquery',
     //   jQuery: 'jquery'
     // }),
 
-    new SpriteLoaderPlugin(),
+    // new SpriteLoaderPlugin(),
 
-    new SpritesmithPlugin({
-      src: {
-          cwd: path.resolve(`${PATHS.src}/${PATHS.assets}icons`),
-          glob: '*.png'
-      },
-      target: {
-          image: path.resolve(`${PATHS.src}/${PATHS.assets}/img/sprite.png`),
-          css: path.resolve(`${PATHS.src}/${PATHS.assets}/sass/helpers/sprite.css`)
-      },
-      apiOptions: {
-          cssImageRef: "../img/sprite.png"
-      },
-      spritesmithOptions: {
-        padding: 10
-      }
-    }),
+    // new SpritesmithPlugin({
+    //   src: {
+    //       cwd: path.resolve(`${PATHS.src}/${PATHS.assets}icons`),
+    //       glob: '*.png'
+    //   },
+    //   target: {
+    //       image: path.resolve(`${PATHS.src}/${PATHS.assets}/img/sprite.png`),
+    //       css: path.resolve(`${PATHS.src}/${PATHS.assets}/sass/helpers/sprite.css`)
+    //   },
+    //   apiOptions: {
+    //       cssImageRef: "../img/sprite.png"
+    //   },
+    //   spritesmithOptions: {
+    //     padding: 10
+    //   }
+    // }),
 
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}css/[name].[hash].css`,
