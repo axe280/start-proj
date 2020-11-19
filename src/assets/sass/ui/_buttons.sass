@@ -8,6 +8,7 @@ button
   outline: none
   cursor: pointer
   box-shadow: none
+  transition: $transDefault
 
 .btn
   position: relative
@@ -16,11 +17,9 @@ button
   margin: 0
   padding: 8px 15px
   border: none
-
   text-align: center
   font: normal normal 14px/24px $site-font-family, Arial, sans-serif
   text-decoration: none
-
   color: #fff
   background-color: $base-color
   border-radius: 5px
@@ -74,6 +73,14 @@ button
       &:hover
         color: #fff
         border-color: lighten($second-color, 5%)
+
+  &__link
+    background: none
+    color: #000
+
+    &:hover
+      background: none
+      color: rgba(#000, .8)
 
   &[disabled]
     cursor: default

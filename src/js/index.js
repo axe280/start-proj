@@ -10,14 +10,35 @@ import '../assets/sass/textWork/textwork.js'
 
 $(function() {
 
+  AOS.init({
+    // disable: 'mobile',
+    duration: 600,
+    once: true
+  });
+
   //for ie 11
   svg4everybody();
   picturefill();
 
   // open mobile menu
-  $('.burger-menu').click(function() {
+  $('.burger-menu').on('click', function() {
     $('body').toggleClass('menu_opened');
     toggleDocumentScrollBlocker();
+  });
+
+  // animation inputs
+  $('.form-group_animate-js input, .form-group_animate-js textarea').on('focus', function() {
+    $(this)
+      .parents('.form-group_animate-js')
+      .addClass('form-group_focused');
+  });
+
+  $('.form-group_animate-js input, .form-group_animate-js textarea').on('blur', function() {
+    if ($(this).val() === '') {
+      $(this)
+        .parents('.form-group_animate-js')
+        .removeClass('form-group_focused');
+    }
   });
 
   // sticky header

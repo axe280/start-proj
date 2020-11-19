@@ -3,7 +3,8 @@
   box-sizing: border-box
 
 body
-  font: $site-text-size $site-font-family, Arial, sans-serif
+  font-family: $site-font-family, $systemFont
+  font-size: $site-text-size
   line-height: 28px
   color: $site-text-color
 
@@ -11,7 +12,7 @@ body
   display: block
   margin: 0 0 20px
   padding: 0
-  font-family: $site-font-family, Arial, sans-serif
+  font-family: $site-font-family, $systemFont
   font-weight: 700
   line-height: 1.5em
   color: $site-title-color
@@ -85,6 +86,14 @@ a
     text-decoration: none
     color: $color-h-link
 
+.icon
+  display: inline-block
+  width: 24px
+  height: 24px
+  transition: $transDefault
+
+.text_primary
+  color: $colorPrimary
 
 
 /* Min width 740 pixels */

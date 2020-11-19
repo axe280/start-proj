@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'fontName';
+  src: url('../fonts/dinprobold.woff2') format('woff2'),
+    url('../fonts/dinprobold.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}

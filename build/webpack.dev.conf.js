@@ -26,14 +26,14 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   },
   module: {
     rules: [{
-      test: /img\/(-?\w\/?){0,}\.(png|jpg|gif|svg)(\?.*)?$/,
+      test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
       loader: 'file-loader',
       options: {
         name: '../img/[name].[ext]'
       }
     },
     {
-      test: /fonts\/(-?\w\/?){0,}\.(woff(2)?|ttf|eot|otf|svg)(\?v=\d+\.\d+\.\d+)?$/,
+      test: /\.(woff(2)?|ttf|eot|otf|svg)(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'file-loader',
       options: {
         name: '../fonts/[name].[ext]'

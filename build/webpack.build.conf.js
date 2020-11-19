@@ -7,7 +7,7 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   module: {
     rules: [{
-      test: /img\/(-?\w\/?){0,}\.(png|jpg|gif|svg)(\?.*)?$/,
+      test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
       loader: 'file-loader',
       options: {
         name: '[name].[ext]',
@@ -16,7 +16,7 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
       }
     },
     {
-      test: /fonts\/(-?\w\/?){0,}\.(woff(2)?|ttf|eot|otf|svg)(\?v=\d+\.\d+\.\d+)?$/,
+      test: /\.(woff(2)?|ttf|eot|otf|svg)(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'file-loader',
       options: {
         name: '[name].[ext]',

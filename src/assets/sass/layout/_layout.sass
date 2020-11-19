@@ -3,7 +3,6 @@ html
   height: 100%
 
 body
-  min-height: 100%
   display: flex
   flex-direction: column
   min-width: 320px
@@ -40,24 +39,27 @@ body
   justify-content: space-between
   align-items: center
 
-/* Min width 740 pixels */
-@media only screen and (min-width: 740px)
+/* Min width $md*/
+@media only screen and (min-width: $md)
   .hidden-tablet
     display: none
 
   .hidden-mobile
     display: block
-/* end media min width 740 pixels */
+
+  .container
+    padding: 0 25px
+/* end media min width $md*/
 
 
-/* Min width 980 pixels */
-@media only screen and (min-width: 980px)
+/* Min width $lg */
+@media only screen and (min-width: $lg)
   .section-st
     padding-top: 120px
     padding-bottom: 40px
 
   .container
-    max-width: 980px
+    max-width: 1220px
     margin-left: auto
     margin-right: auto
 
@@ -86,7 +88,7 @@ body
 
     &.stop
       position: relative
-/* end media min width 980 pixels */
+/* end media min width $lg */
 
 
 

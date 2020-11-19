@@ -119,11 +119,6 @@ module.exports = {
     }
   },
   plugins: [
-    // new webpack.ProvidePlugin({
-    //   $: 'jquery',
-    //   jQuery: 'jquery'
-    // }),
-
     // new SpriteLoaderPlugin(),
 
     // new SpritesmithPlugin({
