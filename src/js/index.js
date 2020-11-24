@@ -10,36 +10,55 @@ import '../assets/sass/textWork/textwork.js'
 
 $(function() {
 
+  // aos animation
   AOS.init({
-    // disable: 'mobile',
+    disable: 'mobile',
     duration: 600,
     once: true
   });
+
 
   //for ie 11
   svg4everybody();
   picturefill();
 
+
+  // page scroll blocker
+  var addDocumentScrollBlocker = function() {  
+    document.body.classList.add('scroll-page-locked');
+  };
+
+  var removeDocumentScrollBlocker = function() {
+    document.body.classList.remove('scroll-page-locked');
+  };
+
+
   // open mobile menu
   $('.burger-menu').on('click', function() {
     $('body').toggleClass('menu_opened');
-    toggleDocumentScrollBlocker();
-  });
 
-  // animation inputs
-  $('.form-group_animate-js input, .form-group_animate-js textarea').on('focus', function() {
-    $(this)
-      .parents('.form-group_animate-js')
-      .addClass('form-group_focused');
-  });
-
-  $('.form-group_animate-js input, .form-group_animate-js textarea').on('blur', function() {
-    if ($(this).val() === '') {
-      $(this)
-        .parents('.form-group_animate-js')
-        .removeClass('form-group_focused');
+    if ($('body').hasClass('menu_opened')) {
+      addDocumentScrollBlocker();
+    } else {
+      removeDocumentScrollBlocker();
     }
   });
+
+
+  // animation inputs
+  $(document).on({
+    'focus': function() {
+      $(this).parents('.field-item')
+        .addClass('_focused');
+    },
+    'blur': function() {
+      if ($(this).val() === '') {
+        $(this).parents('.field-item')
+          .removeClass('_focused');
+      }
+    }
+  }, '.field-item_animation-label input, .field-item_animation-label textarea');
+
 
   // sticky header
   function stickyHeader() {
@@ -75,21 +94,10 @@ $(function() {
 
   stickyHeader();
 
-  // page scroll blocker
-  function toggleDocumentScrollBlocker() {
-    var body = document.body;
-  
-    if (body.classList.contains('scroll-page-locked')) {
-      body.classList.remove('scroll-page-locked');
-    }
-    else {
-      body.classList.add('scroll-page-locked');
-    }
-  }
 
   // data-lity
-  $(document).on('lity:ready', function(event, instance) {
-    toggleDocumentScrollBlocker();
+  $(document).on('lity:ready', function(e, instance) {
+    addDocumentScrollBlocker();
 
     var el = instance.element();
     el.find('.lity-close').html(
@@ -98,8 +106,9 @@ $(function() {
   });
 
   $(document).on('lity:close', function() {
-    toggleDocumentScrollBlocker();
+    removeDocumentScrollBlocker();
   });
+
 
   // magnific popup
   $('.open-popup-link').magnificPopup({
@@ -110,11 +119,11 @@ $(function() {
     cursor: null,
     callbacks: {
       open: function() {
-        toggleDocumentScrollBlocker();
+        addDocumentScrollBlocker();
         $('.mfp-close').html('<svg class="icon icon-close"><use xlink:href="assets/img/sprite.svg#close"></use></svg>');
       },
       close: function() {
-        toggleDocumentScrollBlocker();
+        removeDocumentScrollBlocker();
       }
     }
   });
@@ -133,15 +142,16 @@ $(function() {
     removalDelay: 300,
     callbacks: {
       open: function() {
-        toggleDocumentScrollBlocker();
+        addDocumentScrollBlocker();
         $('.mfp-close').html('<svg class="icon icon-close"><use xlink:href="assets/img/sprite.svg#close"></use></svg>');
       },
       close: function() {
-        toggleDocumentScrollBlocker();
+        removeDocumentScrollBlocker();
       }
     }
   });
   
+
   // owl carousel
   $('.owl-carousel').owlCarousel({
     margin: 10,
@@ -165,6 +175,7 @@ $(function() {
       }
     }
   });
+
 
   // sliders
   new Swiper('.st-swiper', {
@@ -197,6 +208,7 @@ $(function() {
       },
     }
   });
+
 
   // swiper-outside-navi
   var swiperCollections = document.querySelectorAll('.st-swiper-outside-navi');

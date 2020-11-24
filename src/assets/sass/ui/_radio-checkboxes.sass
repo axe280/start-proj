@@ -1,6 +1,6 @@
 /* checkbox and radio */
-.form-st-radio,
-.form-st-checkbox
+.ui-st-radio,
+.ui-st-checkbox
   position: relative
   padding-left: 25px
   font-size: 14px
@@ -25,7 +25,7 @@
   box-shadow: 0 1px 3px rgba(#000, 0.3)
   transition: $transDefault
 
-.form-st-radio
+.ui-st-radio
   .fake-control
     border-radius: 50%
 
@@ -39,14 +39,16 @@
       background-color: $second-color
       border-radius: 50%
       background-color: inherit
+      transform: scale(0)
       transition: $transDefault
 
-  input:checked + .fake-control
+  input:checked ~ .fake-control
     &::before
       background-color: $second-color
+      transform: scale(1)
 
-.form-st-checkbox
-  input:checked + .fake-control
+.ui-st-checkbox
+  input:checked ~ .fake-control
     background-color: $second-color
     // background-image: url('../img/check.svg')
     background-repeat: no-repeat

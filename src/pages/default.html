@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="ru">
   <head>
     <meta charset="utf-8" />
     <title></title>
@@ -21,7 +21,7 @@
           <div class="container">
             <div class="st-flex-jc-space-between">
               <div class="logo">
-                <a href="preview.html">
+                <a href="index.html">
                   <img src="assets/img/logo.png" alt="logo" />
                 </a>
               </div>
@@ -74,6 +74,7 @@
         </div>
       </header>
       <!-- end header -->
+
 
       <main class="main">
         <section id="breadCrumbs" class="section-st">
@@ -192,21 +193,21 @@
                   margin-right: 50px;
                 "
               >
-                <div class="form-st-radio">
+                <div class="ui-st-radio">
                   <label>
                     Option 1
                     <input type="radio" name="radio" checked />
                     <span class="fake-control"></span>
                   </label>
                 </div>
-                <div class="form-st-radio">
+                <div class="ui-st-radio">
                   <label>
                     Option 2
                     <input type="radio" name="radio" />
                     <span class="fake-control"></span>
                   </label>
                 </div>
-                <div class="form-st-radio">
+                <div class="ui-st-radio">
                   <label>
                     Option 3
                     <input type="radio" name="radio" />
@@ -216,7 +217,7 @@
               </div>
 
               <div style="display: inline-block; vertical-align: top">
-                <div class="form-st-checkbox">
+                <div class="ui-st-checkbox">
                   <label>
                     Option 1
                     <input type="checkbox" checked />
@@ -224,7 +225,7 @@
                   </label>
                 </div>
 
-                <div class="form-st-checkbox">
+                <div class="ui-st-checkbox">
                   <label>
                     Option 2
                     <input type="checkbox" />
@@ -233,7 +234,7 @@
                 </div>
 
                 <div class="accept-checkbox">
-                  <div class="form-st-checkbox">
+                  <div class="ui-st-checkbox">
                     <label>
                       Lorem ipsum dolor sit amet,
                       <a href="#">consectetur</a> adipisicing elit.
@@ -247,24 +248,51 @@
 
               <br /><br /><br />
               <h4>Animation labels</h4>
-              <div class="form-group form-group_animate-js">
-                <label class="field-item">
+              <div class="form-group">
+                <label class="field-item field-item_animation-label">
                   <div class="field-item__label">label text</div>
                   <div class="field-item__field">
-                    <input type="text" required="required" />
+                    <input type="text" required />
                   </div>
                 </label>
               </div>
 
-              <div class="form-group form-group_animate-js">
-                <label class="field-item">
+              <div class="form-group">
+                <label class="field-item field-item_animation-label">
                   <div class="field-item__label">password</div>
                   <div class="field-item__field">
                     <input
                       type="password"
-                      pattern="(?=.*d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                      title="Не менее восьми символов, содержащих хотя бы одну цифру и символы из верхнего и нижнего регистра"
-                      required="required"
+                      required
+                    />
+                  </div>
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label class="field-item field-item_animation-label">
+                  <div class="field-item__label">E-mail</div>
+                  <div class="field-item__field">
+                    <input
+                      type="email"
+                      pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}"
+                      required
+                    />
+                  </div>
+                </label>
+              </div>
+
+              <br>
+              <h4>Default inputs</h4>
+              <div class="form-group">
+                <label class="field-item">
+                  <div class="field-item__label">E-mail</div>
+                  <div class="field-item__field">
+                    <input
+                      type="email"
+                      pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}"
+                      placeholder="E-mail"
+                      required
                     />
                   </div>
                 </label>
@@ -297,7 +325,7 @@
                       type="email"
                       placeholder="axe@gamil.com"
                       pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}"
-                      required="required"
+                      required
                     />
                   </div>
                 </label>
@@ -307,7 +335,7 @@
                 <label class="field-item field-item_inline">
                   <div class="field-item__label">Phone</div>
                   <div class="field-item__field">
-                    <input type="tel" placeholder="+3" required="required" />
+                    <input type="tel" placeholder="+3" required />
                   </div>
                 </label>
               </div>
@@ -332,7 +360,7 @@
                       <input
                         type="text"
                         placeholder="Website"
-                        required="required"
+                        required
                       />
                     </div>
                   </label>
@@ -347,7 +375,7 @@
                       <input
                         type="text"
                         placeholder="placeholder text"
-                        required="required"
+                        required
                       />
                     </div>
                   </label>
@@ -360,7 +388,7 @@
                       <input
                         type="text"
                         placeholder="placeholder text"
-                        required="required"
+                        required
                       />
                     </div>
                   </label>
@@ -373,7 +401,7 @@
                       <input
                         type="text"
                         placeholder="placeholder text"
-                        required="required"
+                        required
                       />
                     </div>
                   </label>
@@ -388,7 +416,7 @@
                       <input
                         type="text"
                         placeholder="placeholder text"
-                        required="required"
+                        required
                       />
                     </div>
                   </label>
@@ -401,7 +429,7 @@
                       <input
                         type="text"
                         placeholder="placeholder text"
-                        required="required"
+                        required
                       />
                     </div>
                   </label>
@@ -414,7 +442,7 @@
                       <input
                         type="text"
                         placeholder="placeholder text"
-                        required="required"
+                        required
                       />
                     </div>
                   </label>
@@ -427,7 +455,7 @@
                       <input
                         type="text"
                         placeholder="placeholder text"
-                        required="required"
+                        required
                       />
                     </div>
                   </label>
@@ -587,6 +615,7 @@
         </section>
       </main>
     </div>
+
 
     <!-- footer -->
     <footer class="footer" id="footer">

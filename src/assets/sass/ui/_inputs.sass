@@ -1,9 +1,9 @@
 .placeholder
-  color: #37393A
+  color: #ccc
 
 input,
 textarea
-  +placeholder-color(#37393A)
+  +placeholder-color(#ccc)
 
 ::-webkit-contacts-auto-fill-button
   opacity: 0
@@ -14,8 +14,8 @@ input[type="password"]::-webkit-contacts-auto-fill-button
 input[type="search"]
   -webkit-appearance: none
 
-.field-item__field input,
-.field-item__field textarea
+input,
+textarea
   position: relative
   height: 50px
   width: 100%
@@ -35,7 +35,7 @@ input[type="search"]
   &:focus
     border-color: rgba(#444, 0.5)
 
-.field-item__field textarea
+textarea
   vertical-align: top
   height: 130px
   padding: 10px 15px

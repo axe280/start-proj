@@ -3,39 +3,37 @@
   margin-bottom: 30px
 
 .field-item
-  &__label
-    margin-bottom: 10px
-    font-size: 16px
-    line-height: 20px
-    color: #0B3954
+  &_animation-label
+    position: relative
+    margin-top: 40px
+    display: block
 
-.form-group_animate-js
-  position: relative
-  padding-top: 20px
-
-  .field-item
-    &__label
+    .field-item__label
       position: absolute
       z-index: 3
       left: 0
-      top: 20px
+      top: 0
       transform: translateY(0)
       width: 100%
       padding: 0 15px
       font-size: 16px
       line-height: 50px
       cursor: text
-      transition: all 0.3s ease
+      transition: $transDefault
       margin: 0
-      color: #37393A
+      color: #ccc
 
-.form-group
-  &_focused
+  &._focused
     .field-item__label
-      transform: translateY(-40px)
+      transform: translateY(-85%)
       padding: 0
-      font-size: 14px
-      line-height: 40px
+      color: #444
+
+  &__label
+    margin-bottom: 10px
+    font-size: 16px
+    line-height: 20px
+    color: #0B3954
 
 
 /* Min width 740 pixels */
