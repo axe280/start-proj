@@ -23,7 +23,7 @@
   height: 14px
   background-color: #fff
   box-shadow: 0 1px 3px rgba(#000, 0.3)
-  transition: $transDefault
+  transition: background-color $transDefault, border-color $transDefault
 
 .ui-st-radio
   .fake-control
@@ -40,7 +40,7 @@
       border-radius: 50%
       background-color: inherit
       transform: scale(0)
-      transition: $transDefault
+      transition: transform $transDefault, background-color $transDefault
 
   input:checked ~ .fake-control
     &::before

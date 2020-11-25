@@ -1,5 +1,5 @@
 .mfp-wrap
-  transition: $transDefault
+  transition: background-color $transDefault
   overflow: auto
 
 .mfp-bg
@@ -30,7 +30,7 @@ button.mfp-arrow
   background-color: #fff
   overflow: hidden
   cursor: pointer
-  transition: $transDefault
+  transition: background-color $transDefault, color $transDefault
 
   &::before
     content: ''
@@ -43,9 +43,6 @@ button.mfp-arrow
     border: none
     margin: 0
     padding: 0
-
-  .icon
-    transition: $transDefault
 
 button.mfp-close,
 .mfp-close
