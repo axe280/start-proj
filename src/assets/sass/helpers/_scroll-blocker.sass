@@ -4,11 +4,11 @@ body.scroll-page-locked
   -webkit-overflow-scrolling: auto
   overflow: hidden
 
-/* Min width 980 pixels */
-@media only screen and (min-width: 980px)
+/* Min width $lg pixels */
+@media only screen and (min-width: $lg)
   body.scroll-page-locked
     &.menu_opened
       touch-action: auto
       overscroll-behavior: auto
       overflow: visible
-/* end media min width 980 pixels */
+/* end media min width $lg pixels */

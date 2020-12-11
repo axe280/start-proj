@@ -1,8 +1,8 @@
 import svg4everybody from 'svg4everybody';
-import picturefill from 'picturefill';
+// import picturefill from 'picturefill';
 
 window.svg4everybody = svg4everybody;
-window.picturefill = picturefill;
+// window.picturefill = picturefill;
 
 // forEach
 if (window.NodeList && !NodeList.prototype.forEach) {
@@ -16,9 +16,9 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 
 // isNan
 if (!Number.isNan) {
-    Object.defineProperty(Number, 'isNaN', {
-        value: function(value) {     
-        return value !== value;
-        }
-    });
+  Object.defineProperty(Number, 'isNaN', {
+    value: function(value) {     
+      return value !== value;
+    }
+  });
 }

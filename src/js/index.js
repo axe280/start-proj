@@ -20,7 +20,7 @@ $(function() {
 
   //for ie 11
   svg4everybody();
-  picturefill();
+  // picturefill();
 
 
   // page scroll blocker
@@ -44,6 +44,11 @@ $(function() {
     }
   });
 
+  $('.menu-close-overlay').on('click', function() {
+    $('body').removeClass('menu_opened');
+    removeDocumentScrollBlocker();
+  });
+
 
   // animation inputs
   $(document).on({
@@ -63,7 +68,6 @@ $(function() {
   // sticky header
   function stickyHeader() {
     var $header = $('#header');
-    var $body = $('body');
     var headerStickyTimer = null;
   
     if($header.length) {
@@ -83,10 +87,10 @@ $(function() {
         var scroll = $(window).scrollTop();
   
         if (scroll >= headerOffsetTop + headerHeight) {
-          $body.addClass('header-sticky');
+          $header.addClass('header_sticky');
         }
         else {
-          $body.removeClass('header-sticky');
+          $header.removeClass('header_sticky');
         }
       }, 50);
     }

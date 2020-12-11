@@ -1,44 +1,56 @@
 .header
-  position: relative
-  z-index: 200
-  height: 70px
+  height: $header-height-xs
 
-.header
-  height: 70px
+.header-inner
+  background-color: $header-bg-color
+
+.header-mob-layer-wrapp
   display: flex
-  justify-content: space-between
   align-items: center
-  padding: 5px 55px 5px 0
-  background-color: #333
-
-  .container
-    width: 100%
-
-.header-sticky
-  .header-main
-    position: fixed
-    left: 0
-    top: 0
-    width: 100%
-    box-shadow: 0 0 10px rgba(#000, 0.7)
-    animation: .25s slideInDown ease
-    transition: none
+  justify-content: space-between
 
 .logo
-  max-width: 80px
+  display: flex
+  align-items: center
+  outline: none
+  text-decoration: none
+  transition: opacity .2s
 
-  a
-    display: block
-    outline: none
+  &:hover
+    opacity: .95
 
-/* Min width 980 pixels */
-@media only screen and (min-width: 980px)
+  img
+    width: 44px
+    height: 44px
+
+  &__slogan
+    max-width: 80px
+    margin-left: 16px
+    font-size: 12px
+    line-height: 16px
+    color: #fff
+
+
+/* Max width $m-lg */
+@media only screen and (max-width: $m-lg)
+  .header-mob-layer-wrapp
+    position: relative
+    z-index: 40
+    padding: 10px 0
+/* end media max width $m-lg */
+
+
+/* Min width $lg pixels */
+@media only screen and (min-width: $lg)
   .header
-    height: 90px
+    height: $header-height-lg
 
-  .header-main
-    padding-right: 0
+  .header-inner
+    padding: 52px 0 14px
+    // transition: transform .3s
 
-  .head-menu
-    min-width: 1px // for safari
-/* end media min width 980 pixels */
+  .header-panel
+    display: flex
+    align-items: center
+    justify-content: space-between
+/* end media min width $lg pixels */

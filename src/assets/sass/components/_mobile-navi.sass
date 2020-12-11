@@ -1,158 +1,191 @@
-.menu-wrapper-fixed
-  top: 70px
-
-.burger-menu
-  display: block
-  position: absolute
-  right: 7px
-  top: 15px
-  z-index: 10
-  cursor: pointer
-  padding: 10px
-  user-select: none
-
+.burger-menu,
 .burger-menu-box
-  display: block
-  width: 26px
-  padding: 8px 0
-  transition: padding .3s ease
-
-.burger-menu-inner
-  display: block
-  position: relative
-  height: 3px
-  background-color: #fff
-  border-radius: 3px
-  transition: transform .2s cubic-bezier(.215, .61, .355, 1)
-
-  &:before,
-  &:after
-    content: ' '
-    position: absolute
-    left: 0
-    top: 0
-    height: 3px
-    background-color: #fff
-    width: 100%
-    border-radius: 3px
-
-  &:before
-    transform: translateY(-8px)
-    transition: transform .3s ease .2s, opacity .1s ease
-
-  &:after
-    top: auto
-    bottom: -8px
-    transition: bottom .3s ease .2s, transform .2s cubic-bezier(.215, .61, .355, 1)
-
-.menu-wrapper-fixed
-  position: fixed
-  bottom: 0
-  z-index: 30
-  width: 100%
-  left: 0
-  max-width: 260px
-  transform: translateX(-100%)
-  transition: transform .2s ease-in-out
-
-.menu-open-wrapper
-  padding: 30px
-  height: 100%
-  background-color: #333
-  overflow: auto
-  -webkit-overflow-scrolling: touch
-
-// opened menu
-body
-  position: relative
-
-  &:before
+  &::before,
+  &::after
     content: ''
     position: absolute
-    left: 0
+    width: 100%
+    height: 3px
+    border-radius: 3px
+    background-color: #fff
+    transition-property: width, transform
+    transition-duration: .35s
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1)
+
+.burger-menu
+  display: flex
+  align-items: center
+  position: relative
+  z-index: 40
+  width: 32px
+  height: 25px
+  user-select: none
+  cursor: pointer
+
+  &::before
     top: 0
-    width: 0
-    height: 0
-    z-index: 8
-    transition: background-color .5s ease-out
+    right: 0
 
-.menu_opened
-  overflow: hidden
-
-  &:before
-    width: 100%
-    height: 100%
-    background-color: rgba(#fff, .7)
-
-  .menu-wrapper-fixed
-    transform: translateX(0)
-    transition: transform .35s ease-in-out
-
-  .burger-menu
-    position: fixed
-    top: 70px
-    left: 0
+  &::after
     bottom: 0
-    z-index: 25
-    width: 100%
-    height: 100%
+    left: 0
+
+.burger-menu-box
+  width: 100%
+  height: 3px
+  position: relative
+
+
+// opened menu
+.menu_opened
+  .burger-menu
+    &::before,
+    &::after
+      width: 0
+
+  .header-mob-layer-wrapp
+    // background-color: #911212
 
   .burger-menu-box
-    position: absolute
-    top: -45px
-    right: 17px
-
-  .burger-menu-inner
-    transform: rotate(45deg)
-    // background-color: #fff
-    transition: transform .1s cubic-bezier(.215, .61, .355, 1) .3s, background-color 1s ease .5s
-
     &:before
-      transform: translateY(0)
-      opacity: 0
-      transition: transform .3s ease, opacity .1s ease .3s
+      transform: rotate(135deg)
 
     &:after
-      top: auto
-      bottom: 0
-      // background-color: #fff
-      transform: rotate(-90deg)
-      transition: bottom .3s ease, transform .1s cubic-bezier(.215, .61, .355, 1) .3s, background-color 1s ease .5s
+      transform: rotate(45deg)
 
-  .burger-menu-box
-    padding-left: 1px
-    padding-right: 1px
 
-/* Min width 980 pixels */
-@media only screen and (min-width: 980px)
-  body
-    &:before
-      display: none
+/* Max width $m-lg */
+@media only screen and (max-width: $m-lg)
+  // left
+  ._mobile-menu-left
+    .menu-wrapper-fixed
+      right: 50%
+      transform: translate(-100%)
 
-  .menu_opened
-    overflow: visible
+    .menu-close-overlay
+      left: 100%
 
-    .site-wrapper
+  // right
+  ._mobile-menu-right
+    .menu-wrapper-fixed
+      left: 50%
+      right: 0
+      transform: translate(100%)
+
+    .menu-close-overlay
+      right: 100%
+  
+  // top
+  ._mobile-menu-top
+    .header-mob-layer-wrapp
+      background-color: $header-bg-color
+      padding-left: $sides-spacing-md
+      padding-right: $sides-spacing-md
+      margin: 0 $sides-negative-spacing-md
+
+    // .menu-wrapper-fixed
+    //   left: 0
+    //   right: 0
+    //   transform: translateY(-100%)
+    //   background-color: $header-bg-color
+
+    // .menu-close-overlay
+    //   top: 100%
+    //   left: 0
+
+
+    // menu top one more version
+    .menu-wrapper-fixed
+      left: 0
+      right: 0
+      transform: translateY(-100%)
+      background: none
+
+    .menu-close-overlay
+      top: 0
+      left: 0
+
+    .menu-open-wrapper
       height: auto
+      max-height: 100%
+      background-color: $header-bg-color
+
 
   .menu-wrapper-fixed
-    position: relative
+    position: fixed
+    left: 0
     top: 0
-    height: auto
-    width: auto
-    max-width: none
-    transform: none
-    transition: none
+    bottom: 0
+    z-index: 30
+    padding-top: $header-height-xs
+    background-color: $header-bg-color
+    transition: transform .35s cubic-bezier(0.25, 1, 0.5, 1)
 
   .menu-open-wrapper
-    background: none
-    padding: 0
-    height: auto
-    overflow: visible
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding: 30px $sides-spacing-md
+    height: 100%
+    overflow: auto
+    -webkit-overflow-scrolling: touch
 
+  .menu-close-overlay
+    position: absolute
+    cursor: pointer
+    top: 0
+    height: 100%
+    z-index: -1
+
+
+  // opened menu
+  .menu_opened
+    overflow: hidden
+
+    .menu-wrapper-fixed
+      transform: translate(0)
+
+    .menu-close-overlay
+      width: 2000px
+      background-color: rgba(#000000, .15)
+      transition: background-color .2s ease-in .35s
+/* end media max width $m-lg */
+
+
+/* Max width $m-md */
+@media only screen and (max-width: $m-md)
+  .menu-open-wrapper
+    padding-left: $sides-spacing-xs
+    padding-right: $sides-spacing-xs
+
+  // left
+  ._mobile-menu-left
+    .menu-wrapper-fixed
+      right: 25%
+
+  // right
+  ._mobile-menu-right
+    .menu-wrapper-fixed
+      left: 25%
+/* end media max width $m-md */
+
+
+/* Max width $m-mobile-s */
+@media only screen and (max-width: $m-mobile-s)
+  // left
+  ._mobile-menu-left
+    .menu-wrapper-fixed
+      right: 62px
+
+  // right
+  ._mobile-menu-right
+    .menu-wrapper-fixed
+      left: 62px
+/* end media max width $m-mobile-s */
+
+
+/* Min width $lg pixels */
+@media only screen and (min-width: $lg)
   .burger-menu
     display: none
-
-  .header-nav
-    display: block
-/* end media min width 980 pixels */
+/* end media min width $lg pixels */

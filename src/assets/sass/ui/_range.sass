@@ -121,14 +121,14 @@ input[type=range]
     -webkit-appearance: none
     box-shadow: -1020px 0 0 1000px $colorPrimaryDark
 
-/* Min width 740 pixels */
-@media only screen and (min-width: 740px)
+/* Min width $md pixels */
+@media only screen and (min-width: $md)
   .range-container
     display: block
-/* end media min width 740 pixels */
+/* end media min width $md pixels */
 
-/* Min width 1200 pixels */
-@media only screen and (min-width: 1200px)
+/* Min width $xl pixels */
+@media only screen and (min-width: $xl)
   .range-fake-slider
     .range-dot
       &:nth-child(1)
@@ -142,4 +142,4 @@ input[type=range]
 
       &:nth-child(4)
         left: 80.5%
-/* end media min width 1200 pixels */
+/* end media min width $xl pixels */
