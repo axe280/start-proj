@@ -16,7 +16,6 @@
   <body>
     <!-- site main wrapper -->
     <div class="site-wrapper">
-
       <!-- header -->
       <header class="header _mobile-menu-top" id="header">
         <div class="header-inner">
@@ -35,7 +34,7 @@
             <div class="header-menu">
               <div class="menu-wrapper-fixed">
                 <div class="menu-close-overlay"></div>
-                
+
                 <div class="menu-open-wrapper">
                   <nav class="header-nav">
                     <ul class="menu">
@@ -51,7 +50,7 @@
                             >
                           </li>
                           <li class="menu-dd-item">
-                            <a class="menu-dd-item__link" href="#breadCrumbs"
+                            <a class="menu-dd-item__link" href="#"
                               >Bread crumbs</a
                             >
                           </li>
@@ -71,9 +70,7 @@
 
                   <!-- header top panel -->
                   <div class="header-top-panel">
-                    <div class="container">
-                      header top panel
-                    </div>
+                    <div class="container">header top panel</div>
                   </div>
                   <!-- end header top panel -->
                 </div>
@@ -84,11 +81,8 @@
       </header>
       <!-- end header -->
 
-
       <main class="main">
-        <section
-          data-aos="fade-up"
-          id="breadCrumbs" class="section-st">
+        <section data-aos="fade-up" id="pagination" class="section-st">
           <div class="container">
             <h2>Bread crumbs</h2>
 
@@ -98,13 +92,9 @@
               <li><a href="#">long product name</a></li>
               <li>last item</li>
             </ul>
-          </div>
-        </section>
 
-        <section
-          data-aos="fade-up"
-          id="pagination" class="section-st">
-          <div class="container">
+            <br /><br />
+
             <h2>Pagination</h2>
             <ol class="pagination">
               <li class="pagination__prev"><a href="#">prev</a></li>
@@ -117,16 +107,102 @@
               <li><a href="#">15</a></li>
               <li class="pagination__next"><a href="#">next</a></li>
             </ol>
+
+            <br /><br />
+
+            <h2>Social inline</h2>
+            <ul class="social-inline">
+              <li>
+                <a href="#">
+                  <svg class="icon">
+                    <use xlink:href="assets/img/sprite.svg#fb"></use>
+                  </svg>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <svg class="icon">
+                    <use xlink:href="assets/img/sprite.svg#vk"></use>
+                  </svg>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <svg class="icon">
+                    <use xlink:href="assets/img/sprite.svg#insta"></use>
+                  </svg>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <svg class="icon">
+                    <use xlink:href="assets/img/sprite.svg#youtube"></use>
+                  </svg>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <svg class="icon">
+                    <use xlink:href="assets/img/sprite.svg#telegram"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+
+            <br /><br />
+
+            <h2>User component</h2>
+
+            <div class="st-user">
+              <div class="st-user__img">
+                <svg class="icon">
+                  <use xlink:href="assets/img/sprite.svg#user"></use>
+                </svg>
+              </div>
+              <div class="st-user__about">
+                <div class="st-user__name">Username</div>
+                <div class="st-user__info">More info</div>
+              </div>
+            </div>
+
+            <br />
+
+            <div class="st-user">
+              <div class="st-user__img">
+                <svg class="icon">
+                  <use xlink:href="assets/img/sprite.svg#user"></use>
+                </svg>
+                <img src="assets/img/img1.png" alt="" />
+              </div>
+              <div class="st-user__about">
+                <div class="st-user__name">Username</div>
+              </div>
+            </div>
+
+            <br />
+
+            <div class="st-user st-user_md">
+              <div class="st-user__img">
+                <svg class="icon">
+                  <use xlink:href="assets/img/sprite.svg#user"></use>
+                </svg>
+              </div>
+              <div class="st-user__about">
+                <div class="st-user__name">Username</div>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section
-          data-aos="fade-up"
-          id="buttons" class="section-st">
+        <section data-aos="fade-up" id="buttons" class="section-st">
           <div class="container">
             <h2>Buttons</h2>
 
-            <a class="btn btn_sm" href="#">Small</a>
+            <a class="btn btn_sm" href="#">Small button</a>
             <a class="btn btn_sm btn_min-width" href="#">Min width</a>
             <a class="btn btn_sm btn_second-st" href="#">Second style</a>
             <a class="btn btn_sm btn_border" href="#">Border</a>
@@ -134,45 +210,85 @@
               >Border second</a
             >
             <a class="btn btn_sm" href="#">
-              <span class="btn__icon btn__icon_left"></span>
-              <span class="btn__icon-text">Icon left</span>
+              <span class="btn__icon">
+                <svg class="icon">
+                  <use xlink:href="assets/img/sprite.svg#arrow-prev"></use>
+                </svg>
+              </span>
+              <span>Icon left</span>
             </a>
             <a class="btn btn_sm" href="#">
-              <span class="btn__icon-text">Icon right</span>
-              <span class="btn__icon btn__icon_right"></span>
+              <span>Icon right</span>
+              <span class="btn__icon">
+                <svg class="icon">
+                  <use xlink:href="assets/img/sprite.svg#arrow-next"></use>
+                </svg>
+              </span>
             </a>
 
             <br /><br />
 
-            <a class="btn" href="#">Default</a>
+            <a class="btn" href="#">Default button</a>
+            <a class="btn btn_link" href="#">Button Link</a>
             <a class="btn btn_min-width" href="#">Min width</a>
             <a class="btn btn_second-st" href="#">Second style</a>
             <a class="btn btn_border" href="#">Border</a>
             <a class="btn btn_second-st btn_border" href="#">Border second</a>
             <a class="btn" href="#">
-              <span class="btn__icon btn__icon_left"></span>
-              <span class="btn__icon-text">Icon left</span>
+              <span class="btn__icon">
+                <svg class="icon">
+                  <use xlink:href="assets/img/sprite.svg#arrow-prev"></use>
+                </svg>
+              </span>
+              <span>Icon left</span>
             </a>
             <a class="btn" href="#">
-              <span class="btn__icon-text">Icon right</span>
-              <span class="btn__icon btn__icon_right"></span>
+              <span>Icon right</span>
+              <span class="btn__icon">
+                <svg class="icon">
+                  <use xlink:href="assets/img/sprite.svg#arrow-next"></use>
+                </svg>
+              </span>
             </a>
 
             <br /><br />
+            <button type="button" class="btn" disabled>
+              Disabled default button
+            </button>
+            <button type="button" class="btn btn_second-st" disabled>
+              Disabled
+            </button>
+            <button type="button" class="btn btn_second-st btn_border" disabled>
+              Border disabled
+            </button>
+            <button type="button" class="btn btn_border" disabled>
+              Border disabled
+            </button>
 
-            <a class="btn btn_md" href="#">Middle</a>
+            <br /><br />
+
+            <a class="btn btn_md" href="#">Middle button</a>
+            <a class="btn btn_md btn_link" href="#">Button Link</a>
             <a class="btn btn_md btn_second-st" href="#">Second style</a>
             <a class="btn btn_md btn_border" href="#">Border</a>
             <a class="btn btn_md btn_second-st btn_border" href="#"
               >Border second</a
             >
             <a class="btn btn_md" href="#">
-              <span class="btn__icon btn__icon_left"></span>
-              <span class="btn__icon-text">Icon left</span>
+              <span class="btn__icon">
+                <svg class="icon">
+                  <use xlink:href="assets/img/sprite.svg#arrow-prev"></use>
+                </svg>
+              </span>
+              <span>Icon left</span>
             </a>
             <a class="btn btn_md" href="#">
-              <span class="btn__icon-text">Icon right</span>
-              <span class="btn__icon btn__icon_right"></span>
+              <span>Icon right</span>
+              <span class="btn__icon">
+                <svg class="icon">
+                  <use xlink:href="assets/img/sprite.svg#arrow-next"></use>
+                </svg>
+              </span>
             </a>
 
             <br /><br />
@@ -181,23 +297,58 @@
             <a class="btn btn_lg btn_second-st" href="#">Second style</a>
             <a class="btn btn_lg btn_border" href="#">Border</a>
             <a class="btn btn_lg" href="#">
-              <span class="btn__icon btn__icon_left"></span>
-              <span class="btn__icon-text">Icon left</span>
+              <span class="btn__icon">
+                <svg class="icon">
+                  <use xlink:href="assets/img/sprite.svg#arrow-prev"></use>
+                </svg>
+              </span>
+              <span>Icon left</span>
             </a>
             <a class="btn btn_lg" href="#">
-              <span class="btn__icon-text">Icon right</span>
-              <span class="btn__icon btn__icon_right"></span>
+              <span>Icon right</span>
+              <span class="btn__icon">
+                <svg class="icon">
+                  <use xlink:href="assets/img/sprite.svg#arrow-next"></use>
+                </svg>
+              </span>
             </a>
 
             <br /><br />
 
             <a class="btn btn_lg btn_max">btn large max width</a>
+            <br /><br />
+            <a class="btn btn_max-mobile">btn max width only mobile</a>
+            <br /><br />
+            <h3>Btn icons</h3>
+            <button class="btn btn_sm btn_icon" type="button">
+              <svg class="icon">
+                <use xlink:href="assets/img/sprite.svg#close"></use>
+              </svg>
+            </button>
+            <button class="btn btn_sm btn_icon btn_link" type="button">
+              <svg class="icon">
+                <use xlink:href="assets/img/sprite.svg#close"></use>
+              </svg>
+            </button>
+            <button class="btn btn_icon" type="button">
+              <svg class="icon">
+                <use xlink:href="assets/img/sprite.svg#close"></use>
+              </svg>
+            </button>
+            <button class="btn btn_md btn_icon" type="button">
+              <svg class="icon">
+                <use xlink:href="assets/img/sprite.svg#close"></use>
+              </svg>
+            </button>
+            <button class="btn btn_lg btn_icon" type="button">
+              <svg class="icon">
+                <use xlink:href="assets/img/sprite.svg#close"></use>
+              </svg>
+            </button>
           </div>
         </section>
 
-        <section
-          data-aos="fade-up"
-          id="form" class="section-st">
+        <section data-aos="fade-up" id="form" class="section-st">
           <div class="container">
             <form class="st-form" action="#">
               <h2>Form</h2>
@@ -278,10 +429,7 @@
                 <label class="field-item field-item_animation-label">
                   <div class="field-item__label">password</div>
                   <div class="field-item__field">
-                    <input
-                      type="password"
-                      required
-                    />
+                    <input type="password" required />
                   </div>
                 </label>
               </div>
@@ -299,7 +447,7 @@
                 </label>
               </div>
 
-              <br>
+              <br />
               <h4>Default inputs</h4>
               <div class="form-group">
                 <label class="field-item">
@@ -315,7 +463,7 @@
                 </label>
               </div>
 
-              <br>
+              <br />
               <h4>Select</h4>
               <div class="form-group">
                 <label class="field-item">
@@ -323,14 +471,20 @@
                   <div class="field-item__field">
                     <select name="" id="">
                       <option value="" disabled selected>Select wallet</option>
-                      <option value="">121ny213bdwjuTNOhunthOuthu2uhonethuNUHOu2</option>
-                      <option value="">121ndhy213bdwjuTNOthOuthu2uhonethuNUHOu2</option>
-                      <option value="">121ndhy213bdwjuTNOhunthOu2uhonethuNUHOu2</option>
+                      <option value="">
+                        121ny213bdwjuTNOhunthOuthu2uhonethuNUHOu2
+                      </option>
+                      <option value="">
+                        121ndhy213bdwjuTNOthOuthu2uhonethuNUHOu2
+                      </option>
+                      <option value="">
+                        121ndhy213bdwjuTNOhunthOu2uhonethuNUHOu2
+                      </option>
                     </select>
                   </div>
                 </label>
               </div>
-              
+
               <br />
               <h4>Inline labels</h4>
               <br />
@@ -374,11 +528,7 @@
                   <label class="field-item">
                     <div class="field-item__label">Website</div>
                     <div class="field-item__field">
-                      <input
-                        type="text"
-                        placeholder="Website"
-                        required
-                      />
+                      <input type="text" placeholder="Website" required />
                     </div>
                   </label>
                 </div>
@@ -488,9 +638,7 @@
           </div>
         </section>
 
-        <section
-          data-aos="fade-up"
-          id="text" class="section-st">
+        <section data-aos="fade-up" id="text" class="section-st">
           <div class="container">
             <h2>Text</h2>
             <div class="text-bl">
@@ -519,7 +667,7 @@
                 </p>
               </div>
 
-              <div class="text_right">
+              <div class="tex">
                 <h3>h3 text right</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -636,7 +784,6 @@
     </div>
     <!-- end site main wrapper -->
 
-
     <!-- footer -->
     <footer class="footer" id="footer">
       <div class="container">
@@ -644,6 +791,5 @@
       </div>
     </footer>
     <!-- end footer -->
-
   </body>
 </html>

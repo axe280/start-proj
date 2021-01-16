@@ -8,3 +8,26 @@
     transform: translate3d(0, 0, 0);
   }
 }
+
+@keyframes myBounceY {
+  60%, 80%, to {
+    transform: translateY(350px) rotate(90deg);
+    animation-timing-function: cubic-bezier(.215, .61,.355,1);
+  }
+  
+  70% {
+    transform: translateY(300px) rotate(135deg);
+    animation-timing-function: ease-in;
+  }
+
+  90% {
+    transform: translateY(340px) rotate(45deg);
+    animation-timing-function: ease-in;
+  }
+}
+
+.bounce-animation {
+  position: absolute;
+  width: 100px;
+  animation: myBounceY 2s cubic-bezier(.755,.05,.855,.06) forwards;
+}

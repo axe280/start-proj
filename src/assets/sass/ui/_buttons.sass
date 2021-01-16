@@ -1,21 +1,29 @@
+// all page buttons
 button
-  display: inline-block
-  vertical-align: middle
+  display: inline-flex
+  align-items: center
+  justify-content: center
   margin: 0
   padding: 0
   background: none
   border: none
   outline: none
-  cursor: pointer
   box-shadow: none
   transition: background-color $transDefault, color $transDefault, border-color $transDefault
 
+  .icon
+    transition: fill $transDefault, stroke $transDefault
+
+
+// page buttons default with class
 .btn
   position: relative
-  display: inline-block
+  display: inline-flex
+  align-items: center
+  justify-content: center
   vertical-align: middle
   margin: 0
-  padding: 8px 15px
+  padding: 8px 16px
   border: none
   text-align: center
   font: normal normal 14px/24px $site-font-family, Arial, sans-serif
@@ -30,32 +38,58 @@ button
   &:hover
     text-decoration: none
     color: #fff
-    background-color: lighten($base-color, 5%)
+    background-color: darken($base-color, 5%)
 
+  // disabled
+  &[disabled],
+  &.disabled,
+  &_border[disabled],
+  &_border.btn_second-st[disabled]
+    cursor: default
+    color: #fff
+    background-color: $colorUiDisabled
+    border-color: transparent
+
+    &:hover
+      color: #fff
+      background-color: $colorUiDisabled
+      border-color: transparent
+
+
+  // second style
   &_second-st
     background-color: $second-color
 
     &:hover
-      background-color: lighten($second-color, 5%)
+      background-color: darken($second-color, 5%)
 
-  &__icon-text
-    display: inline-block
-    vertical-align: middle
+  // icon
+  &_icon
+    padding: 12px
 
+    .icon
+      width: 16px
+      height: 16px
+      fill: #fff
+
+  // icon and text
   &__icon
     width: 20px
     height: 20px
-    display: inline-block
-    vertical-align: middle
-    border: 1px solid #000
-    font-style: normal
+    margin-left: 10px
 
-    &_right
-      margin-left: 5px
+    &:first-child
+      margin-right: 10px
+      margin-left: 0
 
-    &_left
-      margin-right: 5px
+    .icon
+      vertical-align: top
+      height: 100%
+      width: 100%
+      fill: #fff
 
+
+  // border, border-second-st
   &_border
     border: 2px solid $base-color
     background: transparent
@@ -64,7 +98,7 @@ button
 
     &:hover
       color: #fff
-      border-color: lighten($base-color, 5%)
+      border-color: darken($base-color, 5%)
 
     &.btn_second-st
       border-color: $second-color
@@ -72,43 +106,80 @@ button
 
       &:hover
         color: #fff
-        border-color: lighten($second-color, 5%)
+        border-color: darken($second-color, 5%)
 
-  &__link
+
+  // link
+  &_link
     background: none
-    color: #000
+    color: $color-link
 
     &:hover
       background: none
-      color: rgba(#000, .8)
+      color: $color-h-link
 
-  &[disabled]
-    cursor: default
-    background-color: rgba(#000, 0.4)
+      .icon
+        color: $color-h-link
 
+    .icon
+      fill: $color-link
+
+
+  // width
   &_min-width
     min-width: 110px
 
   &_max
     width: 100%
 
+
+  // sm
   &_sm
-    padding: 5px 10px
+    padding: 6px 12px
     font-size: 12px
 
     &.btn_min-width
       min-width: 80px
 
+    &.btn_icon
+      padding: 10px
+
+
+  // md
   &_md
-    padding: 16px 25px
+    padding: 16px 26px
     font-size: 18px
 
     &.btn_min-width
       min-width: 140px
 
+    &.btn_icon
+      padding: 18px
+      
+      .icon
+        width: 20px
+        height: 20px
+
+
+  // lg
   &_lg
     padding: 22px 30px
     font-size: 24px
 
     &.btn_min-width
       min-width: 180px
+
+    &.btn_icon
+      padding: 22px
+
+      .icon
+        width: 24px
+        height: 24px
+
+
+/* Max width $md */
+@media only screen and (max-width: $md)
+  .btn
+    &_max-mobile
+      width: 100%
+/* end media max width $md */

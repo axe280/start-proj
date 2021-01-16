@@ -73,6 +73,12 @@ p
 .text_uppercase
   text-transform: uppercase
 
+.text_primary
+  color: $colorPrimary
+
+.text_bold
+  font-weight: 700
+
 img
   vertical-align: middle
   max-width: 100%
@@ -88,16 +94,42 @@ a
 
 .icon
   display: inline-block
+  vertical-align: middle
   width: 24px
   height: 24px
   transition: fill $transDefault, stroke $transDefault
 
-.text_primary
-  color: $colorPrimary
-
 
 /* Min width $md pixels */
 @media only screen and (min-width: $md)
+  h1, .title-site_h1
+    font-size: $site-h1-size-tablet
+
+  h2, .title-site_h2
+    font-size: $site-h2-size-tablet
+
+  h3, .title-site_h3
+    font-size: $site-h3-size-tablet
+
+  h4, .title-site_h4
+    font-size: $site-h4-size-tablet
+
+  h5, .title-site_h5
+    font-size: $site-h5-size-tablet
+
+  h6, .title-site_h6
+    font-size: $site-h6-size-tablet
+
+  .text-bl-grid
+    display: flex
+    justify-content: space-between
+
+    &__half-col
+      width: 48%
+/* end media min width $md pixels */
+
+/* Max width $xl */
+@media only screen and (max-width: $xl)
   h1, .title-site_h1
     font-size: $site-h1-size
 
@@ -115,14 +147,7 @@ a
 
   h6, .title-site_h6
     font-size: $site-h6-size
-
-  .text-bl-grid
-    display: flex
-    justify-content: space-between
-
-    &__half-col
-      width: 48%
-/* end media min width $md pixels */
+/* end media max width $xl */
 
 /* ----- END Typography ---------------- */
 
