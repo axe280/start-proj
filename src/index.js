@@ -4,11 +4,11 @@ import Swiper from 'swiper/swiper-bundle.esm.js'
 import 'owl.carousel2'
 import 'magnific-popup'
 import 'lity'
-import AOS from 'aos'
+import './js/libs/jquery.maskedinput.min.js'
+// import AOS from 'aos'
 
-window.AOS = AOS;
+// window.AOS = AOS;
 window.Swiper = Swiper
-
 
 // JS
 import './js/index.js'

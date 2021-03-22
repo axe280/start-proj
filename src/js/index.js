@@ -2,19 +2,67 @@ import $ from 'jquery'
 import Swiper from 'swiper/swiper-bundle.esm.js'
 
 import './components/tabs.js'
-// import './components/magicLine.js'
 import './components/magicLinePlugin.js'
 import './components/ratingStars.js'
 import './components/stickyCol.js'
+import './components/animationInputs.js'
+import './components/stickyHeader.js'
 import '../assets/sass/shapes/shapes.js'
 import '../assets/sass/textWork/textwork.js'
+import './components/copyBtn.js'
 
 $(function () {
   // aos animation
-  AOS.init({
-    disable: 'mobile',
-    duration: 600,
-    once: true,
+  // AOS.init({
+  //   disable: 'mobile',
+  //   duration: 600,
+  //   once: true,
+  // })
+
+  // debounce delay func
+  var debounce = function (fn, delay) {
+    var timeout
+
+    return function () {
+      clearTimeout(timeout)
+      var args = arguments
+      timeout = setTimeout(function () {
+        fn.apply(this, args)
+      }, delay || 50)
+    }
+  }
+
+  // page scroll blocker
+  var body = document.body
+  var scrollPosition = 0
+
+  var addDocumentScrollBlocker = function () {
+    scrollPosition = window.pageYOffset
+    body.style.overflow = 'hidden'
+    body.style.position = 'fixed'
+    body.style.top = `-${scrollPosition}px`
+    body.style.width = '100%'
+  }
+
+  var removeDocumentScrollBlocker = function () {
+    body.style.removeProperty('overflow')
+    body.style.removeProperty('position')
+    body.style.removeProperty('top')
+    body.style.removeProperty('width')
+    window.scrollTo(0, scrollPosition)
+  }
+
+  // click outside target
+  $(document).on('click', function (e) {
+    var $clicked = $(e.target)
+
+    var removeOpenClass = function (targetClassName) {
+      if (!$clicked.parents().hasClass(targetClassName)) {
+        $('.' + targetClassName).removeClass('_opened')
+      }
+    }
+
+    removeOpenClass('menu-item')
   })
 
   // my magic line
@@ -25,79 +73,30 @@ $(function () {
 
   //for ie 11
   svg4everybody()
-  // picturefill();
-
-  // page scroll blocker
-  var addDocumentScrollBlocker = function () {
-    document.body.classList.add('scroll-page-locked')
-  }
-
-  var removeDocumentScrollBlocker = function () {
-    document.body.classList.remove('scroll-page-locked')
-  }
 
   // open mobile menu
-  $('.burger-menu').on('click', function () {
-    $('body').toggleClass('menu_opened')
-
-    if ($('body').hasClass('menu_opened')) {
-      addDocumentScrollBlocker()
-    } else {
-      removeDocumentScrollBlocker()
-    }
-  })
-
-  $('.menu-close-overlay').on('click', function () {
-    $('body').removeClass('menu_opened')
-    removeDocumentScrollBlocker()
-  })
-
-  // animation inputs
-  $(document).on(
-    {
-      focus: function () {
-        $(this).parents('.field-item').addClass('_focused')
-      },
-      blur: function () {
-        if ($(this).val() === '') {
-          $(this).parents('.field-item').removeClass('_focused')
-        }
-      },
-    },
-    '.field-item_animation-label input, .field-item_animation-label textarea'
-  )
-
-  // sticky header
-  function stickyHeader() {
-    var $header = $('#header')
-    var headerStickyTimer = null
-
-    if ($header.length) {
-      headerStickyCalc()
-
-      $(window).on('scroll', function () {
-        headerStickyCalc()
-      })
-    }
-
-    function headerStickyCalc() {
-      clearTimeout(headerStickyTimer)
-
-      headerStickyTimer = setTimeout(function () {
-        var headerHeight = $header.outerHeight()
-        var headerOffsetTop = $header.offset().top
-        var scroll = $(window).scrollTop()
-
-        if (scroll >= headerOffsetTop + headerHeight) {
-          $header.addClass('header_sticky')
-        } else {
-          $header.removeClass('header_sticky')
-        }
-      }, 50)
-    }
+  var openMenu = function () {
+    $('body').addClass('menu_opened')
+    addDocumentScrollBlocker()
   }
 
-  stickyHeader()
+  var closeMenu = function () {
+    $('body').removeClass('menu_opened')
+    removeDocumentScrollBlocker()
+  }
+
+  $('.burger-menu').on('click', function () {
+    if ($('body').hasClass('menu_opened')) {
+      closeMenu()
+    } else {
+      openMenu()
+    }
+  })
+
+  $('.menu-close-overlay').on('click', closeMenu)
+
+  // tel mask
+  $('input[type="tel"]').mask('+7 (999) 999-9999')
 
   // data-lity
   $(document).on('lity:ready', function (e, instance) {
@@ -160,28 +159,82 @@ $(function () {
   })
 
   // owl carousel
-  $('.owl-carousel').owlCarousel({
-    margin: 10,
+  var onDragHandler = function () {
+    document.ontouchmove = function (e) {
+      e.preventDefault()
+    }
+  }
+
+  var onDraggedHandler = function () {
+    document.ontouchmove = function () {
+      return true
+    }
+  }
+
+  var defaultOwlOptions = {
     nav: true,
     navText: [
       '<svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg>',
       '<svg class="icon icon-arrow-next"><use xlink:href="assets/img/sprite.svg#arrow-next"></use></svg>',
     ],
-    responsive: {
-      0: {
-        items: 1,
+    onDrag: onDragHandler,
+    onDragged: onDraggedHandler,
+  }
+
+  $('.st-carousel').owlCarousel(
+    $.extend(
+      {
+        margin: 10,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          640: {
+            items: 2,
+          },
+          740: {
+            items: 3,
+          },
+          1000: {
+            items: 5,
+          },
+        },
       },
-      640: {
-        items: 2,
-      },
-      740: {
-        items: 3,
-      },
-      1000: {
-        items: 5,
-      },
-    },
-  })
+      defaultOwlOptions
+    )
+  )
+
+  // only mobile owl carousel
+  var $mobileCarousel = null
+
+  var initMobileCarousel = function () {
+    $mobileCarousel = $('.mobile-carousel').owlCarousel(
+      $.extend(
+        {
+          margin: 10,
+          responsive: {
+            0: {
+              items: 2,
+            },
+            740: {
+              items: 3,
+            },
+          },
+        },
+        defaultOwlOptions
+      )
+    )
+  }
+
+  var initCarouselResizeHandler = function ($selector, initFunc) {
+    if ($selector && $selector.length && $(window).width() >= 740) {
+      $selector.trigger('destroy.owl.carousel')
+    } else if ($(window).width() < 740) {
+      initFunc()
+    }
+  }
+
+  initCarouselResizeHandler($mobileCarousel, initMobileCarousel)
 
   // sliders
   new Swiper('.st-swiper', {
@@ -255,4 +308,64 @@ $(function () {
       },
     })
   })
+
+  // scroll active menu
+  var $menuLinks = $('.header .menu .scrollto-js')
+  var targetIds = []
+
+  $menuLinks.each(function () {
+    var attr = $(this).attr('href')
+    targetIds.push(attr)
+  })
+
+  var targetOffsetPos = 100
+
+  $(window).on('scroll', function () {
+    $menuLinks.removeClass('_active')
+    var currentPosition = $(window).scrollTop()
+
+    targetIds.forEach(function (id) {
+      var $target = $(id)
+      var topTargetPos = $target.offset().top - targetOffsetPos
+      var bottomTargetPos = $target.offset().top + $target.outerHeight()
+
+      if (currentPosition > topTargetPos && currentPosition < bottomTargetPos) {
+        $menuLinks.removeClass('_active')
+        $menuLinks.each(function () {
+          if ($(this).attr('href') === id) {
+            $(this).addClass('_active')
+          }
+        })
+      }
+    })
+  })
+
+  // slow scroll to
+  $('a.scrollto-js').on('click', function () {
+    if ($(window).width() < 980) {
+      closeMenu()
+    }
+
+    var elementClick = $(this).attr('href')
+    var destination = $(elementClick).offset().top
+    jQuery('html:not(:animated),body:not(:animated)').animate(
+      { scrollTop: destination },
+      800
+    )
+    return false
+  })
+
+  // document resize hendler
+  $(window).on(
+    'resize',
+    debounce(function () {
+      // rebuild mobile owl carousel
+      initCarouselResizeHandler($mobileCarousel, initMobileCarousel)
+
+      // close burger menu
+      if ($(window.width >= 980)) {
+        closeMenu()
+      }
+    }, 50)
+  )
 })

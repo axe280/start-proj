@@ -43,8 +43,9 @@ button
   // disabled
   &[disabled],
   &.disabled,
-  &_border[disabled],
-  &_border.btn_second-st[disabled]
+  &.btn_border[disabled],
+  &.btn_border.btn_second-st[disabled],
+  &.btn_second-st[disabled]
     cursor: default
     color: #fff
     background-color: $colorUiDisabled
@@ -57,14 +58,14 @@ button
 
 
   // second style
-  &_second-st
+  &.btn_second-st
     background-color: $second-color
 
     &:hover
       background-color: darken($second-color, 5%)
 
   // icon
-  &_icon
+  &.btn_icon
     padding: 12px
 
     .icon
@@ -90,7 +91,7 @@ button
 
 
   // border, border-second-st
-  &_border
+  &.btn_border
     border: 2px solid $base-color
     background: transparent
     color: #444
@@ -99,6 +100,7 @@ button
     &:hover
       color: #fff
       border-color: darken($base-color, 5%)
+      background-color: darken($base-color, 5%)
 
     &.btn_second-st
       border-color: $second-color
@@ -107,10 +109,11 @@ button
       &:hover
         color: #fff
         border-color: darken($second-color, 5%)
+        background-color: darken($second-color, 5%)
 
 
   // link
-  &_link
+  &.btn_link
     background: none
     color: $color-link
 
@@ -126,7 +129,7 @@ button
 
 
   // width
-  &_min-width
+  &.btn_min-width
     min-width: 110px
 
   &_max
@@ -134,7 +137,7 @@ button
 
 
   // sm
-  &_sm
+  &.btn_sm
     padding: 6px 12px
     font-size: 12px
 
@@ -146,7 +149,7 @@ button
 
 
   // md
-  &_md
+  &.btn_md
     padding: 16px 26px
     font-size: 18px
 
@@ -162,7 +165,7 @@ button
 
 
   // lg
-  &_lg
+  &.btn_lg
     padding: 22px 30px
     font-size: 24px
 
@@ -180,6 +183,6 @@ button
 /* Max width $md */
 @media only screen and (max-width: $md)
   .btn
-    &_max-mobile
+    &.btn_max-mobile
       width: 100%
 /* end media max width $md */

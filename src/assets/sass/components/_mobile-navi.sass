@@ -56,27 +56,65 @@
 
 /* Max width $m-lg */
 @media only screen and (max-width: $m-lg)
-  // left
-  ._mobile-menu-left
-    .menu-wrapper-fixed
-      right: 50%
-      transform: translate(-100%)
+  .menu-wrapper-fixed
+    position: fixed
+    left: 0
+    top: 0
+    bottom: 0
+    z-index: 30
+    padding-top: $header-height-xs
+    background-color: $header-bg-color
+    transform: translate(-100%)
+    transition: transform .35s cubic-bezier(0.25, 1, 0.5, 1)
 
-    .menu-close-overlay
-      left: 100%
+  .menu-open-wrapper
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding: 30px $sides-spacing-md
+    height: 100%
+    overflow: auto
+    -webkit-overflow-scrolling: touch
+
+  .menu-close-overlay
+    position: absolute
+    cursor: pointer
+    left: 0
+    top: 0
+    height: 100%
+    z-index: -1
+    display: none
+
+  // fade
+  ._menu-mob-fade
+    .menu-wrapper-fixed
+      right: 0
+      opacity: 0
+
+  .menu_opened
+    ._menu-mob-fade
+      .menu-wrapper-fixed
+        opacity: 1
+        transition: opacity .3s ease-in
+
+  // left
+  ._menu-mob-left
+    .menu-wrapper-fixed
+      right: 0
 
   // right
-  ._mobile-menu-right
+  ._menu-mob-right
     .menu-wrapper-fixed
-      left: 50%
+      left: 0
       right: 0
       transform: translate(100%)
 
     .menu-close-overlay
-      right: 100%
+      right: 0
+      left: auto
   
   // top
-  ._mobile-menu-top
+  ._menu-mob-top
     .header-mob-layer-wrapp
       background-color: $header-bg-color
       padding-left: $sides-spacing-md
@@ -93,13 +131,13 @@
     //   top: 100%
     //   left: 0
 
-
     // menu top one more version
     .menu-wrapper-fixed
       left: 0
       right: 0
       transform: translateY(-100%)
       background: none
+      transition: transform .35s ease-in
 
     .menu-close-overlay
       top: 0
@@ -110,40 +148,13 @@
       max-height: 100%
       background-color: $header-bg-color
 
-
-  .menu-wrapper-fixed
-    position: fixed
-    left: 0
-    top: 0
-    bottom: 0
-    z-index: 30
-    padding-top: $header-height-xs
-    background-color: $header-bg-color
-    transition: transform .35s cubic-bezier(0.25, 1, 0.5, 1)
-
-  .menu-open-wrapper
-    display: flex
-    flex-direction: column
-    justify-content: space-between
-    padding: 30px $sides-spacing-md
-    height: 100%
-    overflow: auto
-    -webkit-overflow-scrolling: touch
-
-  .menu-close-overlay
-    position: absolute
-    cursor: pointer
-    top: 0
-    height: 100%
-    z-index: -1
-
-
   // opened menu
   .menu_opened
     overflow: hidden
 
     .menu-wrapper-fixed
       transform: translate(0)
+      transition: transform .35s cubic-bezier(0.25, 1, 0.5, 1)
 
     .menu-close-overlay
       width: 2000px
@@ -159,12 +170,12 @@
     padding-right: $sides-spacing-xs
 
   // left
-  ._mobile-menu-left
+  ._mob-left
     .menu-wrapper-fixed
       right: 25%
 
   // right
-  ._mobile-menu-right
+  ._mob-right
     .menu-wrapper-fixed
       left: 25%
 /* end media max width $m-md */
@@ -173,12 +184,12 @@
 /* Max width $m-mobile-s */
 @media only screen and (max-width: $m-mobile-s)
   // left
-  ._mobile-menu-left
+  ._mob-left
     .menu-wrapper-fixed
       right: 62px
 
   // right
-  ._mobile-menu-right
+  ._mob-right
     .menu-wrapper-fixed
       left: 62px
 /* end media max width $m-mobile-s */

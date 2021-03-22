@@ -1,9 +1,9 @@
 .placeholder
-  color: #ccc
+  color: $placeholderColor
 
 input,
 textarea
-  +placeholder-color(#ccc)
+  +placeholder-color($placeholderColor)
 
 ::-webkit-contacts-auto-fill-button
   opacity: 0
@@ -17,26 +17,26 @@ input[type="search"]
 input,
 textarea
   position: relative
-  height: 50px
+  height: $fieldUiHeight
   width: 100%
-  padding: 0 15px
-  border: 1px solid rgba(#444, 0.3)
-  font: 16px $site-font-family, Arial, sans-serif
-  color: #444
-  background-color: #fff
+  padding: 0 $fieldUiSpace
+  border: 1px solid $colorUiBorder
+  font: $fieldUiFontSize $site-font-family, $systemFont
+  color: $fieldUiColor
+  background-color: $fieldUiBgColor
   outline: none
-  border-radius: 3px
+  border-radius: $fieldUiRadius
   -webkit-appearance: none
   box-shadow: none
 
   &:hover
-    border-color: rgba(#444, 0.4)
+    border-color: rgba($colorUiBorder, 0.4)
 
   &:focus
-    border-color: rgba(#444, 0.5)
+    border-color: rgba($colorUiBorder, 0.5)
 
 textarea
   vertical-align: top
   height: 130px
-  padding: 10px 15px
+  padding: 10px $fieldUiSpace
   resize: none

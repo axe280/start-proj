@@ -1,0 +1,31 @@
+@import 'const';
+
+@mixin placeholder-color($color-pl) {
+  &:-moz-placeholder,
+  &::-moz-placeholder {
+    color: $color-pl;
+    opacity: 1;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color-pl;
+    opacity: 1;
+  }
+
+  &:focus {
+    &:-moz-placeholder,
+    &::-moz-placeholder {
+      opacity: 0;
+    }
+
+    &::-webkit-input-placeholder {
+      opacity: 0;
+    }
+  }
+}
+
+@mixin breakpoint($bp) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}

@@ -17,7 +17,7 @@
     <!-- site main wrapper -->
     <div class="site-wrapper">
       <!-- header -->
-      <header class="header _mobile-menu-top" id="header">
+      <header class="header _menu-mob-fade" id="header">
         <div class="header-inner">
           <div class="header-panel container">
             <div class="header-mob-layer-wrapp">
@@ -57,13 +57,19 @@
                         </ul>
                       </li>
                       <li class="menu-item">
-                        <a class="menu-item__link" href="#buttons">Buttons</a>
+                        <a class="menu-item__link scrollto-js" href="#buttons"
+                          >Buttons</a
+                        >
                       </li>
                       <li class="menu-item">
-                        <a class="menu-item__link" href="#form">Form</a>
+                        <a class="menu-item__link scrollto-js" href="#form"
+                          >Form</a
+                        >
                       </li>
                       <li class="menu-item">
-                        <a class="menu-item__link" href="#text">Text</a>
+                        <a class="menu-item__link scrollto-js" href="#text"
+                          >Text</a
+                        >
                       </li>
                     </ul>
                   </nav>
@@ -442,6 +448,19 @@
                       type="email"
                       pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}"
                       required
+                    />
+                  </div>
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label class="field-item">
+                  <div class="field-item__label">Phone</div>
+                  <div class="field-item__field">
+                    <input
+                      type="tel"
+                      required
+                      placeholder="+7 (___) ___ __ __"
                     />
                   </div>
                 </label>

@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'fontName';
   src: url('../fonts/fontName.woff2') format('woff2'),
     url('../fonts/fontName.woff') format('woff');
@@ -36,4 +36,4 @@
     url('../fonts/fontName.woff') format('woff');
     font-weight: 700;
     font-display: swap;
-}
+} */
