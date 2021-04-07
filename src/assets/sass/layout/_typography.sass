@@ -3,37 +3,37 @@
   box-sizing: border-box
 
 body
-  font-family: $site-font-family, $systemFont
-  font-size: $site-text-size
-  line-height: 28px
-  color: $site-text-color
+  font-family: var(--site-font-family), var(--system-font)
+  font-size: var(--text-md)
+  line-height: var(--text-md-lh)
+  color: var(--text-color-dark)
 
 .title-site, h1, h2, h3, h4, h5, h6
   display: block
-  margin: 0 0 20px
+  margin: 0 0 16px
   padding: 0
-  font-family: $site-font-family, $systemFont
+  font-family: var(--site-font-family-2), sans-serif
   font-weight: 700
   line-height: 1.5em
-  color: $site-title-color
+  color: var(--text-color-dark)
 
 h1, .title-site_h1
-  font-size: $site-h1-size-mobile
+  font-size: var(--heading-h1)
 
 h2, .title-site_h2
-  font-size: $site-h2-size-mobile
+  font-size: var(--heading-h2)
 
 h3, .title-site_h3
-  font-size: $site-h3-size-mobile
+  font-size: var(--heading-h3)
 
 h4, .title-site_h4
-  font-size: $site-h4-size-mobile
+  font-size: var(--heading-h4)
 
 h5, .title-site_h5
-  font-size: $site-h5-size-mobile
+  font-size: var(--heading-h5)
 
 h6, .title-site_h6
-  font-size: $site-h6-size-mobile
+  font-size: var(--heading-h6)
 
 ul, ol
   list-style-type: none
@@ -74,7 +74,13 @@ p
   text-transform: uppercase
 
 .text_primary
-  color: $colorPrimary
+  color: var(--primary-color)
+
+.text_success
+  color: var(--success-color)
+
+.text_danger
+  color: var(--danger-color)
 
 .text_bold
   font-weight: 700
@@ -95,31 +101,15 @@ a
 .icon
   display: inline-block
   vertical-align: middle
-  width: 24px
-  height: 24px
+  width: var(--default-icon-size)
+  height: var(--default-icon-size)
   transition: fill $transDefault, stroke $transDefault
+  fill: var(--primary-color)
+  stroke: var(--primary-color)
 
 
 /* Min width $md pixels */
 @media only screen and (min-width: $md)
-  h1, .title-site_h1
-    font-size: $site-h1-size-tablet
-
-  h2, .title-site_h2
-    font-size: $site-h2-size-tablet
-
-  h3, .title-site_h3
-    font-size: $site-h3-size-tablet
-
-  h4, .title-site_h4
-    font-size: $site-h4-size-tablet
-
-  h5, .title-site_h5
-    font-size: $site-h5-size-tablet
-
-  h6, .title-site_h6
-    font-size: $site-h6-size-tablet
-
   .text-bl-grid
     display: flex
     justify-content: space-between
@@ -127,27 +117,6 @@ a
     &__half-col
       width: 48%
 /* end media min width $md pixels */
-
-/* Max width $xl */
-@media only screen and (max-width: $xl)
-  h1, .title-site_h1
-    font-size: $site-h1-size
-
-  h2, .title-site_h2
-    font-size: $site-h2-size
-
-  h3, .title-site_h3
-    font-size: $site-h3-size
-
-  h4, .title-site_h4
-    font-size: $site-h4-size
-
-  h5, .title-site_h5
-    font-size: $site-h5-size
-
-  h6, .title-site_h6
-    font-size: $site-h6-size
-/* end media max width $xl */
 
 /* ----- END Typography ---------------- */
 

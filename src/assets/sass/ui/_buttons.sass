@@ -1,15 +1,22 @@
 // all page buttons
-button
+button, .btn
   display: inline-flex
   align-items: center
   justify-content: center
+  vertical-align: middle
   margin: 0
   padding: 0
   background: none
   border: none
   outline: none
   box-shadow: none
+  text-decoration: none
+  text-align: center
+  cursor: pointer
   transition: background-color $transDefault, color $transDefault, border-color $transDefault
+
+  &:hover
+    text-decoration: none
 
   .icon
     transition: fill $transDefault, stroke $transDefault
@@ -17,172 +24,157 @@ button
 
 // page buttons default with class
 .btn
-  position: relative
-  display: inline-flex
-  align-items: center
-  justify-content: center
-  vertical-align: middle
-  margin: 0
-  padding: 8px 16px
-  border: none
-  text-align: center
-  font: normal normal 14px/24px $site-font-family, Arial, sans-serif
-  text-decoration: none
-  color: #fff
-  background-color: $base-color
-  border-radius: 5px
-  outline: none
-  cursor: pointer
-  transition: background-color $transDefault, color $transDefault, border-color $transDefault
+  padding: var(--btn-default-size)
+  font-family: var(--site-font-family), sans-serif
+  font-weight: 700
+  font-size: var(--text-ui-md)
+  line-height: var(--btn-line-height)
+  color: var(--btn-color)
+  background-color: var(--btn-bg)
+  border: 2px solid var(--btn-border)
+  border-radius: var(--btn-radius-sm)
 
   &:hover
-    text-decoration: none
-    color: #fff
-    background-color: darken($base-color, 5%)
+    color: var(--btn-color)
+    background-color: var(--btn-bg-hover)
+    border-color: var(--btn-bg-hover)
+
+  &:active
+    background-color: var(--btn-bg-active)
+    border-color: var(--btn-bg-active)
+
+  .icon
+    width: var(--btn-default-icon-size)
+    height: var(--btn-default-icon-size)
+    fill: var(--btn-color)
+    stroke: var(--btn-color)
+  
+  &__icon
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-left: 12px
+
+    &:first-child
+      margin-right: 12px
+      margin-left: 0
 
   // disabled
   &[disabled],
+  &[disabled]:hover,
+  &[disabled]:active,
   &.disabled,
-  &.btn_border[disabled],
-  &.btn_border.btn_second-st[disabled],
-  &.btn_second-st[disabled]
+  &.disabled:hover,
+  &.disabled:active
     cursor: default
-    color: #fff
-    background-color: $colorUiDisabled
-    border-color: transparent
-
-    &:hover
-      color: #fff
-      background-color: $colorUiDisabled
-      border-color: transparent
-
-
-  // second style
-  &.btn_second-st
-    background-color: $second-color
-
-    &:hover
-      background-color: darken($second-color, 5%)
-
-  // icon
-  &.btn_icon
-    padding: 12px
+    color: var(--btn-color-disabled)
+    background-color: var(--btn-bg-disabled)
+    border-color: var(--btn-border-disabled)
 
     .icon
-      width: 16px
-      height: 16px
-      fill: #fff
+      fill: var(--btn-color-disabled)
+      stroke: var(--btn-color-disabled)
 
-  // icon and text
-  &__icon
-    width: 20px
-    height: 20px
-    margin-left: 10px
+// xs
+.btn_xs
+  +mixin_btn_xs()
+
+  .btn__icon
+    margin-left: 8px
 
     &:first-child
-      margin-right: 10px
+      margin-right: 8px
       margin-left: 0
 
-    .icon
-      vertical-align: top
-      height: 100%
-      width: 100%
-      fill: #fff
+  .icon
+    width: var(--btn-sm-icon-size)
+    height: var(--btn-sm-icon-size)
 
+// sm
+.btn_sm
+  +mixin_btn_sm()
 
-  // border, border-second-st
-  &.btn_border
-    border: 2px solid $base-color
-    background: transparent
-    color: #444
-    line-height: 20px
+  .btn__icon
+    margin-left: 8px
 
-    &:hover
-      color: #fff
-      border-color: darken($base-color, 5%)
-      background-color: darken($base-color, 5%)
+    &:first-child
+      margin-right: 8px
+      margin-left: 0
 
-    &.btn_second-st
-      border-color: $second-color
-      color: #444
+  .icon
+    width: var(--btn-md-icon-size)
+    height: var(--btn-md-icon-size)
 
-      &:hover
-        color: #fff
-        border-color: darken($second-color, 5%)
-        background-color: darken($second-color, 5%)
+// md
+.btn_md
+  +mixin_btn_md()
 
+// lg
+.btn_lg
+  +mixin_btn_lg()
 
-  // link
-  &.btn_link
-    background: none
-    color: $color-link
+// btn icon
+.btn_icon
+  padding: var(--btn-icon-size-default)
 
-    &:hover
-      background: none
-      color: $color-h-link
+  .btn__icon
+    margin: 0
+    width: var(--btn-line-height)
+    height: var(--btn-line-height)
 
-      .icon
-        color: $color-h-link
+    &:first-child
+      margin: 0
 
-    .icon
-      fill: $color-link
+  &.btn_xs
+    +mixin_btn-icon_xs()
 
-
-  // width
-  &.btn_min-width
-    min-width: 110px
-
-  &_max
-    width: 100%
-
-
-  // sm
   &.btn_sm
-    padding: 6px 12px
-    font-size: 12px
+    +mixin_btn-icon_sm()
 
-    &.btn_min-width
-      min-width: 80px
-
-    &.btn_icon
-      padding: 10px
-
-
-  // md
   &.btn_md
-    padding: 16px 26px
-    font-size: 18px
+    +mixin_btn-icon_md()
 
-    &.btn_min-width
-      min-width: 140px
-
-    &.btn_icon
-      padding: 18px
-      
-      .icon
-        width: 20px
-        height: 20px
-
-
-  // lg
   &.btn_lg
-    padding: 22px 30px
-    font-size: 24px
+    +mixin_btn-icon_lg()
 
-    &.btn_min-width
-      min-width: 180px
+// btn link
+.btn_link
+  --btn-bg-hover: transparent
+  --btn-bg-active: transparent
+  --btn-border: transparent
+  --btn-border-disabled: transparent
 
-    &.btn_icon
-      padding: 22px
+  &:hover
+    color: var(--primary-color)
 
-      .icon
-        width: 24px
-        height: 24px
+    .icon
+      fill: var(--primary-color)
+      stroke: var(--primary-color)
 
+// primary
+.btn_primary
+  +btnColor(primary)
 
-/* Max width $md */
-@media only screen and (max-width: $md)
-  .btn
-    &.btn_max-mobile
-      width: 100%
-/* end media max width $md */
+// secondary
+.btn_secondary
+  +btnColor(secondary)
+
+// danger
+.btn_danger
+  +btnColor(danger)
+
+// success
+.btn_success
+  +btnColor(success)
+
+// warning
+.btn_warning
+  +btnColor(warning)
+
+// max width
+.btn_max
+  width: 100%
+
+.btn_max-mobile
+  +breakpoint-max-width($m-md)
+    width: 100%
