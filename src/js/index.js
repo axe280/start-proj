@@ -363,7 +363,7 @@ $(function () {
       initCarouselResizeHandler($mobileCarousel, initMobileCarousel)
 
       // close burger menu
-      if ($(window.width >= 980)) {
+      if ($(window.width >= 980 && $('body').hasClass('menu_opened'))) {
         closeMenu()
       }
     }, 50)

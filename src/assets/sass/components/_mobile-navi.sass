@@ -22,6 +22,9 @@
   user-select: none
   cursor: pointer
 
+  +breakpoint($lg)
+    display: none
+
   &::before
     top: 0
     right: 0
@@ -54,7 +57,6 @@
       transform: rotate(45deg)
 
 
-/* Max width $m-lg */
 @media only screen and (max-width: $m-lg)
   .menu-wrapper-fixed
     position: fixed
@@ -71,7 +73,7 @@
     display: flex
     flex-direction: column
     justify-content: space-between
-    padding: 30px $sides-spacing-md
+    padding: 30px var(--container-space)
     height: 100%
     overflow: auto
     -webkit-overflow-scrolling: touch
@@ -117,9 +119,9 @@
   ._menu-mob-top
     .header-mob-layer-wrapp
       background-color: $header-bg-color
-      padding-left: $sides-spacing-md
-      padding-right: $sides-spacing-md
-      margin: 0 $sides-negative-spacing-md
+      padding-left: var(--container-space)
+      padding-right: var(--container-space)
+      margin: 0 calc(var(--container-space) * -1)
 
     // .menu-wrapper-fixed
     //   left: 0
@@ -160,15 +162,8 @@
       width: 2000px
       background-color: rgba(#000000, .15)
       transition: background-color .2s ease-in .35s
-/* end media max width $m-lg */
 
-
-/* Max width $m-md */
 @media only screen and (max-width: $m-md)
-  .menu-open-wrapper
-    padding-left: $sides-spacing-xs
-    padding-right: $sides-spacing-xs
-
   // left
   ._mob-left
     .menu-wrapper-fixed
@@ -178,10 +173,7 @@
   ._mob-right
     .menu-wrapper-fixed
       left: 25%
-/* end media max width $m-md */
 
-
-/* Max width $m-mobile-s */
 @media only screen and (max-width: $m-mobile-s)
   // left
   ._mob-left
@@ -192,11 +184,3 @@
   ._mob-right
     .menu-wrapper-fixed
       left: 62px
-/* end media max width $m-mobile-s */
-
-
-/* Min width $lg pixels */
-@media only screen and (min-width: $lg)
-  .burger-menu
-    display: none
-/* end media min width $lg pixels */

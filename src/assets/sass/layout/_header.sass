@@ -1,13 +1,31 @@
 .header
   height: $header-height-xs
 
+  +breakpoint($lg)
+    height: $header-height-lg
+
 .header-inner
   background-color: $header-bg-color
+
+  +breakpoint($lg)
+    padding: 52px 0 14px
+    // transition: transform .3s
+
+.header-panel
+  +breakpoint($lg)
+    display: flex
+    align-items: center
+    justify-content: space-between
 
 .header-mob-layer-wrapp
   display: flex
   align-items: center
   justify-content: space-between
+
+  +breakpoint-max-width($m-lg)
+    position: relative
+    z-index: 40
+    padding: 10px 0
 
 .logo
   display: flex
@@ -29,28 +47,3 @@
     font-size: 12px
     line-height: 16px
     color: #fff
-
-
-/* Max width $m-lg */
-@media only screen and (max-width: $m-lg)
-  .header-mob-layer-wrapp
-    position: relative
-    z-index: 40
-    padding: 10px 0
-/* end media max width $m-lg */
-
-
-/* Min width $lg pixels */
-@media only screen and (min-width: $lg)
-  .header
-    height: $header-height-lg
-
-  .header-inner
-    padding: 52px 0 14px
-    // transition: transform .3s
-
-  .header-panel
-    display: flex
-    align-items: center
-    justify-content: space-between
-/* end media min width $lg pixels */

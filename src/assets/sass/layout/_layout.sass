@@ -1,4 +1,7 @@
 /* ----- Page structure ---------------- */
+*
+  box-sizing: border-box
+
 html
   height: 100%
 
@@ -10,7 +13,7 @@ body
   width: 100%
   margin: 0
   padding: 0
-  background-color: #f3f3f3
+  background-color: var(--bg-body)
 
 .site-wrapper
   overflow: hidden
@@ -19,52 +22,42 @@ body
 .footer
   flex-shrink: 0
 
+.main
+  padding: 50px 0
+
 .section-st
   padding-top: 40px
   padding-bottom: 40px
 
 .container
-  padding: 0 $sides-spacing-xs
+  max-width: var(--container-width)
+  padding: 0 var(--container-space)
+  margin: 0 auto
 
-.hidden-mobile,
+.hidden-mobile
+  display: none
+
+  +breakpoint($md)
+    display: block
+
+.hidden-tablet
+  +breakpoint($md)
+    display: none
+
+  +breakpoint($lg)
+    display: block
+
 .hidden-devices
   display: none
 
-.main
-  padding: 50px 0
-
-
-/* Min width $md*/
-@media only screen and (min-width: $md)
-  .hidden-tablet
-    display: none
-
-  .hidden-mobile
+  +breakpoint($lg)
     display: block
 
-  .container
-    padding: 0 $sides-spacing-md
-/* end media min width $md*/
+.hidden-desktop
+  +breakpoint($lg)
+    display: none
 
-
-/* Min width $lg */
 @media only screen and (min-width: $lg)
-  .section-st
-    padding-top: 60px
-    padding-bottom: 60px
-
-  .container
-    max-width: $max-width-layout
-    margin-left: auto
-    margin-right: auto
-
-  .hidden-devices,
-  .hidden-tablet
-    display: block
-
-  .hidden-desktop
-    display: none
-
   .site-columns
     display: flex
 
@@ -74,4 +67,3 @@ body
     &__aside
       flex: 0 0 270px
       margin-left: 50px
-/* end media min width $lg */

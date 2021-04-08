@@ -1,4 +1,3 @@
-/* ----- Forms ------------------------- */
 .form-group
   margin-bottom: 30px
 
@@ -23,6 +22,21 @@
       margin: 0
       color: #ccc
 
+  &_inline
+    +breakpoint($md)
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      .field-item__label
+        min-width: 140px
+        flex-basis: 140px
+        margin-bottom: 0
+        margin-right: 10px
+
+      .field-item__field
+        flex-grow: 1
+
   &._focused
     .field-item__label
       transform: translateY(-85%)
@@ -36,7 +50,6 @@
     color: #0B3954
 
 
-/* Min width $md pixels */
 @media only screen and (min-width: $md)
   .form-group-grid
     display: flex
@@ -51,31 +64,6 @@
     &_three-col
       width: 31.3%
 
-  .field-item
-    &_inline
-      display: flex
-      justify-content: space-between
-      align-items: center
-
-      .field-item__label
-        min-width: 140px
-        flex-basis: 140px
-        margin-bottom: 0
-        margin-right: 10px
-
-      .field-item__field
-        flex-grow: 1
-/* end media min width $md pixels */
-
-
-/* Min width $lg pixels */
-@media only screen and (min-width: $lg)
-  .form-group
     &_four-col
-      width: 22.8%
-/* end media min width $lg pixels */
-
-
-/* ----- END Forms --------------------- */
-
-
+      +breakpoint($lg)
+        width: 22.8%

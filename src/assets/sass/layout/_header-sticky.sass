@@ -8,13 +8,9 @@
     box-shadow: 0 0 10px rgba(#000, 0.7)
     animation: .25s slideInDown ease
 
-
-/* Min width $lg pixels */
-@media only screen and (min-width: $lg)
-  .header_sticky
-    .header-top-panel
-      display: none
-
-    .header-inner
+    +breakpoint($lg)
       padding: 10px 0
-/* end media min width $lg pixels */
+
+  .header-top-panel
+    +breakpoint($lg)
+      display: none
