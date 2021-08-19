@@ -7,8 +7,9 @@
 
 .mobile-scroll-wrapper
   +breakpoint-max-width($m-lg)
+    display: flex
     margin-left: calc(var(--container-space) * -1)
-    margin-right: calc(var(--container-space) * 1)
+    margin-right: calc(var(--container-space) * -1)
     padding-left: var(--container-space)
     overflow-x: auto
     -webkit-overflow-scrolling: touch
@@ -20,3 +21,8 @@
       display: none
       height: 0
       width: 0
+
+    &::after
+      content: ''
+      flex-shrink: 0
+      width: var(--container-space)

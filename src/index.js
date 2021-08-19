@@ -5,9 +5,9 @@ import 'owl.carousel2'
 import 'magnific-popup'
 import 'lity'
 import './js/libs/jquery.maskedinput.min.js'
-// import AOS from 'aos'
+import AOS from 'aos'
 
-// window.AOS = AOS;
+window.AOS = AOS;
 window.Swiper = Swiper
 
 // JS

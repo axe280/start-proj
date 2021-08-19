@@ -1,4 +1,6 @@
 import svg4everybody from 'svg4everybody'
+import 'smoothscroll-polyfill'
+
 window.svg4everybody = svg4everybody
 
 // forEach

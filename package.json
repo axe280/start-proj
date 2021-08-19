@@ -67,6 +67,7 @@
     "normalize.css": "^8.0.1",
     "owl.carousel2": "^2.2.1",
     "picturefill": "^3.0.3",
+    "smoothscroll-polyfill": "^0.4.4",
     "svg4everybody": "^2.1.9",
     "swiper": "^6.1.3"
   }

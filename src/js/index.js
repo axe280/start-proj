@@ -34,22 +34,13 @@ $(function () {
 
   // page scroll blocker
   var body = document.body
-  var scrollPosition = 0
 
   var addDocumentScrollBlocker = function () {
-    scrollPosition = window.pageYOffset
     body.style.overflow = 'hidden'
-    body.style.position = 'fixed'
-    body.style.top = '-' + scrollPosition + 'px'
-    body.style.width = '100%'
   }
 
   var removeDocumentScrollBlocker = function () {
     body.style.removeProperty('overflow')
-    body.style.removeProperty('position')
-    body.style.removeProperty('top')
-    body.style.removeProperty('width')
-    window.scrollTo(0, scrollPosition)
   }
 
   // click outside target
@@ -363,7 +354,7 @@ $(function () {
       initCarouselResizeHandler($mobileCarousel, initMobileCarousel)
 
       // close burger menu
-      if ($(window.width >= 980 && $('body').hasClass('menu_opened'))) {
+      if ($(window).width() >= 980 && $('body').hasClass('menu_opened')) {
         closeMenu()
       }
     }, 50)
