@@ -30,7 +30,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'file-loader',
         options: {
-          name: '../img/[name].[ext]',
+          name: '[name].[ext]',
         },
       },
       {

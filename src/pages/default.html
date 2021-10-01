@@ -19,7 +19,8 @@
         color: var(--tc-white);
       }
 
-      .h4, .h5 {
+      .h4,
+      .h5 {
         padding: 10px 20px;
         margin-bottom: 10px;
         background-color: var(--bg-dark);
@@ -31,182 +32,88 @@
   <body>
     <!-- site main wrapper -->
     <div class="site-wrapper">
-
-      <!-- header -->
-      <header class="header _menu-mob-fade" id="header">
-        <div class="header-inner">
-          <div class="header-panel container">
-            <div class="header-mob-layer-wrapp">
-              <a href="index.html" class="logo">
-                <img src="assets/img/logo.svg" alt="logo" />
-                <span class="logo__slogan">Lorem ipsum slogan</span>
-              </a>
-
-              <div class="burger-menu">
-                <div class="burger-menu-box"></div>
-              </div>
-            </div>
-
-            <div class="header-menu">
-              <div class="menu-wrapper-fixed">
-                <div class="menu-close-overlay"></div>
-
-                <div class="menu-open-wrapper">
-                  <nav class="header-nav">
-                    <ul class="menu">
-                      <li class="menu-item">
-                        <span class="menu-item__link _dd">
-                          Links
-                          <svg class="icon">
-                            <use xlink:href="assets/img/sprite.svg#chevron-down"></use>
-                          </svg>
-                        </span>
-
-                        <ul class="menu-dd">
-                          <li>
-                            <a href="#pagination">Pagination</a>
-                          </li>
-                          <li>
-                            <a href="#">Bread crumbs</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="menu-item">
-                        <a class="menu-item__link scrollto-js" href="#buttons"
-                          >Buttons</a
-                        >
-                      </li>
-                      <li class="menu-item">
-                        <a class="menu-item__link scrollto-js" href="#form"
-                          >Form</a
-                        >
-                      </li>
-                      <li class="menu-item">
-                        <a class="menu-item__link scrollto-js" href="#text"
-                          >Text</a
-                        >
-                      </li>
-                    </ul>
-                  </nav>
-
-                  <!-- header top panel -->
-                  <div class="header-top-panel">
-                    <div class="container">header top panel</div>
-                  </div>
-                  <!-- end header top panel -->
-                </div>
-              </div>
-            </div>
-
-            <div class="header-aside">
-              <a href="#" class="btn _xs _light">Вход</a>
-
-              <div class="dd-lang">
-                <button class="dd-lang-btn">
-                  <span class="dd-lang-active">ru</span>
-                  <svg class="icon">
-                    <use xlink:href="assets/img/sprite.svg#chevron-down"></use>
-                  </svg>
-                </button>
-
-                <ul class="dd-lang-list">
-                  <li><a href="#">en</a></li>
-                  <li><a href="#">cn</a></li>
-                </ul>
-              </div>
-
-              <div class="dd-search-wrapp">
-                <button class="dd-search-btn" type="button">
-                  <svg class="icon">
-                    <use xlink:href="assets/img/sprite.svg#search"></use>
-                  </svg>
-                </button>
-
-                <form action="#" class="search-form">
-                  <div class="search-form__inner">
-                    <input type="search" placeholder="Поиск" />
-                    <button type="submit">
-                      <svg class="icon icon-search">
-                        <use xlink:href="assets/img/sprite.svg#search"></use>
-                      </svg>
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-      <!-- end header -->
+      <%=require('html-loader?minimize=false!../partials/header.html')%>
 
       <main class="main">
         <section class="section-st">
           <div class="container">
             <h2 class="h2">Colors</h2>
             <h4 class="h4">Background</h4>
-            <div style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr;">
+            <div
+              style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr"
+            >
               <div>
                 <div class="_bg-primary">
-                  <div style="padding: 5px 20px;">primary</div>
+                  <div style="padding: 5px 20px">primary</div>
                 </div>
-                <br>
+                <br />
                 <div class="_bg-secondary">
-                  <div style="padding: 5px 20px;">secondary</div>
+                  <div style="padding: 5px 20px">secondary</div>
                 </div>
-                <br>
+                <br />
                 <div class="_bg-danger">
-                  <div style="padding: 5px 20px;">danger</div>
+                  <div style="padding: 5px 20px">danger</div>
                 </div>
-                <br>
+                <br />
                 <div class="_bg-success">
-                  <div style="padding: 5px 20px;">success</div>
+                  <div style="padding: 5px 20px">success</div>
                 </div>
-                <br>
+                <br />
                 <div class="_bg-dark">
-                  <div style="padding: 5px 20px;">dark</div>
+                  <div style="padding: 5px 20px">dark</div>
                 </div>
               </div>
 
               <div>
                 <div class="_bg-light">
-                  <div style="padding: 5px 20px;">light</div>
+                  <div style="padding: 5px 20px">light</div>
                 </div>
-                <br>
+                <br />
                 <div class="_bg-medium">
-                  <div style="padding: 5px 20px;">medium</div>
+                  <div style="padding: 5px 20px">medium</div>
                 </div>
-                <br>
+                <br />
                 <div class="_bg-white">
-                  <div style="padding: 5px 20px;">white</div>
+                  <div style="padding: 5px 20px">white</div>
                 </div>
-                <br>
+                <br />
                 <div class="_bg-grey">
-                  <div style="padding: 5px 20px;">grey</div>
+                  <div style="padding: 5px 20px">grey</div>
                 </div>
-                <br>
+                <br />
                 <div class="_bg-disabled">
-                  <div style="padding: 5px 20px;">disabled</div>
+                  <div style="padding: 5px 20px">disabled</div>
                 </div>
               </div>
             </div>
 
-            <br>
-            <br>
-            <br>
+            <br />
+            <br />
+            <br />
 
             <h4 class="h4">Text</h4>
-            <div style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr;">
+            <div
+              style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr"
+            >
               <div>
-                <div class="text_700 text_primary">primary</div><br>
-                <div class="text_700 text_secondary">secondary</div><br>
-                <div class="text_700 text_success">success</div><br>
-                <div class="text_700 text_danger">danger</div><br>
+                <div class="text_700 text_primary">primary</div>
+                <br />
+                <div class="text_700 text_secondary">secondary</div>
+                <br />
+                <div class="text_700 text_success">success</div>
+                <br />
+                <div class="text_700 text_danger">danger</div>
+                <br />
               </div>
               <div>
-                <div class="text_700 text_dark">dark</div><br>
-                <div class="text_700 text_light">light</div><br>
-                <div class="text_700 text_white">white</div><br>
-                <div class="text_700 text_medium">medium</div><br>
+                <div class="text_700 text_dark">dark</div>
+                <br />
+                <div class="text_700 text_light">light</div>
+                <br />
+                <div class="text_700 text_white">white</div>
+                <br />
+                <div class="text_700 text_medium">medium</div>
+                <br />
               </div>
             </div>
           </div>
@@ -214,34 +121,38 @@
 
         <section class="section-st">
           <div class="container">
-            <h2 class="h2">Heading <span style="margin: 0 20px;">|</span> Heading div / span </h2>
-            <div style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr;">
+            <h2 class="h2">
+              Heading <span style="margin: 0 20px">|</span> Heading div / span
+            </h2>
+            <div
+              style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr"
+            >
               <div>
                 <h1>Heading h1</h1>
-                <br>
+                <br />
                 <h2>Heading h2</h2>
-                <br>
+                <br />
                 <h3>Heading h3</h3>
-                <br>
+                <br />
                 <h4>Heading h4</h4>
-                <br>
+                <br />
                 <h5>Heading h5</h5>
-                <br>
+                <br />
                 <h6>Heading h6</h6>
               </div>
               <div>
                 <div class="heading _h1">Heading _h1</div>
-                <br>
+                <br />
                 <div class="heading _h2">Heading _h2</div>
-                <br>
+                <br />
                 <div class="heading _h3">Heading _h3</div>
-                <br>
+                <br />
                 <div class="heading _h4">Heading _h4</div>
-                <br>
+                <br />
                 <div class="heading _h5">Heading _h5</div>
-                <br>
+                <br />
                 <div class="heading _h6">Heading _h6</div>
-                <br>
+                <br />
               </div>
             </div>
           </div>
@@ -249,59 +160,73 @@
 
         <section class="section-st">
           <div class="container">
-            <h2 class="h2">Text <span style="margin: 0 20px;">|</span> Text UI</h2>
+            <h2 class="h2">
+              Text <span style="margin: 0 20px">|</span> Text UI
+            </h2>
             <h4 class="h4">Sizes</h4>
-            <div style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr;">
+            <div
+              style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr"
+            >
               <div>
                 <div>
                   <span class="text_xs">text_xs</span>
-                  <span class="text_xs" style="margin: 0 20px;">|</span>
+                  <span class="text_xs" style="margin: 0 20px">|</span>
                   <span class="text_xs text_700">text_xs 700</span>
-                  <span class="text_xs" style="margin: 0 20px;">|</span>
-                  <span class="text_xs text_700 _uppercase">text_xs 700 uppercase</span>
+                  <span class="text_xs" style="margin: 0 20px">|</span>
+                  <span class="text_xs text_700 _uppercase"
+                    >text_xs 700 uppercase</span
+                  >
                 </div>
-                <br>
+                <br />
                 <div>
                   <span class="text_sm">text_sm</span>
-                  <span class="text_sm" style="margin: 0 20px;">|</span>
+                  <span class="text_sm" style="margin: 0 20px">|</span>
                   <span class="text_sm text_700">text_sm 700</span>
-                  <span class="text_sm" style="margin: 0 20px;">|</span>
-                  <span class="text_sm text_700 _uppercase">text_sm 700 uppercase</span>
+                  <span class="text_sm" style="margin: 0 20px">|</span>
+                  <span class="text_sm text_700 _uppercase"
+                    >text_sm 700 uppercase</span
+                  >
                 </div>
-                <br>
+                <br />
                 <div>
                   <span class="text_md">text_md</span>
-                  <span class="text_md" style="margin: 0 20px;">|</span>
+                  <span class="text_md" style="margin: 0 20px">|</span>
                   <span class="text_md text_700">text_md 700</span>
-                  <span class="text_md" style="margin: 0 20px;">|</span>
-                  <span class="text_md text_700 _uppercase">text_md 700 uppercase</span>
+                  <span class="text_md" style="margin: 0 20px">|</span>
+                  <span class="text_md text_700 _uppercase"
+                    >text_md 700 uppercase</span
+                  >
                 </div>
-                <br>
+                <br />
                 <div>
                   <span class="text_lg">text_lg</span>
-                  <span class="text_lg" style="margin: 0 20px;">|</span>
+                  <span class="text_lg" style="margin: 0 20px">|</span>
                   <span class="text_lg text_700">text_lg 700</span>
-                  <span class="text_lg" style="margin: 0 20px;">|</span>
-                  <span class="text_lg text_700 _uppercase">text_lg 700 uppercase</span>
+                  <span class="text_lg" style="margin: 0 20px">|</span>
+                  <span class="text_lg text_700 _uppercase"
+                    >text_lg 700 uppercase</span
+                  >
                 </div>
-                <br>
+                <br />
                 <div>
                   <span class="text_xl">text_xl</span>
-                  <span class="text_xl" style="margin: 0 20px;">|</span>
+                  <span class="text_xl" style="margin: 0 20px">|</span>
                   <span class="text_xl text_700">text_xl 700</span>
-                  <span class="text_xl" style="margin: 0 20px;">|</span>
-                  <span class="text_xl text_700 _uppercase">text_xl 700 uppercase</span>
+                  <span class="text_xl" style="margin: 0 20px">|</span>
+                  <span class="text_xl text_700 _uppercase"
+                    >text_xl 700 uppercase</span
+                  >
                 </div>
-                <br>
+                <br />
                 <div>
                   <span class="text_2xl">text_2xl</span>
-                  <span class="text_2xl" style="margin: 0 20px;">|</span>
+                  <span class="text_2xl" style="margin: 0 20px">|</span>
                   <span class="text_2xl text_700">text_2xl 700</span>
                 </div>
-                <br>
+                <br />
                 <div>
                   <span class="text_3xl">text_3xl</span>
-                  <span class="text_3xl" style="margin: 0 20px;">|</span>
+                  <span class="text_3xl" style="margin: 0 20px">|</span>
                   <span class="text_3xl text_700">text_3xl 700</span>
                 </div>
               </div>
@@ -309,43 +234,43 @@
               <div>
                 <div>
                   <span class="text_ui-xs">text_ui-xs</span>
-                  <span class="text_ui-xs" style="margin: 0 20px;">|</span>
+                  <span class="text_ui-xs" style="margin: 0 20px">|</span>
                   <span class="text_ui-xs text_700">text_ui-xs 700</span>
                 </div>
-                <br>
+                <br />
                 <div>
                   <span class="text_ui-sm">text_ui-sm</span>
-                  <span class="text_ui-sm" style="margin: 0 20px;">|</span>
+                  <span class="text_ui-sm" style="margin: 0 20px">|</span>
                   <span class="text_ui-sm text_700">text_ui-sm 700</span>
                 </div>
-                <br>
+                <br />
                 <div>
                   <span class="text_ui-md">text_ui-md</span>
-                  <span class="text_ui-md" style="margin: 0 20px;">|</span>
+                  <span class="text_ui-md" style="margin: 0 20px">|</span>
                   <span class="text_ui-md text_700">text_ui-md 700</span>
                 </div>
-                <br>
+                <br />
                 <div>
                   <span class="text_ui-lg">text_ui-lg</span>
-                  <span class="text_ui-lg" style="margin: 0 20px;">|</span>
+                  <span class="text_ui-lg" style="margin: 0 20px">|</span>
                   <span class="text_ui-lg text_700">text_ui-lg 700</span>
                 </div>
-                <br>
+                <br />
                 <div>
                   <span class="text_ui-xl">text_ui-xl</span>
-                  <span class="text_ui-xl" style="margin: 0 20px;">|</span>
+                  <span class="text_ui-xl" style="margin: 0 20px">|</span>
                   <span class="text_ui-xl text_700">text_ui-xl 700</span>
                 </div>
-                <br>
+                <br />
                 <div>
                   <span class="text_ui-2xl">text_ui-2xl</span>
-                  <span class="text_ui-2xl" style="margin: 0 20px;">|</span>
+                  <span class="text_ui-2xl" style="margin: 0 20px">|</span>
                   <span class="text_ui-2xl text_700">text_ui-2xl 700</span>
                 </div>
-                <br>
+                <br />
                 <div>
                   <span class="text_ui-3xl">text_ui-3xl</span>
-                  <span class="text_ui-3xl" style="margin: 0 20px;">|</span>
+                  <span class="text_ui-3xl" style="margin: 0 20px">|</span>
                   <span class="text_ui-3xl text_700">text_ui-3xl 700</span>
                 </div>
               </div>
@@ -358,7 +283,7 @@
             <h2 class="h2">Components</h2>
 
             <h4 class="h4">Bread crumbs</h4>
-            <br>
+            <br />
             <ul class="bread-crumbs">
               <li><a href="#">Main</a></li>
               <li><a href="#">product</a></li>
@@ -371,7 +296,7 @@
             <br />
 
             <h4 class="h4">Pagination</h4>
-            <br>
+            <br />
             <ol class="pagination">
               <li class="pagination__prev">
                 <a href="#">
@@ -401,7 +326,7 @@
             <br />
 
             <h4 class="h4">Social inline</h4>
-            <br>
+            <br />
             <ul class="social-inline">
               <li>
                 <a href="#">
@@ -444,11 +369,18 @@
               </li>
             </ul>
 
-            <br /><br /><br>
+            <br /><br /><br />
 
             <h4 class="h4">Avatar</h4>
-            <br>
-            <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 30px;">
+            <br />
+            <div
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                gap: 30px;
+              "
+            >
               <div class="st-avatar">
                 <div class="st-avatar__img">
                   <svg class="icon">
@@ -514,13 +446,17 @@
               type="button"
               data-mfp-src="#feedback"
               class="btn _min-width open-modal-btn"
-            >Feedback</button>
+            >
+              Feedback
+            </button>
 
             <button
               type="button"
               data-mfp-src="#thanks"
               class="btn _min-width open-modal-btn"
-            >Thanks</button>
+            >
+              Thanks
+            </button>
           </div>
         </section>
 
@@ -603,10 +539,9 @@
 
                 <a class="btn _sm" href="#">Sm button</a>
                 <a class="btn _sm" href="#">
-                    <svg class="icon _xs">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                   <span>Sm button</span>
                 </a>
                 <a class="btn _sm" href="#" disabled>
@@ -865,7 +800,6 @@
                   </svg>
                 </button>
 
-
                 <button class="btn btn_icon _md" type="button">
                   <svg class="icon _xs">
                     <use xlink:href="assets/img/sprite.svg#close"></use>
@@ -907,7 +841,6 @@
                   </svg>
                 </button>
 
-
                 <button class="btn btn_icon _round _md" type="button">
                   <svg class="icon _xs">
                     <use xlink:href="assets/img/sprite.svg#close"></use>
@@ -922,15 +855,13 @@
               </div>
             </div>
 
-            <br><br>
+            <br /><br />
 
             <h2 class="h2">Buttons light</h2>
-            <div style="background-color: #000; padding: 30px;">
+            <div style="background-color: #000; padding: 30px">
               <h5 class="text_light h5">
                 Btn light
-                <span class="text_primary"
-                  >class="btn _light"</span
-                >
+                <span class="text_primary">class="btn _light"</span>
               </h5>
               <button type="button" class="btn _light">Button</button>
               <button type="button" class="btn _light">
@@ -961,12 +892,10 @@
                 </svg>
               </button>
 
-              <br><br>
+              <br /><br />
               <h5 class="text_light h5">
                 Btn light fill
-                <span class="text_primary"
-                  >class="btn _light_fill"</span
-                >
+                <span class="text_primary">class="btn _light_fill"</span>
               </h5>
 
               <button type="button" class="btn _light-fill">Button</button>
@@ -1007,7 +936,7 @@
               <h2 class="h2">Form</h2>
 
               <h5 class="h5">Radio and checkbox</h5>
-              <br>
+              <br />
               <div
                 style="
                   display: inline-block;
@@ -1126,15 +1055,11 @@
                 <label class="field-item _animation-label">
                   <span class="field-item__label">Phone</span>
                   <span class="field-item__field">
-                    <input
-                      type="tel"
-                      required
-                    />
+                    <input type="tel" required />
                   </span>
                   <span class="field-item__message"></span>
                 </label>
               </div>
-
 
               <br />
               <h5 class="h5">Default inputs</h5>
@@ -1160,11 +1085,7 @@
                 <label class="field-item">
                   <span class="field-item__label">Phone</span>
                   <span class="field-item__field">
-                    <input
-                      type="tel"
-                      required
-                      placeholder="+7"
-                    />
+                    <input type="tel" required placeholder="+7" />
                   </span>
                   <span class="field-item__message"></span>
                 </label>
@@ -1436,9 +1357,7 @@
                 totam, dolore aliquam temporibus quidem commodi.
               </p>
 
-              <h2>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              </h2>
+              <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure,
                 similique. Architecto quo cum, sunt consequuntur quaerat,
@@ -1446,7 +1365,7 @@
                 optio, possimus beatae rem ex. Unde.
               </p>
 
-              <img src="https://fakeimg.pl/600x400/">
+              <img src="https://fakeimg.pl/600x400/" />
 
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure,
@@ -1546,7 +1465,6 @@
           </div>
         </section>
 
-
         <section class="section-st">
           <div class="container">
             <h2 class="h2">Cards</h2>
@@ -1559,7 +1477,9 @@
                   </div>
                 </div>
                 <div class="st-card__info">
-                  <div class="text_lg text_uppercase text_700 mb-4">Dualsense Lorem, ipsum dolor.</div>
+                  <div class="text_lg text_uppercase text_700 mb-4">
+                    Dualsense Lorem, ipsum dolor.
+                  </div>
                   <div class="text_md">Lorem, ipsum dolor.</div>
                 </div>
               </a>
@@ -1571,7 +1491,9 @@
                   </div>
                 </div>
                 <div class="st-card__info">
-                  <div class="text_lg text_uppercase text_700">Dualsense Lorem, ipsum dolor.</div>
+                  <div class="text_lg text_uppercase text_700">
+                    Dualsense Lorem, ipsum dolor.
+                  </div>
                 </div>
               </a>
 
@@ -1582,7 +1504,9 @@
                   </div>
                 </div>
                 <div class="st-card__info">
-                  <div class="text_lg text_uppercase text_700">Dualsense Lorem, ipsum dolor.</div>
+                  <div class="text_lg text_uppercase text_700">
+                    Dualsense Lorem, ipsum dolor.
+                  </div>
                 </div>
               </a>
 
@@ -1593,14 +1517,15 @@
                   </div>
                 </div>
                 <div class="st-card__info">
-                  <div class="text_lg text_uppercase text_700">Dualsense Lorem, ipsum dolor.</div>
+                  <div class="text_lg text_uppercase text_700">
+                    Dualsense Lorem, ipsum dolor.
+                  </div>
                   <div class="text_md">Lorem, ipsum dolor.</div>
                 </div>
               </a>
             </div>
           </div>
         </section>
-
 
         <section class="section-st">
           <div class="container">
@@ -1610,10 +1535,16 @@
           <div class="full-section-bg _height-700">
             <div class="full-image-bg _cover _cover-04 _cover-grad-bottom">
               <picture>
-                <source srcset="assets/img/img3.jpg" media="(min-width: 980px)">
-                <source srcset="assets/img/img3-tablet.jpg" media="(min-width: 500px)">
-                <source srcset="assets/img/img3-mob.jpg">
-                <img srcset="assets/img/img3.jpg" alt="">
+                <source
+                  srcset="assets/img/img3.jpg"
+                  media="(min-width: 980px)"
+                />
+                <source
+                  srcset="assets/img/img3-tablet.jpg"
+                  media="(min-width: 500px)"
+                />
+                <source srcset="assets/img/img3-mob.jpg" />
+                <img srcset="assets/img/img3.jpg" alt="" />
               </picture>
             </div>
 
@@ -1623,7 +1554,11 @@
                   <div class="mb-20">
                     <h1>Heading text</h1>
                   </div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit iusto cum, doloribus magni exercitationem accusamus labore nulla nam distinctio minima.</p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Impedit iusto cum, doloribus magni exercitationem accusamus
+                    labore nulla nam distinctio minima.
+                  </p>
                 </div>
               </div>
             </div>
@@ -1634,7 +1569,11 @@
                   <div class="mb-20">
                     <h1>Heading text</h1>
                   </div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit iusto cum, doloribus magni exercitationem accusamus labore nulla nam distinctio minima.</p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Impedit iusto cum, doloribus magni exercitationem accusamus
+                    labore nulla nam distinctio minima.
+                  </p>
                 </div>
               </div>
             </div>
@@ -1649,10 +1588,16 @@
           <div class="full-image-bg-wrapp">
             <div class="full-image-bg _cover">
               <picture>
-                <source srcset="assets/img/img3.jpg" media="(min-width: 980px)">
-                <source srcset="assets/img/img3-tablet.jpg" media="(min-width: 500px)">
-                <source srcset="assets/img/img3-mob.jpg">
-                <img srcset="assets/img/img3.jpg" alt="">
+                <source
+                  srcset="assets/img/img3.jpg"
+                  media="(min-width: 980px)"
+                />
+                <source
+                  srcset="assets/img/img3-tablet.jpg"
+                  media="(min-width: 500px)"
+                />
+                <source srcset="assets/img/img3-mob.jpg" />
+                <img srcset="assets/img/img3.jpg" alt="" />
               </picture>
             </div>
           </div>
@@ -1661,120 +1606,7 @@
     </div>
     <!-- end site main wrapper -->
 
-    <!-- footer -->
-    <footer class="footer" id="footer">
-      <div class="container">
-        <div class="footer-main">
-          <div class="footer-aside-col">
-            <div class="footer-logo">
-              <a href="#"><img src="assets/img/logo.svg" alt="" /></a>
-            </div>
-          </div>
-
-          <div class="footer-main-col">
-            <ul class="footer-contacts">
-              <li><a href="mailto:www.rok1group.ru">www.rok1group.ru</a></li>
-              <li><a href="tel:+7 812 318 08 08">+7 812 318 08 08</a></li>
-              <li><a href="tel:+7 812 612 14 03">+7 812 612 14 03</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div class="container">
-          <span>Официальный сайт торговой марки ... © 2021</span>
-          <span>Все права защищены</span>
-        </div>
-      </div>
-    </footer>
-    <!-- end footer -->
-
-
-    <!-- modals -->
-    <div id="thanks" class="st-modal mfp-hide">
-      <div class="st-modal__head">
-        <div class="heading _h2">Спасибо!</div>
-      </div>
-      <div class="st-modal__body">
-        <p>
-          Ваше сообщение отправлено и в ближайшее время наши специалисты
-          обработают его и ответят Вам.
-        </p>
-      </div>
-    </div>
-
-    <div id="feedback" class="st-modal mfp-hide">
-      <div class="st-modal__head">
-        <div class="heading _h2">Обратная связь</div>
-      </div>
-
-      <div class="st-modal__body">
-        <form class="st-form" action="#">
-          <div class="form-group">
-            <label class="field-item">
-              <span class="field-item__label">Имя</span>
-              <span class="field-item__field">
-                <input type="text" />
-              </span>
-              <span class="field-item__message">Пожалуйста заполните поле</span>
-            </label>
-          </div>
-
-          <div class="form-group">
-            <label class="field-item">
-              <span class="field-item__label">Фамилия</span>
-              <span class="field-item__field">
-                <input type="text" />
-              </span>
-              <span class="field-item__message">Пожалуйста заполните поле</span>
-            </label>
-          </div>
-
-          <div class="form-group">
-            <label class="field-item _error">
-              <span class="field-item__label">E-mail</span>
-              <span class="field-item__field">
-                <input type="email" />
-              </span>
-              <span class="field-item__message">Пожалуйста заполните Email</span>
-            </label>
-          </div>
-
-          <div class="form-group">
-            <label class="field-item">
-              <span class="field-item__label">Телефон</span>
-              <span class="field-item__field">
-                <input type="tel" />
-              </span>
-              <span class="field-item__message"></span>
-            </label>
-          </div>
-
-          <div class="form-group">
-            <label class="field-item">
-              <span class="field-item__label">Сообщение</span>
-              <span class="field-item__field">
-                <textarea></textarea>
-              </span>
-              <span class="field-item__message"></span>
-            </label>
-          </div>
-
-          <div class="text_center mt-24 mb-24">
-            <button class="btn _primary _min-width" type="submit">
-              Отправить
-            </button>
-          </div>
-
-          <div class="text_xs text_center">
-            Нажиимая на кнопку я соглашаюсь <br />
-            <a href="#">с условиямии обработки персональных данных</a>
-          </div>
-        </form>
-      </div>
-    </div>
-    <!-- end modals -->
-
+    <%=require('html-loader?minimize=false!../partials/footer.html')%>
+    <%=require('html-loader?minimize=false!../partials/modals.html')%>
   </body>
 </html>

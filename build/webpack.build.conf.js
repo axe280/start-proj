@@ -13,7 +13,7 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
         options: {
           name: '[name].[ext]',
           outputPath: 'assets/img',
-          publicPath: '../img',
+          // publicPath: '../img',
         },
       },
       {

@@ -1,23 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8" />
-    <title></title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="format-detection" content="telephone=no" />
-  </head>
+  <%=require('html-loader?minimize=false!../partials/head.html')%>
 
   <body>
     <div class="site-wrapper">
-      <!-- header -->
-
-      <!-- end header -->
+      <%=require('html-loader?minimize=false!../partials/header.html')%>
 
       <main class="main">
         <section class="main-section">
@@ -26,8 +13,7 @@
       </main>
     </div>
 
-    <!-- footer -->
-
-    <!-- end footer -->
+    <%=require('html-loader?minimize=false!../partials/footer.html')%>
+    <%=require('html-loader?minimize=false!../partials/modals.html')%>
   </body>
 </html>
