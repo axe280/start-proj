@@ -5,34 +5,32 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
-// const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
-// const SpritesmithPlugin = require('webpack-spritesmith')
 
 // Main const
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
-  assets: 'assets/'
+  assets: 'assets/',
 }
 
 // Pages const for HtmlWebpackPlugin
 const PAGES_DIR = `${PATHS.src}/pages`
 const PAGES = fs
   .readdirSync(PAGES_DIR)
-  .filter(fileName => fileName.endsWith(".html"))
+  .filter((fileName) => fileName.endsWith('.html'))
 
 module.exports = {
   // BASE config
   externals: {
-    paths: PATHS
+    paths: PATHS,
   },
   entry: {
-    app: PATHS.src
+    app: PATHS.src,
   },
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
     path: PATHS.dist,
-    publicPath: ''
+    publicPath: '',
   },
   optimization: {
     splitChunks: {
@@ -41,10 +39,10 @@ module.exports = {
           name: 'vendors',
           test: /node_modules/,
           chunks: 'all',
-          enforce: true
-        }
-      }
-    }
+          enforce: true,
+        },
+      },
+    },
   },
   module: {
     rules: [
@@ -60,19 +58,6 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
-      // {
-      //   test: /icons\/(-?\w\/?){0,}\.svg(\?.*)?$/,
-      //   use: [
-      //     {
-      //       loader: 'svg-sprite-loader',
-      //       options: {
-      //         extract: true,
-      //         spriteFilename: 'assets/img/sprite.svg'
-      //       }
-      //     },
-      //     'svgo-loader'
-      //   ]
-      // },
       {
         test: /\.sass$/,
         use: [
@@ -80,22 +65,25 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: { sourceMap: true }
+            options: { sourceMap: true },
           },
           {
             loader: 'postcss-loader',
-            options: { sourceMap: true, config: { path: `./postcss.config.js` } }
+            options: {
+              sourceMap: true,
+              config: { path: `./postcss.config.js` },
+            },
           },
           {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
               sassOptions: {
-                outputStyle: 'expanded'
-              }
-            }
-          }
-        ]
+                outputStyle: 'expanded',
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,
@@ -104,62 +92,49 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: { sourceMap: true }
-          }, {
+            options: { sourceMap: true },
+          },
+          {
             loader: 'postcss-loader',
-            options: { sourceMap: true, config: { path: `./postcss.config.js` } }
-          }
-        ]
-      }
-    ]
+            options: {
+              sourceMap: true,
+              config: { path: `./postcss.config.js` },
+            },
+          },
+        ],
+      },
+    ],
   },
   resolve: {
     alias: {
-      '~': PATHS.src
-    }
+      '~': PATHS.src,
+    },
   },
   plugins: [
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
     }),
-    // new SpriteLoaderPlugin(),
-
-    // new SpritesmithPlugin({
-    //   src: {
-    //       cwd: path.resolve(`${PATHS.src}/${PATHS.assets}icons`),
-    //       glob: '*.png'
-    //   },
-    //   target: {
-    //       image: path.resolve(`${PATHS.src}/${PATHS.assets}/img/sprite.png`),
-    //       css: path.resolve(`${PATHS.src}/${PATHS.assets}/sass/helpers/sprite.css`)
-    //   },
-    //   apiOptions: {
-    //       cssImageRef: "../img/sprite.png"
-    //   },
-    //   spritesmithOptions: {
-    //     padding: 10
-    //   }
-    // }),
 
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}css/[name].[hash].css`,
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
-      { from: `${PATHS.src}/${PATHS.assets}icons`, to: `${PATHS.assets}img/icons` },
+      {
+        from: `${PATHS.src}/${PATHS.assets}icons`,
+        to: `${PATHS.assets}img/icons`,
+      },
       { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
       { from: `${PATHS.src}/static`, to: '' },
     ]),
 
     // Automatic creation any html pages (Don't forget to RERUN dev server)
-    ...PAGES.map(
-      page => {
-        return new HtmlWebpackPlugin({
-          template: `${PAGES_DIR}/${page}`,
-          filename: `./${page}`
-        })
-      }
-    )
-  ]
+    ...PAGES.map((page) => {
+      return new HtmlWebpackPlugin({
+        template: `${PAGES_DIR}/${page}`,
+        filename: `./${page}`,
+      })
+    }),
+  ],
 }

@@ -8,7 +8,7 @@ html
 body
   display: flex
   flex-direction: column
-  min-width: 320px
+  min-width: 350px
   min-height: 100%
   width: 100%
   margin: 0
@@ -18,21 +18,30 @@ body
 .site-wrapper
   overflow: hidden
   flex: 1 0 auto
+  // padding-top: var(--header-height)
 
 .footer
   flex-shrink: 0
 
-.main
-  padding: 50px 0
-
 .section-st
-  padding-top: 40px
-  padding-bottom: 40px
+  padding-top: 20px
+  padding-bottom: 20px
+
+  +breakpoint($md)
+    padding-top: 40px
+    padding-bottom: 40px
 
 .container
   max-width: var(--container-width)
   padding: 0 var(--container-space)
   margin: 0 auto
+
+  &._max-width
+    max-width: 100%
+
+._negative-spaces
+  margin: 0 calc(var(--container-space) * -1)
+  padding: 0 var(--container-space)
 
 .hidden-mobile
   display: none
@@ -57,31 +66,13 @@ body
   +breakpoint($lg)
     display: none
 
-.mb-10
-  margin-bottom: 20px
-
-.mb-20
-  margin-bottom: 20px
-
-.mb-30
-  margin-bottom: 30px
-
-.mb-40
-  margin-bottom: 40px
-
-.mb-50
-  margin-bottom: 50px
-
-.mb-60
-  margin-bottom: 60px
-
 @media only screen and (min-width: $lg)
   .site-columns
-    display: flex
+    display: grid
+    grid-template-columns: 1fr 270px
+    gap: var(--col-space-between)
 
-    &__main
-      flex: 1
-
-    &__aside
-      flex: 0 0 270px
-      margin-left: 50px
+  .text-bl-grid
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: var(--col-space-between)

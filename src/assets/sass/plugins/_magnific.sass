@@ -1,27 +1,70 @@
+.gallery-wrapp
+  display: none
+
+.mfp-bg, .mfp-wrap
+  top: 0 !important // safari ios
+  position: fixed !important // safari ios
+  height: 100vh
+  height: var(--app-height) !important // safari ios
+
 .mfp-wrap
   transition: background-color $transDefault
   overflow: auto
   -webkit-overflow-scrolling: touch
-  height: 100vh
-  min-height: 100vh
 
 .mfp-bg
-  background-color: rgba(#000, .7)
+  background-color: rgba(#221F20, .3)
 
 .mfp-bg.mfp-removing
   opacity: 0
 
 .mfp-container
   padding: 0
+  height: 100%
 
 .mfp-content
-  padding: 40px 15px
+  padding: 30px 20px
 
-.mfp-image-holder .mfp-close,
-.mfp-iframe-holder .mfp-close
-  padding: 0
-  right: 0
-  width: 35px
+.mfp-iframe-holder
+  padding: 20px
+
+  .mfp-content
+    margin-top: 46px
+    margin-bottom: 46px
+
+  button.mfp-close,
+  .mfp-close,
+  .mfp-iframe-holder .mfp-close,
+  .mfp-image-holder .mfp-close
+    top: -46px
+    right: 0
+
+    +breakpoint($xl)
+      right: -32px
+
+    &:active
+      top: -46px
+
+.mfp-gallery
+  .mfp-container
+    padding-left: 20px
+    padding-right: 20px
+
+  .mfp-content
+    padding: 60px 0
+    max-width: 1230px
+
+    .mfp-close, .mfp-iframe-holder .mfp-close, .mfp-image-holder .mfp-close, button.mfp-close
+      top: -54px
+      background: none
+      justify-content: flex-end
+
+      +breakpoint($md)
+        top: -70px
+
+      +breakpoint(1400px)
+        right: -70px
+        justify-content: center
 
 button.mfp-close,
 .mfp-close,
@@ -34,6 +77,7 @@ button.mfp-arrow
   overflow: hidden
   cursor: pointer
   transition: background-color $transDefault, color $transDefault
+  transform: none
 
   &::before
     content: ''
@@ -48,44 +92,73 @@ button.mfp-arrow
     padding: 0
 
 button.mfp-close,
-.mfp-close
-  top: -35px
-  right: 0
-  width: 35px
-  height: 35px
+.mfp-close,
+.mfp-iframe-holder .mfp-close,
+.mfp-image-holder .mfp-close
+  padding: 0
+  top: 16px
+  right: 16px
+  width: 30px
+  height: 30px
   opacity: 1
+  border-radius: 0
+  background-color: var(--primary-dark-color)
+  border-radius: 50%
 
   .icon
-    width: 20px
-    height: 20px
-    fill: #000
+    stroke: #fff
 
   &:hover
-    background-color: #000
+    +breakpoint($lg)
+      background: var(--primary-dark-color-hover)
 
-    .icon
-      fill: #fff
+      .icon
+        stroke: #fff
 
   &:active
-    top: -35px
+    top: 16px
 
 button.mfp-arrow
-  background-color: #000
-  padding-right: 5px
+  background-color: var(--bg-dark)
+  position: absolute
+  top: auto
+  left: auto
+  right: 0
+  bottom: 60px
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: background-color $transDefault
+  cursor: pointer
+  width: 50px
+  height: 50px
+  background-color: var(--primary-color)
+
+  +breakpoint($md)
+    width: 80px
+    height: 70px
+
+  &.mfp-arrow-left
+    right: 51px
+
+    +breakpoint($md)
+      right: 81px
+
+  &:hover
+    +breakpoint($lg)
+      background-color: var(--bg-dark-hover)
 
   &::after
     display: none
 
   &.mfp-arrow-right
-    padding: 0 0 0 5px
-
     .icon
       transform: rotate(-180deg)
 
   .icon
-    width: 30px
-    height: 30px
-    fill: #fff
+    width: 24px
+    height: 24px
+    stroke: #fff
 
 // magnific gallery
 .mfp-zoom-out-cur
@@ -94,31 +167,18 @@ button.mfp-arrow
 .mfp-zoom-out-cur .mfp-image-holder .mfp-close
   cursor: pointer
 
-.magnific-gallery
-  button
-    margin-right: 5px
-    height: 100px
-
-    img
-      max-height: 100%
-
 .mfp-figure
   position: relative
+  padding: 0
 
   &::after
-    top: 0
-    bottom: 0
-    background-color: rgba(#000, .3)
-    box-shadow: 0 0 6px rgba(#000, .3)
+    display: none
 
   img.mfp-img
     padding: 0
 
 .mfp-bottom-bar
-  display: flex
-  justify-content: space-between
-  margin-top: 0
-  padding: 5px
+  margin-top: 16px
 
 .mfp-title
   margin-right: 10px
@@ -126,22 +186,17 @@ button.mfp-arrow
   line-height: 24px
 
 .mfp-counter
+  display: flex
+  align-items: center
+  justify-content: space-between
   position: relative
-  font-size: 14px
-  line-height: 24px
+  font-family: var(--site-font-family-1), sans-serif
+  font-weight: 700
+  font-size: 18px
+  line-height: 25px
+  color: #fff
+  text-align: right
 
-@media only screen and (min-width: $md)
-  button.mfp-arrow
-    padding-right: 10px
-
-    &.mfp-arrow-right
-      padding: 0 0 0 10px
-
-    &:hover
-      .icon
-        fill: red
-
-    .icon
-      width: 30px
-      height: 30px
-      fill: #fff
+  span
+    &:last-child
+      margin-left: auto

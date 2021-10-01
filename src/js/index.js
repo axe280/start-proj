@@ -7,30 +7,12 @@ import './components/ratingStars.js'
 import './components/stickyCol.js'
 import './components/animationInputs.js'
 import './components/stickyHeader.js'
-import '../assets/sass/shapes/shapes.js'
-import '../assets/sass/textWork/textwork.js'
 import './components/copyBtn.js'
+import changeSelectPlaceholderColor from './ui/changeSelectPlaceholderColor.js'
+import debounce from './helpers/debounce.js'
 
 $(function () {
-  // aos animation
-  // AOS.init({
-  //   disable: 'mobile',
-  //   duration: 600,
-  //   once: true,
-  // })
-
-  // debounce delay func
-  var debounce = function (fn, delay) {
-    var timeout
-
-    return function () {
-      clearTimeout(timeout)
-      var args = arguments
-      timeout = setTimeout(function () {
-        fn.apply(this, args)
-      }, delay || 50)
-    }
-  }
+  changeSelectPlaceholderColor()
 
   // page scroll blocker
   var body = document.body
@@ -54,6 +36,8 @@ $(function () {
     }
 
     removeOpenClass('menu-item')
+    removeOpenClass('dd-search-wrapp')
+    removeOpenClass('dd-lang')
   })
 
   // my magic line
@@ -61,9 +45,6 @@ $(function () {
   $('.magic-line-list').myMagicLine({
     variant: 'hover',
   })
-
-  //for ie 11
-  svg4everybody()
 
   // open mobile menu
   var openMenu = function () {
@@ -89,13 +70,28 @@ $(function () {
   // tel mask
   $('input[type="tel"]').mask('+7 (999) 999-9999')
 
+  // drop down items
+  $('.menu-item__link._dd').on('click', function () {
+    $(this).parent().toggleClass('_opened')
+  })
+
+  $('.dd-search-btn').on('click', function () {
+    $(this).parent().addClass('_opened').find('input').focus()
+  })
+
+  $('.dd-lang-btn').on('click', function () {
+    $(this).parent().toggleClass('_opened')
+  })
+
   // data-lity
   $(document).on('lity:ready', function (e, instance) {
     addDocumentScrollBlocker()
 
     var el = instance.element()
     el.find('.lity-close').html(
-      '<svg class="icon icon-close"><use xlink:href="assets/img/sprite.svg#close"></use></svg>'
+      `<svg class="icon icon-close">
+        <use xlink:href="assets/img/sprite.svg#close"></use>
+      </svg>`
     )
   })
 
@@ -104,7 +100,7 @@ $(function () {
   })
 
   // magnific popup
-  $('.open-popup-link').magnificPopup({
+  $('.open-modal-btn').magnificPopup({
     type: 'inline',
     midClick: true,
     mainClass: 'mfp-zoom',
@@ -114,7 +110,9 @@ $(function () {
       open: function () {
         addDocumentScrollBlocker()
         $('.mfp-close').html(
-          '<svg class="icon icon-close"><use xlink:href="assets/img/sprite.svg#close"></use></svg>'
+          `<svg class="icon icon-close">
+            <use xlink:href="assets/img/sprite.svg#close"></use>
+          </svg>`
         )
       },
       close: function () {
@@ -128,10 +126,16 @@ $(function () {
     type: 'image',
     midClick: true,
     cursor: null,
+    closeOnBgClick: false,
     gallery: {
       enabled: true,
-      arrowMarkup:
-        '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"><svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg></button>',
+      arrowMarkup: `
+        <button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%">
+          <svg class="icon">
+            <use xlink:href="assets/img/sprite.svg#chevron-left"></use>
+          </svg>
+        </button>
+      `,
       tCounter: '<span class="mfp-counter">%curr% / %total%</span>',
     },
     mainClass: 'mfp-zoom',
@@ -140,11 +144,16 @@ $(function () {
       open: function () {
         addDocumentScrollBlocker()
         $('.mfp-close').html(
-          '<svg class="icon icon-close"><use xlink:href="assets/img/sprite.svg#close"></use></svg>'
+          `<svg class="icon icon-close">
+            <use xlink:href="assets/img/sprite.svg#close"></use>
+          </svg>`
         )
       },
       close: function () {
         removeDocumentScrollBlocker()
+      },
+      buildControls: function () {
+        this.contentContainer.append(this.arrowLeft.add(this.arrowRight))
       },
     },
   })
@@ -165,8 +174,12 @@ $(function () {
   var defaultOwlOptions = {
     nav: true,
     navText: [
-      '<svg class="icon icon-arrow-prev"><use xlink:href="assets/img/sprite.svg#arrow-prev"></use></svg>',
-      '<svg class="icon icon-arrow-next"><use xlink:href="assets/img/sprite.svg#arrow-next"></use></svg>',
+      `<svg class="icon">
+        <use xlink:href="assets/img/sprite.svg#chevron-left"></use>
+      </svg>`,
+      `<svg class="icon">
+        <use xlink:href="assets/img/sprite.svg#chevron-right"></use>
+      </svg>`,
     ],
     onDrag: onDragHandler,
     onDragged: onDraggedHandler,
@@ -345,6 +358,23 @@ $(function () {
     )
     return false
   })
+
+  // fix viewport app height for mobile
+  const isIOSFunc = () => {
+    return /iPad|iPhone/.test(navigator.userAgent)
+  }
+
+  const isIOS = isIOSFunc()
+
+  if (isIOS) {
+    body.style.setProperty('--app-min-height', '100%')
+    const appHeight = () => {
+      body.style.setProperty('--app-height', `${window.innerHeight}px`)
+    }
+
+    appHeight()
+    window.addEventListener('resize', appHeight)
+  }
 
   // document resize hendler
   $(window).on(

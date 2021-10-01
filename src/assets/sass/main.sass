@@ -2,35 +2,43 @@
 @import helpers/mixins
 @import helpers/const
 @import '../../../node_modules/normalize.css/normalize'
-@import helpers/fonts
-@import helpers/theme
+
+// theme
+@import theme/fonts
+@import theme/colors
+@import theme/text
+@import theme/btn
+@import theme/ui
+@import theme/theme
 
 // ui
 @import ui/scrolls
-@import ui/small-things
+@import ui/elements
 @import ui/buttons
-@import ui/inputs
-@import ui/select
+@import ui/controls
 @import ui/radio-checkboxes
-@import ui/rating-stars
 @import ui/range
 
 //layout
 @import layout/typography
 @import layout/layout
 @import layout/header
-@import layout/header-sticky
 @import layout/footer
+@import layout/full-section-bg
+@import layout/full-image-bg
+
+// forms
+@import forms/forms-fields
+@import forms/search
 
 //components
-@import components/forms
 @import components/main-navigation
 @import components/tabs
 @import layout/table
 @import components/mobile-navi
-@import components/header-top-panel
 @import components/sticky-col
-@import components/user
+@import components/avatar
+@import components/st-card
 
 //pages
 @import pages/index
@@ -52,5 +60,8 @@
 @import plugins/modals
 
 // other
-@import shapes/shapes
-@import textWork/textWork
+@import other/shapes
+@import other/textWork
+
+// theme priority classes
+@import theme/classes

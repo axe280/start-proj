@@ -24,11 +24,12 @@ button, .btn
 
 // page buttons default with class
 .btn
-  padding: var(--btn-default-size)
+  height: var(--btn-default)
+  padding: 0 20px
   font-family: var(--site-font-family), sans-serif
-  font-weight: 700
+  font-weight: 600
   font-size: var(--text-ui-md)
-  line-height: var(--btn-line-height)
+  line-height: 1em
   color: var(--btn-color)
   background-color: var(--btn-bg)
   border: 2px solid var(--btn-border)
@@ -44,28 +45,18 @@ button, .btn
     border-color: var(--btn-bg-active)
 
   .icon
-    width: var(--btn-default-icon-size)
-    height: var(--btn-default-icon-size)
     fill: var(--btn-color)
     stroke: var(--btn-color)
-  
-  &__icon
-    display: flex
-    align-items: center
-    justify-content: center
-    margin-left: 12px
+    margin-right: 12px
 
-    &:first-child
-      margin-right: 12px
-      margin-left: 0
+    &:last-child
+      margin-right: 0
+      margin-left: 12px
 
   // disabled
   &[disabled],
   &[disabled]:hover,
-  &[disabled]:active,
-  &.disabled,
-  &.disabled:hover,
-  &.disabled:active
+  &[disabled]:active
     cursor: default
     color: var(--btn-color-disabled)
     background-color: var(--btn-bg-disabled)
@@ -75,109 +66,158 @@ button, .btn
       fill: var(--btn-color-disabled)
       stroke: var(--btn-color-disabled)
 
-// xs
-.btn_xs
-  +mixin_btn_xs()
+  // light / fill
+  &._light
+    --btn-color: var(--btn-light-color)
+    background-color: var(--btn-light-bg)
+    border-color: var(--btn-light-border)
 
-  .btn__icon
-    margin-left: 8px
+    &:hover,
+    &:active
+      --btn-color: var(--btn-color)
+      background-color: var(--btn-light-bg-hover)
+      border-color: var(--btn-light-bg-hover)
 
-    &:first-child
-      margin-right: 8px
-      margin-left: 0
+    // disabled
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled]:active
+      opacity: .4
+      background-color: var(--btn-light-bg)
+      color: var(--btn-light-color-disabled)
 
-  .icon
-    width: var(--btn-sm-icon-size)
-    height: var(--btn-sm-icon-size)
+      .icon
+        fill: var(--btn-light-color-disabled)
+        stroke: var(--btn-light-color-disabled)
 
-// sm
-.btn_sm
-  +mixin_btn_sm()
+  &._light-fill
+    --btn-color: var(--btn-light-fill-color)
+    background-color: var(--btn-light-fill-bg)
+    border-color: var(--btn-light-fill-border)
 
-  .btn__icon
-    margin-left: 8px
+    &:hover,
+    &:active
+      color: var(--btn-light-fill-color)
+      background-color: var(--btn-light-fill-bg-hover)
+      border-color: var(--btn-light-fill-bg-hover)
 
-    &:first-child
-      margin-right: 8px
-      margin-left: 0
+    // disabled
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled]:active
+      opacity: .4
+      background-color: var(--btn-light-fill-bg)
+      color: var(--btn-light-color-fill-disabled)
 
-  .icon
-    width: var(--btn-md-icon-size)
-    height: var(--btn-md-icon-size)
+      .icon
+        fill: var(--btn-light-color-fill-disabled)
+        stroke: var(--btn-light-color-fill-disabled)
 
-// md
-.btn_md
-  +mixin_btn_md()
-
-// lg
-.btn_lg
-  +mixin_btn_lg()
-
-// btn icon
-.btn_icon
-  padding: var(--btn-icon-size-default)
-
-  .btn__icon
-    margin: 0
-    width: var(--btn-line-height)
-    height: var(--btn-line-height)
-
-    &:first-child
-      margin: 0
-
-  &.btn_xs
-    +mixin_btn-icon_xs()
-
-  &.btn_sm
-    +mixin_btn-icon_sm()
-
-  &.btn_md
-    +mixin_btn-icon_md()
-
-  &.btn_lg
-    +mixin_btn-icon_lg()
-
-// btn link
-.btn_link
-  --btn-bg-hover: transparent
-  --btn-bg-active: transparent
-  --btn-border: transparent
-  --btn-border-disabled: transparent
-
-  &:hover
-    color: var(--primary-color)
+  // xs
+  &._xs
+    height: var(--btn-xs)
+    padding: 0 12px
+    font-weight: normal
+    font-size: var(--text-ui-sm)
+    border-width: 1px
 
     .icon
-      fill: var(--primary-color)
-      stroke: var(--primary-color)
+      margin-right: 8px
 
-// primary
-.btn_primary
-  +btnColor(primary)
+      &:last-child
+        margin-left: 8px
+        margin-right: 0
 
-// secondary
-.btn_secondary
-  +btnColor(secondary)
+  // sm
+  &._sm
+    height: var(--btn-sm)
+    padding: 0 16px
+    font-size: var(--text-ui-sm)
+    border-width: 1px
 
-// danger
-.btn_danger
-  +btnColor(danger)
+    .icon
+      margin-right: 10px
 
-// success
-.btn_success
-  +btnColor(success)
+      &:last-child
+        margin-left: 10px
+        margin-right: 0
 
-// warning
-.btn_warning
-  +btnColor(warning)
+  // md
+  &._md
+    height: var(--btn-md)
+    padding: 0 24px
+    font-size: var(--text-ui-md)
 
-// btn width
-.btn_max
-  width: 100%
+  // lg
+  &._lg
+    height: var(--btn-lg)
+    padding: 0 30px
+    font-size: var(--text-ui-lg)
 
-.btn_max-mobile
-  +breakpoint-max-width($m-md)
+  // btn icon
+  &.btn_icon
+    padding: 0
+    width: var(--btn-default)
+
+    &._round
+      border-radius: 50%
+
+    &._xs
+      width: var(--btn-xs)
+    &._sm
+      width: var(--btn-sm)
+    &._md
+      width: var(--btn-md)
+    &._lg
+      width: var(--btn-lg)
+
+    .icon,
+    .icon:last-child
+      margin: 0
+
+  // btn link
+  &.btn_link
+    --btn-bg-hover: transparent
+    --btn-bg-active: transparent
+    --btn-border: transparent
+    --btn-border-disabled: transparent
+
+    &:hover
+      color: var(--primary)
+
+      .icon
+        fill: var(--primary)
+        stroke: var(--primary)
+
+    &[disabled],
+    &[disabled]:hover
+      color: var(--tc-dark)
+      opacity: .4
+      transition: none
+
+      .icon
+        fill: var(--tc-dark)
+        stroke: var(--tc-dark)
+
+  // colors
+  &._primary
+    +btnColor(primary)
+  &._secondary
+    +btnColor(secondary)
+  &._danger
+    +btnColor(danger)
+  &._success
+    +btnColor(success)
+  &._warning
+    +btnColor(warning)
+
+  // btn width
+  &._max
     width: 100%
 
-.btn_min-width
-  min-width: 100px
+  &._max-mobile
+    +breakpoint-max-width($m-md)
+      width: 100%
+
+  &._min-width
+    min-width: 140px

@@ -2,7 +2,6 @@ const webpack = require('webpack')
 const fs = require('fs')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const PATHS = baseWebpackConfig.externals.paths
 const PAGES_DIR = `${PATHS.src}/templates`
@@ -46,13 +45,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   plugins: [
     new webpack.SourceMapDevToolPlugin({
       filename: '[file].map',
-    }),
-
-    ...PAGES.map((page) => {
-      return new HtmlWebpackPlugin({
-        template: `${PAGES_DIR}/${page}`,
-        filename: `./${page}`,
-      })
     }),
   ],
 })

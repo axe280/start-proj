@@ -1,17 +1,62 @@
-.header
-  height: $header-height-xs
+.header_sticky
+  .header-inner
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    z-index: 200
+    box-shadow: var(--shadow-z2)
+    animation: .25s slideInDown ease
+
+    +breakpoint($lg)
+      padding: 10px 0
+
+  .header-top-panel
+    +breakpoint($lg)
+      display: none
+
+.header-top-panel
+  color: #fff
 
   +breakpoint($lg)
-    height: $header-height-lg
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    background-color: #000
+
+  .container
+    +breakpoint-max-width($m-lg)
+      padding: 0
+
+    +breakpoint($lg)
+      display: flex
+      align-items: center
+      justify-content: space-between
+      height: var(--header-top-panel-height)
+
+.header
+  position: relative
+  display: flex
+  flex-direction: column
+  height: var(--header-height)
+
+  +breakpoint($lg)
+    padding-top: var(--header-top-panel-height)
 
 .header-inner
-  background-color: $header-bg-color
+  background-color: var(--header-bg)
+  flex-grow: 1
+  display: flex
+  align-items: center
 
   +breakpoint($lg)
-    padding: 52px 0 14px
+    padding: 10px 0
     // transition: transform .3s
 
 .header-panel
+  flex-grow: 1
+
   +breakpoint($lg)
     display: flex
     align-items: center
@@ -25,6 +70,20 @@
   +breakpoint-max-width($m-lg)
     position: relative
     z-index: 40
+    padding: 10px 0
+
+.header-aside
+  display: flex
+  align-items: center
+
+  +breakpoint-max-width($m-lg)
+    justify-content: flex-end
+    position: absolute
+    top: 0
+    height: var(--header-height)
+    right: 64px
+    left: 180px
+    z-index: 42
     padding: 10px 0
 
 .logo
@@ -47,3 +106,54 @@
     font-size: 12px
     line-height: 16px
     color: #fff
+
+.dd-lang
+  position: relative
+
+  +breakpoint($md)
+    margin-left: 40px
+
+  &._opened
+    .dd-lang-list
+      display: block
+
+.dd-lang-btn
+  display: flex
+  align-items: center
+
+  .icon
+    margin-left: 4px
+    width: var(--icon-xs)
+    height: var(--icon-xs)
+
+  &:hover
+    .dd-lang-active
+      color: var(--primary-hover)
+
+.dd-lang-active,
+.dd-lang-list a
+  display: block
+  text-align: center
+  font-weight: 700
+  font-size: 14px
+  line-height: 32px
+  text-transform: uppercase
+  text-decoration: none
+  color: var(--primary)
+  transition: color $transDefault
+
+.dd-lang-list
+  display: none
+  position: absolute
+  left: 0
+  right: 0
+  top: 100%
+
+  li
+    border-top: 1px solid var(--border)
+
+  a
+    background-color: #fff
+
+    &:hover
+      color: var(--primary-hover)

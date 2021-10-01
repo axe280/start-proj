@@ -1,11 +1,11 @@
+// bread crumbs
 .bread-crumbs
-  padding: 0
-  list-style-type: none
+  font-size: 14px
+  line-height: 20px
 
   li
     display: inline-block
     vertical-align: middle
-    margin: 0
 
     &:before
       content: '/ '
@@ -14,156 +14,138 @@
       &:before
         display: none
 
+// pagination
 .pagination
-  list-style-type: none
+  display: flex
+  align-items: center
+  justify-content: center
 
   li
-    display: inline-block
-    vertical-align: middle
-    margin: 10px 5px
+    margin: 0 6px
 
   a
-    display: block
+    display: flex
+    align-items: center
+    justify-content: center
     width: 30px
     height: 30px
-    border-radius: 2px
-    background-color: #f3f3f3
-    line-height: 30px
-    text-align: center
+    color: var(--tc-white)
     text-decoration: none
+    background-color: var(--primary)
+    border-radius: var(--radius-xs)
 
     &:hover
-      background-color: $base-color
-      color: #fff
+      background-color: var(--primary-hover)
+
+  .icon
+    width: var(--icon-sm)
+    height: var(--icon-sm)
 
   &__prev,
   &__next
     a
       width: auto
-      height: auto
-      border-radius: 0
       background: none
 
       &:hover
         background: none
-        color: #000
+
+        .icon
+          stroke: var(--secondary)
+          fill: var(--secondary)
 
   &__active
     a
-      background-color: $base-color
-      color: #fff
+      background-color: var(--secondary)
 
-
-/* -- Main menu --------------------- */
+// menu
 .menu
-  margin: 0
-  padding: 0
-  list-style: none
-
   +breakpoint($lg)
-    background-color: $base-color
-    border-radius: 3px
+    display: flex
+    align-items: center
 
 .menu-item
   position: relative
-  margin-bottom: 15px
-  padding: 0
-  list-style-type: none
-  font-size: 16px
-  line-height: 20px
-  color: #fff
-
+  margin-bottom: 20px
+  
   +breakpoint($lg)
-    display: inline-block
-    vertical-align: top
-    margin: 0
+    margin-bottom: 0
+    margin-right: 30px
+
+  &._active
+    .menu-item__link
+      color: var(--secondary)
 
   &__link
-    color: #fff
+    display: block
+    font-weight: 700
+    font-size: 16px
+    line-height: 24px
     text-decoration: none
+    text-transform: uppercase
+    color: var(--primary)
 
     +breakpoint($lg)
-      display: block
-      padding: 15px 20px
-      transition: background-color 0.2s ease
-
-      &:hover
-        background-color: darken($base-color, 5%)
-
-    &._active
-      color: red
+      font-size: 14px
 
     &:hover
-      color: #fff
+      color: var(--primary-hover)
 
-/* - Drop down main menu -------- */
-.menu-item__link_dd
-  cursor: pointer
-  user-select: none
+// dd menu
+.menu-item__link
+  &._dd
+    display: flex
+    align-items: center
+    cursor: pointer
+    user-select: none
 
-  &:after
-    content: ' '
-    border-top-color: #fff
-    margin: 0 0 0 10px
+    +breakpoint($lg)
+      cursor: auto
+
+    &:hover
+      .icon
+        fill: var(--primary-hover)
+        stroke: var(--primary-hover)
+
+    .icon
+      margin-left: 4px
+      width: var(--icon-xs)
+      height: var(--icon-xs)
+
+.menu-item
+  &._opened
+    .menu-dd
+      +breakpoint-max-width($m-lg)
+        display: block
+
+.menu-item
+  +breakpoint($lg)
+    &:hover
+      .menu-dd
+        display: block
 
 .menu-dd
   display: none
-  margin: 0
-  padding: 5px 0
-  list-style: none
 
   +breakpoint($lg)
     position: absolute
     display: none
     top: 100%
-    width: 270px
     text-align: left
-    background-color: darken($base-color, 5%)
     padding: 10px 20px
+    background-color: var(--bg-dark)
     border-radius: 0 0 5px 5px
 
-.menu-dd-item
-  line-height: 20px
-  margin: 10px 0
-  padding-left: 20px
-  position: relative
-
-  +breakpoint($lg)
+  li
+    position: relative
     margin: 10px 0
-    padding-left: 0
+    font-size: 14px
+    line-height: 20px
+    white-space: nowrap
 
-  &__link
+  a
     color: #fff
     text-decoration: none
-    font-size: 14px
 
     &:hover
-      color: #fff
-
-.menu-item._opened
-  .menu-dd
-    display: block
-
-    +breakpoint($lg)
-      display: none
-
-  .menu-item__link_dd
-    &:after
-      transform: rotate(180deg)
-
-      +breakpoint($lg)
-        transform: rotate(0)
-
-.menu-item.active
-  .menu-item__link
-    color: $second-color
-
-.menu-item
-  +breakpoint($lg)
-    &:hover
-      .menu-item__link_dd
-        background-color: darken($base-color, 5%)
-
-      .menu-dd
-        display: block
-/* ----- END Navigation ---------------- */
+      color: var(--primary-hover)

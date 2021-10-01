@@ -1,0 +1,49 @@
+:root {
+  /* text */
+  --tc-dark: #1e1e1f;
+  --tc-light: #bfc1c7;
+  --tc-white: #fff;
+  --tc-medium: #82848a;
+  --tc-disabled: #dadce0;
+
+  /* link */
+  --link-color: #1c80bd;
+  --link-color-hover: #2597de;
+
+  /* background */
+  --bg-body: #f5f5f5;
+  --bg-layout-bl: #fff;
+  --bg-light: #f7f7f7;
+  --bg-white: #ffffff;
+  --bg-medium: #82848a;
+  --bg-dark: #1e1e1f;
+  --bg-grey: #eeeeee;
+  --bg-disabled: #f9f9fa;
+
+  --header-bg: #444;
+
+  /* border */
+  --border: #e6e7eb;
+  --border-hover: #bebebe;
+
+  /* main */
+  --primary: #1dbdce;
+  --primary-rgb: 29, 189, 206;
+  --primary-hover: #159fae;
+
+  --secondary: #ce0eae;
+  --secondary-rgb: 206, 14, 174;
+  --secondary-hover: #910d7b;
+
+  --success: #009a00;
+  --success-rgb: 0, 154, 0;
+  --success-hover: #00ae00;
+
+  --danger: #ff4117;
+  --danger-rgb: 255, 65, 23;
+  --danger-hover: #ff5631;
+
+  --warning: #ffae1a;
+  --warning-rgb: 255, 174, 26;
+  --warning-hover: #ffb52e;
+}

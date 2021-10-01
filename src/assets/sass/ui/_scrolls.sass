@@ -5,24 +5,22 @@
 // &::-webkit-scrollbar-corner
 // &::-webkit-resizer
 
-.mobile-scroll-wrapper
-  +breakpoint-max-width($m-lg)
-    display: flex
-    margin-left: calc(var(--container-space) * -1)
-    margin-right: calc(var(--container-space) * -1)
-    padding-left: var(--container-space)
-    overflow-x: auto
-    -webkit-overflow-scrolling: touch
-    -ms-overflow-style: none
-    overflow: -moz-scrollbars-none
-    scrollbar-width: none
+.scroll-wrapper
+  display: flex
+  margin-left: calc(var(--container-space) * -1)
+  margin-right: calc(var(--container-space) * -1)
+  padding-left: var(--container-space)
+  overflow-x: auto
+  -ms-overflow-style: none
+  overflow: -moz-scrollbars-none
+  scrollbar-width: none
 
-    &::-webkit-scrollbar
-      display: none
-      height: 0
-      width: 0
+  &::-webkit-scrollbar
+    display: none
+    height: 0
+    width: 0
 
-    &::after
-      content: ''
-      flex-shrink: 0
-      width: var(--container-space)
+  &::after
+    content: ''
+    flex-shrink: 0
+    width: var(--container-space)

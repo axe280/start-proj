@@ -1,0 +1,89 @@
+// menu st
+.menu-st
+  position: relative
+  margin-bottom: 30px
+
+  li
+    display: inline-block
+    vertical-align: top
+    margin: 0 10px
+
+    a
+      display: block
+      padding: 10px 15px
+
+
+// magic line
+.magic-line
+  position: absolute
+  left: 0
+  bottom: 0
+  height: 3px
+  width: 0
+  background-color: var(--primary)
+
+// inline social
+.social-inline
+  display: flex
+  align-items: center
+
+  a
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 34px
+    height: 34px
+    border: 1px solid var(--border)
+
+    &:hover
+      .icon
+        fill: blue
+
+// separate line
+.sep-line
+  height: 1px
+  background-color: var(--border)
+
+// icons
+.icon
+  display: inline-block
+  vertical-align: middle
+  width: var(--icon-default)
+  height: var(--icon-default)
+  fill: var(--tc-dark)
+  stroke: var(--tc-dark)
+  transition: fill $transDefault, stroke $transDefault
+
+// rating stars
+.rating-stars
+  display: flex
+
+  &__item
+    width: 24px
+    height: 24px
+    margin-right: 8px
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='#eeeeee' stroke='#eeeeee' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11 1L14.09 7.26L21 8.27L16 13.14L17.18 20.02L11 16.77L4.82 20.02L6 13.14L1 8.27L7.91 7.26L11 1Z' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    
+    &._selected
+      background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='#F6DF62' stroke='#F6DF62' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11 1L14.09 7.26L21 8.27L16 13.14L17.18 20.02L11 16.77L4.82 20.02L6 13.14L1 8.27L7.91 7.26L11 1Z' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+
+// paly btn
+.play-btn
+  position: absolute
+  z-index: 10
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 60px
+  height: 60px
+  border: 1px solid var(--tc-white)
+  border-radius: 50%
+
+  .icon
+    fill: var(--tc-white)
+    stroke: var(--tc-white)

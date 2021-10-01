@@ -2,9 +2,12 @@
 .ui-st-radio,
 .ui-st-checkbox
   position: relative
-  padding-left: 44px
-  font-size: 14px
+  padding-left: 34px
+  font-size: var(--text-sm)
   line-height: 28px
+
+  label
+    cursor: pointer
 
   input
     width: 0
@@ -22,21 +25,20 @@
   position: absolute
   left: 0
   top: 2px
-  width: 24px
-  height: 24px
-  border: 1px solid var(--border-medium)
+  width: 20px
+  height: 20px
+  border: 1px solid var(--border)
   transition: background-color $transDefault, border-color $transDefault
   cursor: pointer
 
   &::before
     content: ''
     position: absolute
-    left: 3px
-    top: 3px
-    right: 3px
-    bottom: 3px
-    background-color: var(--primary-color)
-    background-image: var(--primary-gradient)
+    left: 4px
+    top: 4px
+    right: 4px
+    bottom: 4px
+    background-color: var(--primary)
     transform: scale(0)
     transition: transform $transDefault, background-color $transDefault
 
@@ -49,19 +51,8 @@
 
 .ui-st-checkbox
   input:checked ~ .fake-control
-    background-color: $second-color
-    // background-image: url('../img/check.svg')
-    background-repeat: no-repeat
-    background-position: 50% 50%
-    background-size: 75% 75%
-
-
-
-
-
-
-
-
-
-
-
+    // background-color: var(--secondary)
+    // background-image: url('../img/arrow-down.svg')
+    // background-repeat: no-repeat
+    // background-position: 50% 50%
+    // background-size: 70% 70%

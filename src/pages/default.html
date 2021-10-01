@@ -11,11 +11,27 @@
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="format-detection" content="telephone=no" />
+    <style>
+      .h2 {
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: var(--bg-dark);
+        color: var(--tc-white);
+      }
+
+      .h4, .h5 {
+        padding: 10px 20px;
+        margin-bottom: 10px;
+        background-color: var(--bg-dark);
+        color: var(--tc-white);
+      }
+    </style>
   </head>
 
   <body>
     <!-- site main wrapper -->
     <div class="site-wrapper">
+
       <!-- header -->
       <header class="header _menu-mob-fade" id="header">
         <div class="header-inner">
@@ -39,20 +55,19 @@
                   <nav class="header-nav">
                     <ul class="menu">
                       <li class="menu-item">
-                        <span class="menu-item__link menu-item__link_dd"
-                          >Links</span
-                        >
+                        <span class="menu-item__link _dd">
+                          Links
+                          <svg class="icon">
+                            <use xlink:href="assets/img/sprite.svg#chevron-down"></use>
+                          </svg>
+                        </span>
 
                         <ul class="menu-dd">
-                          <li class="menu-dd-item">
-                            <a class="menu-dd-item__link" href="#pagination"
-                              >Pagination</a
-                            >
+                          <li>
+                            <a href="#pagination">Pagination</a>
                           </li>
-                          <li class="menu-dd-item">
-                            <a class="menu-dd-item__link" href="#"
-                              >Bread crumbs</a
-                            >
+                          <li>
+                            <a href="#">Bread crumbs</a>
                           </li>
                         </ul>
                       </li>
@@ -82,16 +97,268 @@
                 </div>
               </div>
             </div>
+
+            <div class="header-aside">
+              <a href="#" class="btn _xs _light">Вход</a>
+
+              <div class="dd-lang">
+                <button class="dd-lang-btn">
+                  <span class="dd-lang-active">ru</span>
+                  <svg class="icon">
+                    <use xlink:href="assets/img/sprite.svg#chevron-down"></use>
+                  </svg>
+                </button>
+
+                <ul class="dd-lang-list">
+                  <li><a href="#">en</a></li>
+                  <li><a href="#">cn</a></li>
+                </ul>
+              </div>
+
+              <div class="dd-search-wrapp">
+                <button class="dd-search-btn" type="button">
+                  <svg class="icon">
+                    <use xlink:href="assets/img/sprite.svg#search"></use>
+                  </svg>
+                </button>
+
+                <form action="#" class="search-form">
+                  <div class="search-form__inner">
+                    <input type="search" placeholder="Поиск" />
+                    <button type="submit">
+                      <svg class="icon icon-search">
+                        <use xlink:href="assets/img/sprite.svg#search"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </header>
       <!-- end header -->
 
       <main class="main">
+        <section class="section-st">
+          <div class="container">
+            <h2 class="h2">Colors</h2>
+            <h4 class="h4">Background</h4>
+            <div style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr;">
+              <div>
+                <div class="_bg-primary">
+                  <div style="padding: 5px 20px;">primary</div>
+                </div>
+                <br>
+                <div class="_bg-secondary">
+                  <div style="padding: 5px 20px;">secondary</div>
+                </div>
+                <br>
+                <div class="_bg-danger">
+                  <div style="padding: 5px 20px;">danger</div>
+                </div>
+                <br>
+                <div class="_bg-success">
+                  <div style="padding: 5px 20px;">success</div>
+                </div>
+                <br>
+                <div class="_bg-dark">
+                  <div style="padding: 5px 20px;">dark</div>
+                </div>
+              </div>
+
+              <div>
+                <div class="_bg-light">
+                  <div style="padding: 5px 20px;">light</div>
+                </div>
+                <br>
+                <div class="_bg-medium">
+                  <div style="padding: 5px 20px;">medium</div>
+                </div>
+                <br>
+                <div class="_bg-white">
+                  <div style="padding: 5px 20px;">white</div>
+                </div>
+                <br>
+                <div class="_bg-grey">
+                  <div style="padding: 5px 20px;">grey</div>
+                </div>
+                <br>
+                <div class="_bg-disabled">
+                  <div style="padding: 5px 20px;">disabled</div>
+                </div>
+              </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <h4 class="h4">Text</h4>
+            <div style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr;">
+              <div>
+                <div class="text_700 text_primary">primary</div><br>
+                <div class="text_700 text_secondary">secondary</div><br>
+                <div class="text_700 text_success">success</div><br>
+                <div class="text_700 text_danger">danger</div><br>
+              </div>
+              <div>
+                <div class="text_700 text_dark">dark</div><br>
+                <div class="text_700 text_light">light</div><br>
+                <div class="text_700 text_white">white</div><br>
+                <div class="text_700 text_medium">medium</div><br>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-st">
+          <div class="container">
+            <h2 class="h2">Heading <span style="margin: 0 20px;">|</span> Heading div / span </h2>
+            <div style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr;">
+              <div>
+                <h1>Heading h1</h1>
+                <br>
+                <h2>Heading h2</h2>
+                <br>
+                <h3>Heading h3</h3>
+                <br>
+                <h4>Heading h4</h4>
+                <br>
+                <h5>Heading h5</h5>
+                <br>
+                <h6>Heading h6</h6>
+              </div>
+              <div>
+                <div class="heading _h1">Heading _h1</div>
+                <br>
+                <div class="heading _h2">Heading _h2</div>
+                <br>
+                <div class="heading _h3">Heading _h3</div>
+                <br>
+                <div class="heading _h4">Heading _h4</div>
+                <br>
+                <div class="heading _h5">Heading _h5</div>
+                <br>
+                <div class="heading _h6">Heading _h6</div>
+                <br>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-st">
+          <div class="container">
+            <h2 class="h2">Text <span style="margin: 0 20px;">|</span> Text UI</h2>
+            <h4 class="h4">Sizes</h4>
+            <div style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr;">
+              <div>
+                <div>
+                  <span class="text_xs">text_xs</span>
+                  <span class="text_xs" style="margin: 0 20px;">|</span>
+                  <span class="text_xs text_700">text_xs 700</span>
+                  <span class="text_xs" style="margin: 0 20px;">|</span>
+                  <span class="text_xs text_700 _uppercase">text_xs 700 uppercase</span>
+                </div>
+                <br>
+                <div>
+                  <span class="text_sm">text_sm</span>
+                  <span class="text_sm" style="margin: 0 20px;">|</span>
+                  <span class="text_sm text_700">text_sm 700</span>
+                  <span class="text_sm" style="margin: 0 20px;">|</span>
+                  <span class="text_sm text_700 _uppercase">text_sm 700 uppercase</span>
+                </div>
+                <br>
+                <div>
+                  <span class="text_md">text_md</span>
+                  <span class="text_md" style="margin: 0 20px;">|</span>
+                  <span class="text_md text_700">text_md 700</span>
+                  <span class="text_md" style="margin: 0 20px;">|</span>
+                  <span class="text_md text_700 _uppercase">text_md 700 uppercase</span>
+                </div>
+                <br>
+                <div>
+                  <span class="text_lg">text_lg</span>
+                  <span class="text_lg" style="margin: 0 20px;">|</span>
+                  <span class="text_lg text_700">text_lg 700</span>
+                  <span class="text_lg" style="margin: 0 20px;">|</span>
+                  <span class="text_lg text_700 _uppercase">text_lg 700 uppercase</span>
+                </div>
+                <br>
+                <div>
+                  <span class="text_xl">text_xl</span>
+                  <span class="text_xl" style="margin: 0 20px;">|</span>
+                  <span class="text_xl text_700">text_xl 700</span>
+                  <span class="text_xl" style="margin: 0 20px;">|</span>
+                  <span class="text_xl text_700 _uppercase">text_xl 700 uppercase</span>
+                </div>
+                <br>
+                <div>
+                  <span class="text_2xl">text_2xl</span>
+                  <span class="text_2xl" style="margin: 0 20px;">|</span>
+                  <span class="text_2xl text_700">text_2xl 700</span>
+                </div>
+                <br>
+                <div>
+                  <span class="text_3xl">text_3xl</span>
+                  <span class="text_3xl" style="margin: 0 20px;">|</span>
+                  <span class="text_3xl text_700">text_3xl 700</span>
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <span class="text_ui-xs">text_ui-xs</span>
+                  <span class="text_ui-xs" style="margin: 0 20px;">|</span>
+                  <span class="text_ui-xs text_700">text_ui-xs 700</span>
+                </div>
+                <br>
+                <div>
+                  <span class="text_ui-sm">text_ui-sm</span>
+                  <span class="text_ui-sm" style="margin: 0 20px;">|</span>
+                  <span class="text_ui-sm text_700">text_ui-sm 700</span>
+                </div>
+                <br>
+                <div>
+                  <span class="text_ui-md">text_ui-md</span>
+                  <span class="text_ui-md" style="margin: 0 20px;">|</span>
+                  <span class="text_ui-md text_700">text_ui-md 700</span>
+                </div>
+                <br>
+                <div>
+                  <span class="text_ui-lg">text_ui-lg</span>
+                  <span class="text_ui-lg" style="margin: 0 20px;">|</span>
+                  <span class="text_ui-lg text_700">text_ui-lg 700</span>
+                </div>
+                <br>
+                <div>
+                  <span class="text_ui-xl">text_ui-xl</span>
+                  <span class="text_ui-xl" style="margin: 0 20px;">|</span>
+                  <span class="text_ui-xl text_700">text_ui-xl 700</span>
+                </div>
+                <br>
+                <div>
+                  <span class="text_ui-2xl">text_ui-2xl</span>
+                  <span class="text_ui-2xl" style="margin: 0 20px;">|</span>
+                  <span class="text_ui-2xl text_700">text_ui-2xl 700</span>
+                </div>
+                <br>
+                <div>
+                  <span class="text_ui-3xl">text_ui-3xl</span>
+                  <span class="text_ui-3xl" style="margin: 0 20px;">|</span>
+                  <span class="text_ui-3xl text_700">text_ui-3xl 700</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section data-aos="fade-up" id="pagination" class="section-st">
           <div class="container">
-            <h2>Bread crumbs</h2>
+            <h2 class="h2">Components</h2>
 
+            <h4 class="h4">Bread crumbs</h4>
+            <br>
             <ul class="bread-crumbs">
               <li><a href="#">Main</a></li>
               <li><a href="#">product</a></li>
@@ -99,11 +366,20 @@
               <li>last item</li>
             </ul>
 
-            <br /><br />
+            <br />
+            <br />
+            <br />
 
-            <h2>Pagination</h2>
+            <h4 class="h4">Pagination</h4>
+            <br>
             <ol class="pagination">
-              <li class="pagination__prev"><a href="#">prev</a></li>
+              <li class="pagination__prev">
+                <a href="#">
+                  <svg class="icon">
+                    <use xlink:href="assets/img/sprite.svg#chevron-left"></use>
+                  </svg>
+                </a>
+              </li>
               <li class="pagination__active"><a href="#">1</a></li>
               <li><a href="#">2</a></li>
               <li><a href="#">3</a></li>
@@ -111,12 +387,21 @@
               <li><a href="#">5</a></li>
               <li><a href="#">...</a></li>
               <li><a href="#">15</a></li>
-              <li class="pagination__next"><a href="#">next</a></li>
+              <li class="pagination__next">
+                <a href="#">
+                  <svg class="icon">
+                    <use xlink:href="assets/img/sprite.svg#chevron-right"></use>
+                  </svg>
+                </a>
+              </li>
             </ol>
 
-            <br /><br />
+            <br />
+            <br />
+            <br />
 
-            <h2>Social inline</h2>
+            <h4 class="h4">Social inline</h4>
+            <br>
             <ul class="social-inline">
               <li>
                 <a href="#">
@@ -159,458 +444,559 @@
               </li>
             </ul>
 
-            <br /><br />
+            <br /><br /><br>
 
-            <h2>User component</h2>
-
-            <div class="st-user">
-              <div class="st-user__img">
-                <svg class="icon">
-                  <use xlink:href="assets/img/sprite.svg#user"></use>
-                </svg>
+            <h4 class="h4">Avatar</h4>
+            <br>
+            <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 30px;">
+              <div class="st-avatar">
+                <div class="st-avatar__img">
+                  <svg class="icon">
+                    <use xlink:href="assets/img/sprite.svg#user"></use>
+                  </svg>
+                </div>
+                <div class="st-avatar__about">
+                  <div class="text_ui-xl text_700">Иванов Иван</div>
+                  <div class="text_ui-md">Шеф повар</div>
+                </div>
               </div>
-              <div class="st-user__about">
-                <div class="st-user__name">Username</div>
-                <div class="st-user__info">More info</div>
-              </div>
-            </div>
 
-            <br />
+              <br />
 
-            <div class="st-user">
-              <div class="st-user__img">
-                <svg class="icon">
-                  <use xlink:href="assets/img/sprite.svg#user"></use>
-                </svg>
-                <img src="assets/img/img1.png" alt="" />
+              <div class="st-avatar _flex-ai-start">
+                <div class="st-avatar__img">
+                  <img src="assets/img/img1.png" alt="" />
+                </div>
+                <div class="st-avatar__about">
+                  <div class="rating-stars">
+                    <span class="rating-stars__item _selected"></span>
+                    <span class="rating-stars__item _selected"></span>
+                    <span class="rating-stars__item _selected"></span>
+                    <span class="rating-stars__item _selected"></span>
+                    <span class="rating-stars__item"></span>
+                  </div>
+                  <div class="text_ui-xl text_700">Иванов Иван</div>
+                  <div class="text_ui-md">Шеф повар</div>
+                </div>
               </div>
-              <div class="st-user__about">
-                <div class="st-user__name">Username</div>
-              </div>
-            </div>
 
-            <br />
+              <br />
 
-            <div class="st-user st-user_md">
-              <div class="st-user__img">
-                <svg class="icon">
-                  <use xlink:href="assets/img/sprite.svg#user"></use>
-                </svg>
+              <div class="st-avatar _vertical-lg">
+                <div class="st-avatar__img">
+                  <img src="assets/img/img1.png" alt="" />
+                </div>
+                <div class="st-avatar__about">
+                  <div class="text_ui-xl text_700">Иванов Иван</div>
+                  <div class="text_ui-md">Шеф повар</div>
+                </div>
               </div>
-              <div class="st-user__about">
-                <div class="st-user__name">Username</div>
+
+              <br />
+
+              <div class="st-avatar _sm">
+                <div class="st-avatar__img">
+                  <img src="assets/img/img1.png" alt="" />
+                </div>
+                <div class="st-avatar__about">
+                  <div class="text_ui-sm text_700">МеGатоп</div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
+        <section data-aos="fade-up" id="pagination" class="section-st">
+          <div class="container">
+            <h2 class="h2">Modals</h2>
+
+            <button
+              type="button"
+              data-mfp-src="#feedback"
+              class="btn _min-width open-modal-btn"
+            >Feedback</button>
+
+            <button
+              type="button"
+              data-mfp-src="#thanks"
+              class="btn _min-width open-modal-btn"
+            >Thanks</button>
+          </div>
+        </section>
+
         <section data-aos="fade-up" id="buttons" class="section-st">
           <div class="container">
-            <h2>Buttons</h2>
+            <h2 class="h2">Buttons</h2>
             <div class="text-bl-grid">
               <div class="text-bl-grid__half-col">
-                <h5>
-                  Default buttons
+                <h5 class="h5">
+                  Default
                   <span class="text_primary">class="btn"</span>
                 </h5>
                 <button type="button" class="btn">Button</button>
                 <button type="button" class="btn">
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
-                  Button
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
+                  <span>Button</span>
                 </button>
                 <button type="button" class="btn" disabled>
                   <span>Disabled button</span>
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                 </button>
-    
+
                 <br />
                 <br />
                 <br />
-    
-                <h5>
-                  Link buttons
+
+                <h5 class="h5">
+                  Link
                   <span class="text_primary">class="btn btn_link"</span>
                 </h5>
                 <button type="button" class="btn btn_link">Button</button>
                 <button type="button" class="btn btn_link">
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                   <span>Button</span>
                 </button>
                 <button type="button" class="btn btn_link" disabled>
                   <span>Disabled button</span>
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                 </button>
-    
-                <br />
-                <br />
-                <br />
-    
-                <h5>
-                  Xs buttons
-                  <span class="text_primary">class="btn btn_xs"</span>
-                </h5>
-    
-                <a class="btn btn_xs" href="#">Xs button</a>
-                <a class="btn btn_xs" href="#">
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
-                  <span>Xs button</span>
-                </a>
-                <a class="btn btn_xs" href="#" disabled>
-                  <span>Xs button</span>
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
-                </a>
-    
+
                 <br />
                 <br />
                 <br />
 
-                <h5>
-                  Sm buttons
-                  <span class="text_primary">class="btn btn_sm"</span>
+                <h5 class="h5">
+                  Xs
+                  <span class="text_primary">class="btn _xs"</span>
                 </h5>
-    
-                <a class="btn btn_sm" href="#">Sm button</a>
-                <a class="btn btn_sm" href="#">
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
+
+                <a class="btn _xs" href="#">Xs button</a>
+                <a class="btn _xs" href="#">
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
+                  <span>Xs button</span>
+                </a>
+                <a class="btn _xs" href="#" disabled>
+                  <span>Xs button</span>
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
+                </a>
+
+                <br />
+                <br />
+                <br />
+
+                <h5 class="h5">
+                  Sm
+                  <span class="text_primary">class="btn _sm"</span>
+                </h5>
+
+                <a class="btn _sm" href="#">Sm button</a>
+                <a class="btn _sm" href="#">
+                    <svg class="icon _xs">
                       <use xlink:href="assets/img/sprite.svg#close"></use>
                     </svg>
                   </span>
                   <span>Sm button</span>
                 </a>
-                <a class="btn btn_sm" href="#" disabled>
+                <a class="btn _sm" href="#" disabled>
                   <span>Sm button</span>
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                 </a>
-    
+
                 <br />
                 <br />
                 <br />
-    
-                <h5>
-                  Md buttons
-                  <span class="text_primary">class="btn btn_md"</span>
+
+                <h5 class="h5">
+                  Md
+                  <span class="text_primary">class="btn _md"</span>
                 </h5>
-    
-                <a class="btn btn_md" href="#">Md button</a>
-                <a class="btn btn_md" href="#">
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+
+                <a class="btn _md" href="#">Md button</a>
+                <a class="btn _md" href="#">
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                   <span>Md button</span>
                 </a>
-                <a class="btn btn_md" href="#" disabled>
+                <a class="btn _md" href="#" disabled>
                   <span>Md button</span>
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                 </a>
-    
+
                 <br />
                 <br />
                 <br />
 
-                <h5>
-                  Lg buttons
-                  <span class="text_primary">class="btn btn_lg"</span>
+                <h5 class="h5">
+                  Lg
+                  <span class="text_primary">class="btn _lg"</span>
                 </h5>
-    
-                <a class="btn btn_lg" href="#">Lg button</a>
-                <a class="btn btn_lg" href="#">
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+
+                <a class="btn _lg" href="#">Lg button</a>
+                <a class="btn _lg" href="#">
+                  <svg class="icon _sm">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                   <span>Lg button</span>
                 </a>
-                <a class="btn btn_lg" href="#" disabled>
+                <a class="btn _lg" href="#" disabled>
                   <span>Lg button</span>
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+                  <svg class="icon _sm">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                 </a>
-    
-                <br />
-                <br />
-                <br />
-  
-                <h5>
-                  Max width button
-                  <span class="text_primary">class="btn btn_max"</span><br>
-                </h5>
-                <a class="btn btn_max">Button</a>
 
-                <br>
-                <br>
-                <br>
+                <br />
+                <br />
+                <br />
 
-                <h5>
-                  Mobile max width button
-                  <span class="text_primary">class="btn btn_max-mobile"</span><br>
+                <h5 class="h5">
+                  Max width
+                  <span class="text_primary">class="btn _max"</span><br />
                 </h5>
-                <a class="btn btn_max-mobile">Button</a>
+                <a class="btn _max">Button</a>
+
+                <br />
+                <br />
+                <br />
+
+                <h5 class="h5">
+                  Mobile max width
+                  <span class="text_primary">class="btn _max-mobile"</span
+                  ><br />
+                </h5>
+                <a class="btn _max-mobile">Button</a>
               </div>
 
               <div class="text-bl-grid__half-col">
-                <h5>
-                  Primary buttons
-                  <span class="text_primary">class="btn btn_primary"</span>
+                <h5 class="h5">
+                  Primary
+                  <span class="text_primary">class="btn _primary"</span>
                 </h5>
-                <button type="button" class="btn btn_primary">Button</button>
-                <button type="button" class="btn btn_primary">
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
-                  <span>Button</span>
+                <button type="button" class="btn _primary">Button</button>
+                <button type="button" class="btn _primary">
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
+                  <span>Lg button</span>
                 </button>
-                <button type="button" class="btn btn_primary" disabled>
+                <button type="button" class="btn _primary" disabled>
                   <span>Disabled button</span>
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                 </button>
-    
-                <br />
-                <br />
-                <br />
-    
-                <h5>
-                  Secondary buttons
-                  <span class="text_primary">class="btn btn_secondary"</span>
-                </h5>
-                <button type="button" class="btn btn_secondary">Button</button>
-                <button type="button" class="btn btn_secondary">
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
-                  <span>Button</span>
-                </button>
-                <button type="button" class="btn btn_secondary" disabled>
-                  <span>Disabled button</span>
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
-                </button>
-    
-                <br />
-                <br />
-                <br />
-    
-                <h5>
-                  Danger buttons
-                  <span class="text_primary">class="btn btn_danger"</span>
-                </h5>
-                <button type="button" class="btn btn_danger">Button</button>
-                <button type="button" class="btn btn_danger">
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
-                  <span>Button</span>
-                </button>
-                <button type="button" class="btn btn_danger" disabled>
-                  <span>Disabled button</span>
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
-                </button>
-    
-                <br />
-                <br />
-                <br />
-    
-                <h5>
-                  Success buttons
-                  <span class="text_primary">class="btn btn_success"</span>
-                </h5>
-                <button type="button" class="btn btn_success">Button</button>
-                <button type="button" class="btn btn_success">
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
-                  <span>Button</span>
-                </button>
-                <button type="button" class="btn btn_success" disabled>
-                  <span>Disabled button</span>
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
-                </button>
-    
-                <br />
-                <br />
-                <br />
-    
-                <h5>
-                  Warning buttons
-                  <span class="text_primary">class="btn btn_warning"</span>
-                </h5>
-                <button type="button" class="btn btn_warning">Button</button>
-                <button type="button" class="btn btn_warning">
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
-                  <span>Button</span>
-                </button>
-                <button type="button" class="btn btn_warning" disabled>
-                  <span>Disabled button</span>
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
-                </button>
-    
+
                 <br />
                 <br />
                 <br />
 
-                <h5>
+                <h5 class="h5">
+                  Secondary
+                  <span class="text_primary">class="btn _secondary"</span>
+                </h5>
+                <button type="button" class="btn _secondary">Button</button>
+                <button type="button" class="btn _secondary">
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
+                  <span>Button</span>
+                </button>
+                <button type="button" class="btn _secondary" disabled>
+                  <span>Disabled button</span>
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
+                </button>
+
+                <br />
+                <br />
+                <br />
+
+                <h5 class="h5">
+                  Danger
+                  <span class="text_primary">class="btn _danger"</span>
+                </h5>
+                <button type="button" class="btn _danger">Button</button>
+                <button type="button" class="btn _danger">
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
+                  <span>Button</span>
+                </button>
+                <button type="button" class="btn _danger" disabled>
+                  <span>Disabled button</span>
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
+                </button>
+
+                <br />
+                <br />
+                <br />
+
+                <h5 class="h5">
+                  Success
+                  <span class="text_primary">class="btn _success"</span>
+                </h5>
+                <button type="button" class="btn _success">Button</button>
+                <button type="button" class="btn _success">
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
+                  <span>Button</span>
+                </button>
+                <button type="button" class="btn _success" disabled>
+                  <span>Disabled button</span>
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
+                </button>
+
+                <br />
+                <br />
+                <br />
+
+                <h5 class="h5">
+                  Warning
+                  <span class="text_primary">class="btn _warning"</span>
+                </h5>
+                <button type="button" class="btn _warning">Button</button>
+                <button type="button" class="btn _warning">
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
+                  <span>Button</span>
+                </button>
+                <button type="button" class="btn _warning" disabled>
+                  <span>Disabled button</span>
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
+                </button>
+
+                <br />
+                <br />
+                <br />
+
+                <h5 class="h5">
                   Btn icon
                   <span class="text_primary">class="btn btn_icon"</span>
                 </h5>
 
                 <button class="btn btn_icon" type="button">
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                 </button>
 
-                <button class="btn btn_icon btn_primary" type="button">
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+                <button class="btn btn_icon _primary" type="button">
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                 </button>
-                
+
                 <button class="btn btn_icon btn_link" type="button">
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                 </button>
 
                 <button class="btn btn_icon" type="button" disabled>
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                 </button>
 
-                <button class="btn btn_primary btn_icon" type="button" disabled>
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+                <button class="btn _primary btn_icon" type="button" disabled>
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                 </button>
 
                 <button class="btn btn_link btn_icon" type="button" disabled>
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                 </button>
 
                 <br />
                 <br />
                 <br />
 
-                <h5>
-                  Btn icon xs
-                  <span class="text_primary">class="btn btn_icon btn_xs btn_sm btn_md btn_lg"</span>
+                <h5 class="h5">
+                  Btn icon
+                  <span class="text_primary"
+                    >class="btn btn_icon _xs _sm _md _lg"</span
+                  >
                 </h5>
 
-                <button class="btn btn_icon btn_xs" type="button">
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+                <button class="btn btn_icon _xs" type="button">
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                 </button>
 
-                <button class="btn btn_icon btn_sm" type="button">
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+                <button class="btn btn_icon _sm" type="button">
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                 </button>
 
-                <button class="btn btn_icon btn_md" type="button">
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+                <button class="btn btn_icon" type="button">
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                 </button>
 
-                <button class="btn btn_icon btn_lg" type="button">
-                  <span class="btn__icon">
-                    <svg class="icon icon-close">
-                      <use xlink:href="assets/img/sprite.svg#close"></use>
-                    </svg>
-                  </span>
+
+                <button class="btn btn_icon _md" type="button">
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
+                </button>
+
+                <button class="btn btn_icon _lg" type="button">
+                  <svg class="icon _md">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
+                </button>
+
+                <br />
+                <br />
+                <br />
+
+                <h5 class="h5">
+                  Btn icon round
+                  <span class="text_primary"
+                    >class="btn btn_icon _round _xs _sm _md _lg"</span
+                  >
+                </h5>
+
+                <button class="btn btn_icon _round _xs" type="button">
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
+                </button>
+
+                <button class="btn btn_icon _round _sm" type="button">
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
+                </button>
+
+                <button class="btn btn_icon _round" type="button">
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
+                </button>
+
+
+                <button class="btn btn_icon _round _md" type="button">
+                  <svg class="icon _xs">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
+                </button>
+
+                <button class="btn btn_icon _round _lg" type="button">
+                  <svg class="icon _md">
+                    <use xlink:href="assets/img/sprite.svg#close"></use>
+                  </svg>
                 </button>
               </div>
+            </div>
+
+            <br><br>
+
+            <h2 class="h2">Buttons light</h2>
+            <div style="background-color: #000; padding: 30px;">
+              <h5 class="text_light h5">
+                Btn light
+                <span class="text_primary"
+                  >class="btn _light"</span
+                >
+              </h5>
+              <button type="button" class="btn _light">Button</button>
+              <button type="button" class="btn _light">
+                <svg class="icon _xs">
+                  <use xlink:href="assets/img/sprite.svg#close"></use>
+                </svg>
+                <span>Button</span>
+              </button>
+              <button type="button" class="btn _light" disabled>
+                <span>Disabled button</span>
+                <svg class="icon _xs">
+                  <use xlink:href="assets/img/sprite.svg#close"></use>
+                </svg>
+              </button>
+              <button class="btn _light btn_icon" type="button">
+                <svg class="icon _xs">
+                  <use xlink:href="assets/img/sprite.svg#close"></use>
+                </svg>
+              </button>
+              <button class="btn _light btn_icon" type="button" disabled>
+                <svg class="icon _xs">
+                  <use xlink:href="assets/img/sprite.svg#close"></use>
+                </svg>
+              </button>
+              <button class="btn _light btn_icon _round" type="button">
+                <svg class="icon _xs">
+                  <use xlink:href="assets/img/sprite.svg#close"></use>
+                </svg>
+              </button>
+
+              <br><br>
+              <h5 class="text_light h5">
+                Btn light fill
+                <span class="text_primary"
+                  >class="btn _light_fill"</span
+                >
+              </h5>
+
+              <button type="button" class="btn _light-fill">Button</button>
+              <button type="button" class="btn _light-fill">
+                <svg class="icon _xs">
+                  <use xlink:href="assets/img/sprite.svg#close"></use>
+                </svg>
+                <span>Button</span>
+              </button>
+              <button type="button" class="btn _light-fill" disabled>
+                <span>Disabled button</span>
+                <svg class="icon _xs">
+                  <use xlink:href="assets/img/sprite.svg#close"></use>
+                </svg>
+              </button>
+              <button class="btn _light-fill btn_icon" type="button">
+                <svg class="icon _xs">
+                  <use xlink:href="assets/img/sprite.svg#close"></use>
+                </svg>
+              </button>
+              <button class="btn _light-fill btn_icon" type="button" disabled>
+                <svg class="icon _xs">
+                  <use xlink:href="assets/img/sprite.svg#close"></use>
+                </svg>
+              </button>
+              <button class="btn _light-fill btn_icon _round" type="button">
+                <svg class="icon _xs">
+                  <use xlink:href="assets/img/sprite.svg#close"></use>
+                </svg>
+              </button>
             </div>
           </div>
         </section>
@@ -618,9 +1004,10 @@
         <section data-aos="fade-up" id="form" class="section-st">
           <div class="container">
             <form class="st-form" action="#">
-              <h2>Form</h2>
+              <h2 class="h2">Form</h2>
 
-              <h5>Radio and checkbox</h5>
+              <h5 class="h5">Radio and checkbox</h5>
+              <br>
               <div
                 style="
                   display: inline-block;
@@ -682,74 +1069,114 @@
               </div>
 
               <br /><br /><br />
-              <h5>Animation labels</h5>
+              <h5 class="h5">Animation labels</h5>
               <div class="form-group">
-                <label class="field-item field-item_animation-label">
-                  <div class="field-item__label">label text</div>
-                  <div class="field-item__field">
-                    <input type="text" required />
-                  </div>
+                <label class="field-item _animation-label _error">
+                  <span class="field-item__label">Your name</span>
+                  <span class="field-item__field _icon">
+                    <input type="text" required value="my-name" />
+                    <svg class="icon icon-user">
+                      <use xlink:href="assets/img/sprite.svg#user"></use>
+                    </svg>
+                  </span>
+                  <span class="field-item__message">Error message</span>
                 </label>
               </div>
 
               <div class="form-group">
-                <label class="field-item field-item_animation-label">
-                  <div class="field-item__label">password</div>
-                  <div class="field-item__field">
-                    <input type="password" required />
-                  </div>
+                <label class="field-item _animation-label">
+                  <span class="field-item__label">password</span>
+                  <span class="field-item__field">
+                    <input type="password" autocomplete="off" required />
+                  </span>
+                  <span class="field-item__text">More text</span>
+                  <span class="field-item__message"></span>
                 </label>
               </div>
 
               <div class="form-group">
-                <label class="field-item field-item_animation-label">
-                  <div class="field-item__label">E-mail</div>
-                  <div class="field-item__field">
+                <label class="field-item _animation-label _success">
+                  <span class="field-item__label">E-mail</span>
+                  <span class="field-item__field _icon">
                     <input
                       type="email"
                       pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}"
                       required
+                      value="test@email.com"
                     />
-                  </div>
+                    <svg class="icon icon-user">
+                      <use xlink:href="assets/img/sprite.svg#user"></use>
+                    </svg>
+                  </span>
+                  <span class="field-item__message">Success message</span>
                 </label>
               </div>
 
               <div class="form-group">
-                <label class="field-item">
-                  <div class="field-item__label">Phone</div>
-                  <div class="field-item__field">
+                <label class="field-item _animation-label">
+                  <span class="field-item__label">Textarea</span>
+                  <span class="field-item__field">
+                    <textarea></textarea>
+                  </span>
+                  <span class="field-item__message"></span>
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label class="field-item _animation-label">
+                  <span class="field-item__label">Phone</span>
+                  <span class="field-item__field">
                     <input
                       type="tel"
                       required
-                      placeholder="+7 (___) ___ __ __"
                     />
-                  </div>
+                  </span>
+                  <span class="field-item__message"></span>
                 </label>
               </div>
 
+
               <br />
-              <h5>Default inputs</h5>
+              <h5 class="h5">Default inputs</h5>
               <div class="form-group">
                 <label class="field-item">
-                  <div class="field-item__label">E-mail</div>
-                  <div class="field-item__field">
+                  <span class="field-item__label">E-mail with icon</span>
+                  <span class="field-item__field _icon">
                     <input
                       type="email"
                       pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}"
                       placeholder="E-mail"
                       required
                     />
-                  </div>
+                    <svg class="icon icon-user">
+                      <use xlink:href="assets/img/sprite.svg#user"></use>
+                    </svg>
+                  </span>
+                  <span class="field-item__message"></span>
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label class="field-item">
+                  <span class="field-item__label">Phone</span>
+                  <span class="field-item__field">
+                    <input
+                      type="tel"
+                      required
+                      placeholder="+7"
+                    />
+                  </span>
+                  <span class="field-item__message"></span>
                 </label>
               </div>
 
               <br />
-              <h5>Select</h5>
+              <h5 class="h5">Select</h5>
               <div class="form-group">
                 <label class="field-item">
-                  <div class="field-item__label">label text</div>
-                  <div class="field-item__field">
-                    <select name="" id="">
+                  <span class="field-item__label">label text</span>
+                  <span class="field-item__field">
+                    <select>
                       <option value="" disabled selected>Select wallet</option>
                       <option value="">
                         121ny213bdwjuTNOhunthOuthu2uhonethuNUHOu2
@@ -761,156 +1188,189 @@
                         121ndhy213bdwjuTNOhunthOu2uhonethuNUHOu2
                       </option>
                     </select>
-                  </div>
+                  </span>
+                  <span class="field-item__message"></span>
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label class="field-item">
+                  <span class="field-item__label">label text</span>
+                  <span class="field-item__field">
+                    <select>
+                      <option value="" disabled>Select wallet</option>
+                      <option value="" selected>
+                        121ny213bdwjuTNOhunthOuthu2uhonethuNUHOu2
+                      </option>
+                      <option value="">
+                        121ndhy213bdwjuTNOthOuthu2uhonethuNUHOu2
+                      </option>
+                      <option value="">
+                        121ndhy213bdwjuTNOhunthOu2uhonethuNUHOu2
+                      </option>
+                    </select>
+                  </span>
+                  <span class="field-item__message"></span>
                 </label>
               </div>
 
               <br />
-              <h5>Inline labels</h5>
+              <h5 class="h5">Inline labels</h5>
               <br />
               <div class="form-group">
-                <label class="field-item field-item_inline">
-                  <div class="field-item__label">E-mail</div>
-                  <div class="field-item__field">
+                <label class="field-item _inline">
+                  <span class="field-item__label">E-mail</span>
+                  <span class="field-item__field">
                     <input
                       type="email"
                       placeholder="axe@gamil.com"
                       pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}"
                       required
                     />
-                  </div>
+                  </span>
                 </label>
+                <span class="field-item__message"></span>
               </div>
 
               <div class="form-group">
-                <label class="field-item field-item_inline">
-                  <div class="field-item__label">Phone</div>
-                  <div class="field-item__field">
-                    <input type="tel" placeholder="+3" required />
-                  </div>
+                <label class="field-item _inline">
+                  <span class="field-item__label">Phone</span>
+                  <span class="field-item__field">
+                    <input type="tel" placeholder="+7" required />
+                  </span>
                 </label>
+                <span class="field-item__message"></span>
               </div>
 
               <br />
-              <h5>Grid labels</h5>
+              <h5 class="h5">Grid labels</h5>
               <br />
-              <div class="form-group-grid">
-                <div class="form-group form-group_half-col">
+              <div class="form-group-grid _two-col">
+                <div class="form-group">
                   <label class="field-item">
-                    <div class="field-item__label">Search</div>
-                    <div class="field-item__field">
+                    <span class="field-item__label">Search</span>
+                    <span class="field-item__field">
                       <input type="search" placeholder="search" />
-                    </div>
+                    </span>
                   </label>
+                  <span class="field-item__message"></span>
                 </div>
 
-                <div class="form-group form-group_half-col">
+                <div class="form-group">
                   <label class="field-item">
-                    <div class="field-item__label">Website</div>
-                    <div class="field-item__field">
+                    <span class="field-item__label">Website</span>
+                    <span class="field-item__field">
                       <input type="text" placeholder="Website" required />
-                    </div>
+                    </span>
                   </label>
+                  <span class="field-item__message"></span>
                 </div>
               </div>
 
-              <div class="form-group-grid">
-                <div class="form-group form-group_three-col">
+              <div class="form-group-grid _three-col">
+                <div class="form-group">
                   <label class="field-item">
-                    <div class="field-item__label">label text</div>
-                    <div class="field-item__field">
+                    <span class="field-item__label">label text</span>
+                    <span class="field-item__field">
                       <input
                         type="text"
                         placeholder="placeholder text"
                         required
                       />
-                    </div>
+                    </span>
                   </label>
+                  <span class="field-item__message"></span>
                 </div>
 
-                <div class="form-group form-group_three-col">
+                <div class="form-group">
                   <label class="field-item">
-                    <div class="field-item__label">label text</div>
-                    <div class="field-item__field">
+                    <span class="field-item__label">label text</span>
+                    <span class="field-item__field">
                       <input
                         type="text"
                         placeholder="placeholder text"
                         required
                       />
-                    </div>
+                    </span>
                   </label>
+                  <span class="field-item__message"></span>
                 </div>
 
-                <div class="form-group form-group_three-col">
+                <div class="form-group">
                   <label class="field-item">
-                    <div class="field-item__label">label text</div>
-                    <div class="field-item__field">
+                    <span class="field-item__label">label text</span>
+                    <span class="field-item__field">
                       <input
                         type="text"
                         placeholder="placeholder text"
                         required
                       />
-                    </div>
+                    </span>
                   </label>
+                  <span class="field-item__message"></span>
                 </div>
               </div>
 
-              <div class="form-group-grid">
-                <div class="form-group form-group_four-col">
+              <div class="form-group-grid _four-col">
+                <div class="form-group">
                   <label class="field-item">
-                    <div class="field-item__label">label text</div>
-                    <div class="field-item__field">
+                    <span class="field-item__label">label text</span>
+                    <span class="field-item__field">
                       <input
                         type="text"
                         placeholder="placeholder text"
                         required
                       />
-                    </div>
+                    </span>
                   </label>
+                  <span class="field-item__message"></span>
                 </div>
 
-                <div class="form-group form-group_four-col">
+                <div class="form-group">
                   <label class="field-item">
-                    <div class="field-item__label">label text</div>
-                    <div class="field-item__field">
+                    <span class="field-item__label">label text</span>
+                    <span class="field-item__field">
                       <input
                         type="text"
                         placeholder="placeholder text"
                         required
                       />
-                    </div>
+                    </span>
                   </label>
+                  <span class="field-item__message"></span>
                 </div>
 
-                <div class="form-group form-group_four-col">
+                <div class="form-group">
                   <label class="field-item">
-                    <div class="field-item__label">label text</div>
-                    <div class="field-item__field">
+                    <span class="field-item__label">label text</span>
+                    <span class="field-item__field">
                       <input
                         type="text"
                         placeholder="placeholder text"
                         required
                       />
-                    </div>
+                    </span>
                   </label>
+                  <span class="field-item__message"></span>
                 </div>
 
-                <div class="form-group form-group_four-col">
+                <div class="form-group">
                   <label class="field-item">
-                    <div class="field-item__label">label text</div>
-                    <div class="field-item__field">
+                    <span class="field-item__label">label text</span>
+                    <span class="field-item__field">
                       <input
                         type="text"
                         placeholder="placeholder text"
                         required
                       />
-                    </div>
+                    </span>
                   </label>
+                  <span class="field-item__message"></span>
                 </div>
               </div>
 
               <div class="form-group text_center">
-                <button class="btn btn_md btn_min-width" type="submit">
+                <button class="btn _primary _md _min-width" type="submit">
                   Submit
                 </button>
               </div>
@@ -920,7 +1380,7 @@
 
         <section data-aos="fade-up" id="text" class="section-st">
           <div class="container">
-            <h2>Text</h2>
+            <h2 class="h2">Text</h2>
             <div class="text-bl">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -929,7 +1389,8 @@
                 totam, dolore aliquam temporibus quidem commodi.
               </p>
 
-              <h1>h1 rubl ₽</h1>
+              <h2>Title</h2>
+              <p>rubl ₽</p>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Assumenda reiciendis, sint quam iste dicta quasi sapiente ipsum
@@ -938,7 +1399,7 @@
               </p>
 
               <div class="text_center">
-                <h2>h2 Text center</h2>
+                <h2>Text center</h2>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Assumenda reiciendis, sint quam iste dicta quasi sapiente
@@ -947,8 +1408,8 @@
                 </p>
               </div>
 
-              <div class="tex">
-                <h3>h3 text right</h3>
+              <div class="text_right">
+                <h2>h3 text right</h2>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Assumenda reiciendis, sint quam iste dicta quasi sapiente
@@ -957,8 +1418,8 @@
                 </p>
               </div>
 
-              <div class="text_uppercase">
-                <h5>h4 text uppercase</h5>
+              <div class="_uppercase">
+                <h2>text uppercase</h2>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Assumenda reiciendis, sint quam iste dicta quasi sapiente
@@ -967,7 +1428,7 @@
                 </p>
               </div>
 
-              <h5>h5 Lorem ipsum dolor sit amet, consectetur adipisicing.</h5>
+              <h2>Lorem ipsum dolor sit amet, consectetur adipisicing.</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Assumenda reiciendis, sint quam iste dicta quasi sapiente ipsum
@@ -975,9 +1436,9 @@
                 totam, dolore aliquam temporibus quidem commodi.
               </p>
 
-              <h6>
-                h6 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              </h6>
+              <h2>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              </h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure,
                 similique. Architecto quo cum, sunt consequuntur quaerat,
@@ -985,7 +1446,7 @@
                 optio, possimus beatae rem ex. Unde.
               </p>
 
-              <br />
+              <img src="https://fakeimg.pl/600x400/">
 
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure,
@@ -994,6 +1455,7 @@
                 optio, possimus beatae rem ex. Unde.
               </p>
 
+              <h2 class="h2">Table</h2>
               <div class="scroll-wrapper">
                 <table>
                   <thead>
@@ -1028,6 +1490,8 @@
                 </table>
               </div>
 
+              <h2 class="h2">Lists</h2>
+
               <ul>
                 <li>Пример списка</li>
                 <li>Пример списка</li>
@@ -1041,7 +1505,7 @@
               </ol>
             </div>
 
-            <div class="title-site title-site_h3">Two column text</div>
+            <h2 class="h2">Two column text</h2>
 
             <div class="text-bl-grid">
               <div class="text-bl text-bl-grid__half-col">
@@ -1081,6 +1545,118 @@
             </div>
           </div>
         </section>
+
+
+        <section class="section-st">
+          <div class="container">
+            <h2 class="h2">Cards</h2>
+
+            <div class="st-cards">
+              <a href="#" class="st-card">
+                <div class="st-card__image">
+                  <div class="full-image-bg _cover">
+                    <img src="assets/img/img1.png" alt="" />
+                  </div>
+                </div>
+                <div class="st-card__info">
+                  <div class="text_lg text_uppercase text_700 mb-4">Dualsense Lorem, ipsum dolor.</div>
+                  <div class="text_md">Lorem, ipsum dolor.</div>
+                </div>
+              </a>
+
+              <a href="#" class="st-card">
+                <div class="st-card__image">
+                  <div class="full-image-bg _cover">
+                    <img src="assets/img/img2.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="st-card__info">
+                  <div class="text_lg text_uppercase text_700">Dualsense Lorem, ipsum dolor.</div>
+                </div>
+              </a>
+
+              <a href="#" class="st-card">
+                <div class="st-card__image">
+                  <div class="full-image-bg _cover">
+                    <img src="assets/img/img1.png" alt="" />
+                  </div>
+                </div>
+                <div class="st-card__info">
+                  <div class="text_lg text_uppercase text_700">Dualsense Lorem, ipsum dolor.</div>
+                </div>
+              </a>
+
+              <a href="#" class="st-card">
+                <div class="st-card__image">
+                  <div class="full-image-bg _cover">
+                    <img src="assets/img/img3.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="st-card__info">
+                  <div class="text_lg text_uppercase text_700">Dualsense Lorem, ipsum dolor.</div>
+                  <div class="text_md">Lorem, ipsum dolor.</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="section-st">
+          <div class="container">
+            <h2 class="h2">Full Section Bg</h2>
+          </div>
+
+          <div class="full-section-bg _height-700">
+            <div class="full-image-bg _cover _cover-04 _cover-grad-bottom">
+              <picture>
+                <source srcset="assets/img/img3.jpg" media="(min-width: 980px)">
+                <source srcset="assets/img/img3-tablet.jpg" media="(min-width: 500px)">
+                <source srcset="assets/img/img3-mob.jpg">
+                <img srcset="assets/img/img3.jpg" alt="">
+              </picture>
+            </div>
+
+            <div class="full-section-bg__head">
+              <div class="container">
+                <div class="max-w-400-md text_white">
+                  <div class="mb-20">
+                    <h1>Heading text</h1>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit iusto cum, doloribus magni exercitationem accusamus labore nulla nam distinctio minima.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="full-section-bg__inner _bottom">
+              <div class="container">
+                <div class="max-w-400-md text_white">
+                  <div class="mb-20">
+                    <h1>Heading text</h1>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit iusto cum, doloribus magni exercitationem accusamus labore nulla nam distinctio minima.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-st">
+          <div class="container">
+            <h2 class="h2">Full Image Bg</h2>
+          </div>
+
+          <div class="full-image-bg-wrapp">
+            <div class="full-image-bg _cover">
+              <picture>
+                <source srcset="assets/img/img3.jpg" media="(min-width: 980px)">
+                <source srcset="assets/img/img3-tablet.jpg" media="(min-width: 500px)">
+                <source srcset="assets/img/img3-mob.jpg">
+                <img srcset="assets/img/img3.jpg" alt="">
+              </picture>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
     <!-- end site main wrapper -->
@@ -1088,9 +1664,117 @@
     <!-- footer -->
     <footer class="footer" id="footer">
       <div class="container">
-        <span class="copy">Design by Axe</span>
+        <div class="footer-main">
+          <div class="footer-aside-col">
+            <div class="footer-logo">
+              <a href="#"><img src="assets/img/logo.svg" alt="" /></a>
+            </div>
+          </div>
+
+          <div class="footer-main-col">
+            <ul class="footer-contacts">
+              <li><a href="mailto:www.rok1group.ru">www.rok1group.ru</a></li>
+              <li><a href="tel:+7 812 318 08 08">+7 812 318 08 08</a></li>
+              <li><a href="tel:+7 812 612 14 03">+7 812 612 14 03</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <span>Официальный сайт торговой марки ... © 2021</span>
+          <span>Все права защищены</span>
+        </div>
       </div>
     </footer>
     <!-- end footer -->
+
+
+    <!-- modals -->
+    <div id="thanks" class="st-modal mfp-hide">
+      <div class="st-modal__head">
+        <div class="heading _h2">Спасибо!</div>
+      </div>
+      <div class="st-modal__body">
+        <p>
+          Ваше сообщение отправлено и в ближайшее время наши специалисты
+          обработают его и ответят Вам.
+        </p>
+      </div>
+    </div>
+
+    <div id="feedback" class="st-modal mfp-hide">
+      <div class="st-modal__head">
+        <div class="heading _h2">Обратная связь</div>
+      </div>
+
+      <div class="st-modal__body">
+        <form class="st-form" action="#">
+          <div class="form-group">
+            <label class="field-item">
+              <span class="field-item__label">Имя</span>
+              <span class="field-item__field">
+                <input type="text" />
+              </span>
+              <span class="field-item__message">Пожалуйста заполните поле</span>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="field-item">
+              <span class="field-item__label">Фамилия</span>
+              <span class="field-item__field">
+                <input type="text" />
+              </span>
+              <span class="field-item__message">Пожалуйста заполните поле</span>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="field-item _error">
+              <span class="field-item__label">E-mail</span>
+              <span class="field-item__field">
+                <input type="email" />
+              </span>
+              <span class="field-item__message">Пожалуйста заполните Email</span>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="field-item">
+              <span class="field-item__label">Телефон</span>
+              <span class="field-item__field">
+                <input type="tel" />
+              </span>
+              <span class="field-item__message"></span>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="field-item">
+              <span class="field-item__label">Сообщение</span>
+              <span class="field-item__field">
+                <textarea></textarea>
+              </span>
+              <span class="field-item__message"></span>
+            </label>
+          </div>
+
+          <div class="text_center mt-24 mb-24">
+            <button class="btn _primary _min-width" type="submit">
+              Отправить
+            </button>
+          </div>
+
+          <div class="text_xs text_center">
+            Нажиимая на кнопку я соглашаюсь <br />
+            <a href="#">с условиямии обработки персональных данных</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- end modals -->
+
   </body>
 </html>

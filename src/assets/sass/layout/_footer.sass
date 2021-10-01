@@ -1,3 +1,51 @@
 .footer
-  background-color: rgba(#ccc, 0.4)
-  padding: 20px 0
+  background-color: var(--bg-dark)
+  color: rgba(#fff, .5)
+
+  a
+    color: rgba(#fff, .5)
+    text-decoration: none
+
+    &:hover
+      color: var(--tc-light)
+
+.footer-main
+  padding: 40px 0
+
+  +breakpoint($md)
+    display: flex
+    justify-content: space-between
+
+.footer-bottom
+  padding: 28px 0
+  border-top: 1px solid var(--border)
+
+  +breakpoint($md)
+    .container
+      display: flex
+      justify-content: space-between
+
+  span
+    display: block
+    margin-bottom: 14px
+    font-size: var(--text-xs)
+    line-height: 1.45em
+
+    +breakpoint($md)
+      margin-bottom: 0
+
+    &:last-child
+      margin-bottom: 0
+
+.footer-contacts
+  li
+    font-size: var(--text-xs)
+    margin-bottom: 10px
+
+    &:last-child
+      margin-bottom: 0
+
+.footer-logo
+  width: 100px
+
+

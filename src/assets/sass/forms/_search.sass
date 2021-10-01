@@ -1,0 +1,43 @@
+.search-form
+  &__inner
+    position: relative
+
+    input
+      padding-right: 54px
+
+    button
+      position: absolute
+      right: 20px
+      top: 50%
+      transform: translateY(-50%)
+
+// drop down search form
+.dd-search-wrapp
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+  &._opened
+    .search-form
+      display: block
+
+  .search-form
+    display: none
+    position: absolute
+    z-index: 4
+    right: 0
+    left: 0
+    top: 50%
+    transform: translateY(-50%)
+
+.header
+  .dd-search-wrapp
+    .search-form
+      +breakpoint($lg)
+        top: var(--header-height)
+        transform: none
+        padding: 10px var(--container-space)
+
+        &__inner
+          max-width: calc(var(--container-width) - var(--container-space) * 2)
+          margin: 0 auto
