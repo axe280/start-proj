@@ -13,26 +13,27 @@ button, .btn
   text-decoration: none
   text-align: center
   cursor: pointer
-  transition: background-color $transDefault, color $transDefault, border-color $transDefault
+  transition: background-color $transDefault, color $transDefault, border-color $transDefault, opacity $transDefault
 
   &:hover
     text-decoration: none
 
   .icon
-    transition: fill $transDefault, stroke $transDefault
+    transition: fill $transDefault, stroke $transDefault, opacity $transDefault
 
 
 // page buttons default with class
 .btn
   height: var(--btn-default)
-  padding: 0 20px
+  padding-left: 20px
+  padding-right: 20px
   font-family: var(--site-font-family), sans-serif
   font-weight: 600
   font-size: var(--text-ui-md)
   line-height: 1em
   color: var(--btn-color)
-  background-color: var(--btn-bg)
   border: 2px solid var(--btn-border)
+  background-color: var(--btn-bg)
   border-radius: var(--btn-radius-sm)
 
   &:hover
@@ -61,6 +62,7 @@ button, .btn
     color: var(--btn-color-disabled)
     background-color: var(--btn-bg-disabled)
     border-color: var(--btn-border-disabled)
+    opacity: .5
 
     .icon
       fill: var(--btn-color-disabled)
@@ -68,50 +70,25 @@ button, .btn
 
   // light / fill
   &._light
+    --btn-bg-hover: var(--btn-light-color)
+    --btn-bg-active: var(--btn-light-active-bg)
+    --btn-border: var(--btn-light-color)
     --btn-color: var(--btn-light-color)
-    background-color: var(--btn-light-bg)
-    border-color: var(--btn-light-border)
+    --btn-color-disabled: var(--btn-light-color)
 
-    &:hover,
-    &:active
-      --btn-color: var(--btn-color)
-      background-color: var(--btn-light-bg-hover)
-      border-color: var(--btn-light-bg-hover)
+    &:hover
+      --btn-color: var(--btn-light-hover-color)
 
-    // disabled
-    &[disabled],
-    &[disabled]:hover,
-    &[disabled]:active
-      opacity: .4
-      background-color: var(--btn-light-bg)
-      color: var(--btn-light-color-disabled)
-
-      .icon
-        fill: var(--btn-light-color-disabled)
-        stroke: var(--btn-light-color-disabled)
 
   &._light-fill
+    --btn-bg: var(--btn-light-fill-bg)
+    --btn-bg-hover: var(--btn-light-fill-bg-hover)
+    --btn-bg-active: var(--btn-light-fill-bg)
+    --btn-bg-disabled: var(--btn-light-fill-bg)
     --btn-color: var(--btn-light-fill-color)
-    background-color: var(--btn-light-fill-bg)
-    border-color: var(--btn-light-fill-border)
-
-    &:hover,
-    &:active
-      color: var(--btn-light-fill-color)
-      background-color: var(--btn-light-fill-bg-hover)
-      border-color: var(--btn-light-fill-bg-hover)
-
-    // disabled
-    &[disabled],
-    &[disabled]:hover,
-    &[disabled]:active
-      opacity: .4
-      background-color: var(--btn-light-fill-bg)
-      color: var(--btn-light-color-fill-disabled)
-
-      .icon
-        fill: var(--btn-light-color-fill-disabled)
-        stroke: var(--btn-light-color-fill-disabled)
+    --btn-color-disabled: var(--btn-light-fill-color)
+    --btn-border: transparent
+    --btn-border-disabled: transparent
 
   // xs
   &._xs
@@ -181,23 +158,10 @@ button, .btn
     --btn-bg-active: transparent
     --btn-border: transparent
     --btn-border-disabled: transparent
+    --btn-color: var(--link-color)
+    --btn-color-hover: var(--link-color-hover)
+    --btn-color-disabled: var(--link-color)
 
-    &:hover
-      color: var(--primary)
-
-      .icon
-        fill: var(--primary)
-        stroke: var(--primary)
-
-    &[disabled],
-    &[disabled]:hover
-      color: var(--tc-dark)
-      opacity: .4
-      transition: none
-
-      .icon
-        fill: var(--tc-dark)
-        stroke: var(--tc-dark)
 
   // colors
   &._primary

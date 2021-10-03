@@ -1,3 +1,7 @@
+@function HexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
 :root {
   /* text */
   --tc-dark: #1e1e1f;
@@ -27,23 +31,23 @@
   --border-hover: #bebebe;
 
   /* main */
-  --primary: #1dbdce;
-  --primary-rgb: 29, 189, 206;
-  --primary-hover: #159fae;
+  --primary: #2381bb;
+  --primary-rgb: #{HexToRGB(#2381bb)};
+  --primary-hover: rgba(#{HexToRGB(#2381bb)}, 0.95);
 
   --secondary: #ce0eae;
-  --secondary-rgb: 206, 14, 174;
-  --secondary-hover: #910d7b;
+  --secondary-rgb: #{HexToRGB(#ce0eae)};
+  --secondary-hover: rgba(#{HexToRGB(#ce0eae)}, 0.95);
 
   --success: #009a00;
-  --success-rgb: 0, 154, 0;
-  --success-hover: #00ae00;
+  --success-rgb: #{HexToRGB(#009a00)};
+  --success-hover: rgba(#{HexToRGB(#009a00)}, 0.95);
 
   --danger: #ff4117;
-  --danger-rgb: 255, 65, 23;
-  --danger-hover: #ff5631;
+  --danger-rgb: #{HexToRGB(#ff4117)};
+  --danger-hover: rgba(#{HexToRGB(#ff4117)}, 0.95);
 
   --warning: #ffae1a;
-  --warning-rgb: 255, 174, 26;
-  --warning-hover: #ffb52e;
+  --warning-rgb: #{HexToRGB(#ffae1a)};
+  --warning-hover: rgba(#{HexToRGB(#ffae1a)}, 0.95);
 }

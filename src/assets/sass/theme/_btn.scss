@@ -4,26 +4,23 @@
   --btn-color: #1e1e1f;
   --btn-border: #dadada;
 
-  --btn-bg-active: #ccc;
+  --btn-bg-active: #cccccc;
   --btn-bg-hover: #dfdfdf;
+  --btn-color-hover: #1e1e1f;
 
-  --btn-bg-disabled: transparent;
-  --btn-color-disabled: #bfc1c7;
-  --btn-border-disabled: #dadada;
+  --btn-bg-disabled: var(--btn-bg);
+  --btn-color-disabled: var(--btn-color);
+  --btn-border-disabled: var(--btn-border);
 
   /* light color */
-  --btn-light-bg: transparent;
-  --btn-light-bg-hover: #f0f0f0;
-  --btn-light-color: #f0f0f0;
-  --btn-light-color-disabled: #f0f0f0;
-  --btn-light-border: #f0f0f0;
+  --btn-light-color: #e1e1e1;
+  --btn-light-hover-color: #1e1e1f;
+  --btn-light-active-bg: #cecece;
 
   /* light fill color */
-  --btn-light-fill-bg: #f0f0f0;
-  --btn-light-fill-bg-hover: #e4e3e3;
-  --btn-light-fill-color: #020202;
-  --btn-light-color-fill-disabled: #787878;
-  --btn-light-fill-border: #f0f0f0;
+  --btn-light-fill-color: #1e1e1f;
+  --btn-light-fill-bg: #e1e1e1;
+  --btn-light-fill-bg-hover: rgba(#{HexToRGB(#e1e1e1)}, 0.95);
 
   /* sizes */
   --btn-xs: 34px;

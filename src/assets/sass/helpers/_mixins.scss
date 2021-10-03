@@ -37,12 +37,12 @@
 }
 
 @mixin btnColor($name) {
-  --btn-color: var(--tc-white);
-  --btn-color-disabled: rgba(255, 255, 255, 0.5);
-  --btn-border-disabled: transparent;
   --btn-bg: var(--#{$name});
-  --btn-border: var(--#{$name});
   --btn-bg-hover: var(--#{$name}-hover);
   --btn-bg-active: var(--#{$name});
-  --btn-bg-disabled: rgba(var(--#{$name}-rgb), 0.5);
+  --btn-bg-disabled: var(--#{$name});
+  --btn-color: var(--tc-white);
+  --btn-color-disabled: var(--tc-white);
+  --btn-border: transparent;
+  --btn-border-disabled: transparent;
 }
