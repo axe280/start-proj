@@ -20,4 +20,4 @@ const changeSelectPlaceholderColor = () => {
   }
 }
 
-export default changeSelectPlaceholderColor
+changeSelectPlaceholderColor()

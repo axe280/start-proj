@@ -3,14 +3,18 @@
   <div class="header-inner">
     <div class="header-panel container">
       <div class="header-mob-layer-wrapp">
-        <a href="index.html" class="logo">
+        <a
+          href="index.html"
+          class="logo"
+          aria-label="перейти на главную страницу"
+        >
           <img src="../assets/img/logo.svg" alt="logo" />
           <span class="logo__slogan">Lorem ipsum slogan</span>
         </a>
 
-        <div class="burger-menu">
-          <div class="burger-menu-box"></div>
-        </div>
+        <button type="button" class="burger-menu" aria-label="меню">
+          <span class="burger-menu-box"></span>
+        </button>
       </div>
 
       <div class="header-menu">
@@ -80,7 +84,11 @@
         </div>
 
         <div class="dd-search-wrapp">
-          <button class="dd-search-btn" type="button">
+          <button
+            class="dd-search-btn"
+            type="button"
+            aria-label="открыть поиск"
+          >
             <svg class="icon">
               <use xlink:href="../assets/img/sprite.svg#search"></use>
             </svg>
@@ -90,7 +98,7 @@
             <div class="search-form__inner">
               <input type="search" placeholder="Поиск" />
               <button type="submit">
-                <svg class="icon icon-search">
+                <svg class="icon icon-search" aria-label="искать">
                   <use xlink:href="../assets/img/sprite.svg#search"></use>
                 </svg>
               </button>

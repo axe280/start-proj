@@ -30,14 +30,10 @@
     top: 50%
     transform: translateY(-50%)
 
-.header
-  .dd-search-wrapp
-    .search-form
-      +breakpoint($lg)
-        top: var(--header-height)
-        transform: none
-        padding: 10px var(--container-space)
+    +breakpoint($lg)
+      width: 300px
+      left: auto
 
-        &__inner
-          max-width: calc(var(--container-width) - var(--container-space) * 2)
-          margin: 0 auto
+.header-aside
+  +breakpoint($lg)
+    position: relative

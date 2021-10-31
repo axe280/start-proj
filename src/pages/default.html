@@ -2,15 +2,15 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <title></title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0"
+      content="width=device-width, initial-scale=1 maximum-scale=1"
     />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Project name</title>
+    <meta name="keywords" content="Описание проекта" />
+    <meta name="description" content="" />
     <meta name="format-detection" content="telephone=no" />
+    <!-- <meta name="theme-color" content="#000000" /> safari 15 -->
     <style>
       .h2 {
         padding: 20px;
@@ -299,7 +299,7 @@
             <br />
             <ol class="pagination">
               <li class="pagination__prev">
-                <a href="#">
+                <a href="#" aria-label="на одну страницу назад">
                   <svg class="icon">
                     <use xlink:href="assets/img/sprite.svg#chevron-left"></use>
                   </svg>
@@ -313,7 +313,7 @@
               <li><a href="#">...</a></li>
               <li><a href="#">15</a></li>
               <li class="pagination__next">
-                <a href="#">
+                <a href="#" aria-label="на одну страницу вперед">
                   <svg class="icon">
                     <use xlink:href="assets/img/sprite.svg#chevron-right"></use>
                   </svg>
@@ -329,7 +329,7 @@
             <br />
             <ul class="social-inline">
               <li>
-                <a href="#">
+                <a href="#" aria-label="фейсбук">
                   <svg class="icon">
                     <use xlink:href="assets/img/sprite.svg#fb"></use>
                   </svg>
@@ -337,7 +337,7 @@
               </li>
 
               <li>
-                <a href="#">
+                <a href="#" aria-label="вконтакте">
                   <svg class="icon">
                     <use xlink:href="assets/img/sprite.svg#vk"></use>
                   </svg>
@@ -345,7 +345,7 @@
               </li>
 
               <li>
-                <a href="#">
+                <a href="#" aria-label="инстаграм">
                   <svg class="icon">
                     <use xlink:href="assets/img/sprite.svg#insta"></use>
                   </svg>
@@ -353,7 +353,7 @@
               </li>
 
               <li>
-                <a href="#">
+                <a href="#" aria-label="ютуб">
                   <svg class="icon">
                     <use xlink:href="assets/img/sprite.svg#youtube"></use>
                   </svg>
@@ -362,7 +362,7 @@
 
               <li>
                 <a href="#">
-                  <svg class="icon">
+                  <svg class="icon" aria-label="телеграм">
                     <use xlink:href="assets/img/sprite.svg#telegram"></use>
                   </svg>
                 </a>
@@ -932,7 +932,7 @@
 
         <section data-aos="fade-up" id="form" class="section-st">
           <div class="container">
-            <form class="st-form" action="#">
+            <form class="st-form" action="#" name="default-form">
               <h2 class="h2">Form</h2>
 
               <h5 class="h5">Radio and checkbox</h5>
@@ -971,7 +971,7 @@
                 <div class="ui-st-checkbox">
                   <label>
                     Option 1
-                    <input type="checkbox" checked />
+                    <input type="checkbox" name="checkboxes" checked />
                     <span class="fake-control"></span>
                   </label>
                 </div>
@@ -979,7 +979,7 @@
                 <div class="ui-st-checkbox">
                   <label>
                     Option 2
-                    <input type="checkbox" />
+                    <input type="checkbox" name="checkboxes" />
                     <span class="fake-control"></span>
                   </label>
                 </div>
@@ -1299,6 +1299,12 @@
           </div>
         </section>
 
+        <section class="section-st">
+          <div class="container">
+            <%=require('html-loader?minimize=false!../partials/form.html')%>
+          </div>
+        </section>
+
         <section data-aos="fade-up" id="text" class="section-st">
           <div class="container">
             <h2 class="h2">Text</h2>
@@ -1365,7 +1371,7 @@
                 optio, possimus beatae rem ex. Unde.
               </p>
 
-              <img src="https://fakeimg.pl/600x400/" />
+              <img src="https://fakeimg.pl/600x400/" alt="" />
 
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure,
@@ -1465,15 +1471,18 @@
           </div>
         </section>
 
-        <section class="section-st">
+        <section class="section-st magnific-gallery">
           <div class="container">
             <h2 class="h2">Cards</h2>
 
             <div class="st-cards">
-              <a href="#" class="st-card">
+              <a href="assets/img/img1.png" class="st-card">
                 <div class="st-card__image">
                   <div class="full-image-bg _cover">
-                    <img src="assets/img/img1.png" alt="" />
+                    <picture>
+                      <source srcset="assets/img/img1.webp" />
+                      <img srcset="assets/img/img1.png" alt="" />
+                    </picture>
                   </div>
                 </div>
                 <div class="st-card__info">
@@ -1484,10 +1493,13 @@
                 </div>
               </a>
 
-              <a href="#" class="st-card">
+              <a href="assets/img/img2.jpg" class="st-card">
                 <div class="st-card__image">
                   <div class="full-image-bg _cover">
-                    <img src="assets/img/img2.jpg" alt="" />
+                    <picture>
+                      <source srcset="assets/img/img2.webp" />
+                      <img srcset="assets/img/img2.jpg" alt="" />
+                    </picture>
                   </div>
                 </div>
                 <div class="st-card__info">
@@ -1497,10 +1509,13 @@
                 </div>
               </a>
 
-              <a href="#" class="st-card">
+              <a href="assets/img/img1.png" class="st-card">
                 <div class="st-card__image">
                   <div class="full-image-bg _cover">
-                    <img src="assets/img/img1.png" alt="" />
+                    <picture>
+                      <source srcset="assets/img/img1.webp" />
+                      <img srcset="assets/img/img1.png" alt="" />
+                    </picture>
                   </div>
                 </div>
                 <div class="st-card__info">
@@ -1510,10 +1525,13 @@
                 </div>
               </a>
 
-              <a href="#" class="st-card">
+              <a href="assets/img/img3.jpg" class="st-card">
                 <div class="st-card__image">
                   <div class="full-image-bg _cover">
-                    <img src="assets/img/img3.jpg" alt="" />
+                    <picture>
+                      <source srcset="assets/img/img3.webp" />
+                      <img srcset="assets/img/img3.jpg" alt="" />
+                    </picture>
                   </div>
                 </div>
                 <div class="st-card__info">
@@ -1536,13 +1554,22 @@
             <div class="full-image-bg _cover _cover-04 _cover-grad-bottom">
               <picture>
                 <source
+                  srcset="assets/img/img3.webp"
+                  media="(min-width: 980px)"
+                />
+                <source
                   srcset="assets/img/img3.jpg"
                   media="(min-width: 980px)"
+                />
+                <source
+                  srcset="assets/img/img3-tablet.webp"
+                  media="(min-width: 500px)"
                 />
                 <source
                   srcset="assets/img/img3-tablet.jpg"
                   media="(min-width: 500px)"
                 />
+                <source srcset="assets/img/img3-mob.webp" />
                 <source srcset="assets/img/img3-mob.jpg" />
                 <img srcset="assets/img/img3.jpg" alt="" />
               </picture>
@@ -1589,13 +1616,22 @@
             <div class="full-image-bg _cover">
               <picture>
                 <source
+                  srcset="assets/img/img3.webp"
+                  media="(min-width: 980px)"
+                />
+                <source
                   srcset="assets/img/img3.jpg"
                   media="(min-width: 980px)"
+                />
+                <source
+                  srcset="assets/img/img3-tablet.webp"
+                  media="(min-width: 500px)"
                 />
                 <source
                   srcset="assets/img/img3-tablet.jpg"
                   media="(min-width: 500px)"
                 />
+                <source srcset="assets/img/img3-mob.webp" />
                 <source srcset="assets/img/img3-mob.jpg" />
                 <img srcset="assets/img/img3.jpg" alt="" />
               </picture>

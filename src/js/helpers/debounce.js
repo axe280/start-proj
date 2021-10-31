@@ -1,11 +1,7 @@
-export default function (fn, delay) {
-  var timeout
-
-  return function () {
+export function debounce(fn, wait = 1) {
+  let timeout
+  return function (...args) {
     clearTimeout(timeout)
-    var args = arguments
-    timeout = setTimeout(function () {
-      fn.apply(this, args)
-    }, delay || 200)
+    timeout = setTimeout(() => fn.call(this, ...args), wait)
   }
 }

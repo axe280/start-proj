@@ -1,6 +1,11 @@
 import $ from 'jquery'
 import Swiper from 'swiper/swiper-bundle.esm.js'
 
+import { debounce } from './helpers/debounce.js'
+
+import './ui/changeSelectPlaceholderColor.js'
+import { closeMenu } from './ui/mainMenu.js'
+
 import './components/tabs.js'
 import './components/magicLinePlugin.js'
 import './components/ratingStars.js'
@@ -8,22 +13,10 @@ import './components/stickyCol.js'
 import './components/animationInputs.js'
 import './components/stickyHeader.js'
 import './components/copyBtn.js'
-import changeSelectPlaceholderColor from './ui/changeSelectPlaceholderColor.js'
-import debounce from './helpers/debounce.js'
 
 $(function () {
-  changeSelectPlaceholderColor()
-
   // page scroll blocker
-  var body = document.body
-
-  var addDocumentScrollBlocker = function () {
-    body.style.overflow = 'hidden'
-  }
-
-  var removeDocumentScrollBlocker = function () {
-    body.style.removeProperty('overflow')
-  }
+  const body = document.body
 
   // click outside target
   $(document).on('click', function (e) {
@@ -46,27 +39,6 @@ $(function () {
     variant: 'hover',
   })
 
-  // open mobile menu
-  var openMenu = function () {
-    $('body').addClass('menu_opened')
-    addDocumentScrollBlocker()
-  }
-
-  var closeMenu = function () {
-    $('body').removeClass('menu_opened')
-    removeDocumentScrollBlocker()
-  }
-
-  $('.burger-menu').on('click', function () {
-    if ($('body').hasClass('menu_opened')) {
-      closeMenu()
-    } else {
-      openMenu()
-    }
-  })
-
-  $('.menu-close-overlay').on('click', closeMenu)
-
   // tel mask
   $('input[type="tel"]').mask('+7 (999) 999-9999')
 
@@ -83,22 +55,6 @@ $(function () {
     $(this).parent().toggleClass('_opened')
   })
 
-  // data-lity
-  $(document).on('lity:ready', function (e, instance) {
-    addDocumentScrollBlocker()
-
-    var el = instance.element()
-    el.find('.lity-close').html(
-      `<svg class="icon icon-close">
-        <use xlink:href="assets/img/sprite.svg#close"></use>
-      </svg>`
-    )
-  })
-
-  $(document).on('lity:close', function () {
-    removeDocumentScrollBlocker()
-  })
-
   // magnific popup
   $('.open-modal-btn').magnificPopup({
     type: 'inline',
@@ -106,52 +62,22 @@ $(function () {
     mainClass: 'mfp-zoom',
     removalDelay: 300,
     cursor: null,
-    callbacks: {
-      open: function () {
-        addDocumentScrollBlocker()
-        $('.mfp-close').html(
-          `<svg class="icon icon-close">
-            <use xlink:href="assets/img/sprite.svg#close"></use>
-          </svg>`
-        )
-      },
-      close: function () {
-        removeDocumentScrollBlocker()
-      },
-    },
+    showCloseBtn: false,
   })
 
   $('.magnific-gallery').magnificPopup({
-    delegate: 'button',
+    delegate: 'a',
     type: 'image',
     midClick: true,
     cursor: null,
     closeOnBgClick: false,
     gallery: {
       enabled: true,
-      arrowMarkup: `
-        <button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%">
-          <svg class="icon">
-            <use xlink:href="assets/img/sprite.svg#chevron-left"></use>
-          </svg>
-        </button>
-      `,
       tCounter: '<span class="mfp-counter">%curr% / %total%</span>',
     },
     mainClass: 'mfp-zoom',
     removalDelay: 300,
     callbacks: {
-      open: function () {
-        addDocumentScrollBlocker()
-        $('.mfp-close').html(
-          `<svg class="icon icon-close">
-            <use xlink:href="assets/img/sprite.svg#close"></use>
-          </svg>`
-        )
-      },
-      close: function () {
-        removeDocumentScrollBlocker()
-      },
       buildControls: function () {
         this.contentContainer.append(this.arrowLeft.add(this.arrowRight))
       },
@@ -173,14 +99,6 @@ $(function () {
 
   var defaultOwlOptions = {
     nav: true,
-    navText: [
-      `<svg class="icon">
-        <use xlink:href="assets/img/sprite.svg#chevron-left"></use>
-      </svg>`,
-      `<svg class="icon">
-        <use xlink:href="assets/img/sprite.svg#chevron-right"></use>
-      </svg>`,
-    ],
     onDrag: onDragHandler,
     onDragged: onDraggedHandler,
   }
