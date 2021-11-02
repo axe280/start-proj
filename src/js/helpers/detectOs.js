@@ -1,4 +1,4 @@
-export default function detectOS() {
+export const detectOS = () => {
   const platform = navigator.platform.toLowerCase(),
     iosPlatforms = ['iphone', 'ipad', 'ipod', 'ipod touch']
 

@@ -5,6 +5,7 @@ import { debounce } from './helpers/debounce.js'
 
 import './ui/changeSelectPlaceholderColor.js'
 import { closeMenu } from './ui/mainMenu.js'
+import { setDiffViewportVariable } from './ui/setDiffViewportVariable.js'
 
 import './components/tabs.js'
 import './components/magicLinePlugin.js'
@@ -240,27 +241,27 @@ $(function () {
     targetIds.push(attr)
   })
 
-  var targetOffsetPos = 100
+  // var targetOffsetPos = 100
 
-  $(window).on('scroll', function () {
-    $menuLinks.removeClass('_active')
-    var currentPosition = $(window).scrollTop()
+  // $(window).on('scroll', function () {
+  //   $menuLinks.removeClass('_active')
+  //   var currentPosition = $(window).scrollTop()
 
-    targetIds.forEach(function (id) {
-      var $target = $(id)
-      var topTargetPos = $target.offset().top - targetOffsetPos
-      var bottomTargetPos = $target.offset().top + $target.outerHeight()
+  //   targetIds.forEach(function (id) {
+  //     var $target = $(id)
+  //     var topTargetPos = $target.offset().top - targetOffsetPos
+  //     var bottomTargetPos = $target.offset().top + $target.outerHeight()
 
-      if (currentPosition > topTargetPos && currentPosition < bottomTargetPos) {
-        $menuLinks.removeClass('_active')
-        $menuLinks.each(function () {
-          if ($(this).attr('href') === id) {
-            $(this).addClass('_active')
-          }
-        })
-      }
-    })
-  })
+  //     if (currentPosition > topTargetPos && currentPosition < bottomTargetPos) {
+  //       $menuLinks.removeClass('_active')
+  //       $menuLinks.each(function () {
+  //         if ($(this).attr('href') === id) {
+  //           $(this).addClass('_active')
+  //         }
+  //       })
+  //     }
+  //   })
+  // })
 
   // slow scroll to
   $('a.scrollto-js').on('click', function () {
@@ -277,22 +278,9 @@ $(function () {
     return false
   })
 
-  // fix viewport app height for mobile
-  const isIOSFunc = () => {
-    return /iPad|iPhone/.test(navigator.userAgent)
-  }
-
-  const isIOS = isIOSFunc()
-
-  if (isIOS) {
-    body.style.setProperty('--app-min-height', '100%')
-    const appHeight = () => {
-      body.style.setProperty('--app-height', `${window.innerHeight}px`)
-    }
-
-    appHeight()
-    window.addEventListener('resize', appHeight)
-  }
+  // resize handlers
+  setDiffViewportVariable()
+  window.addEventListener('resize', debounce(setDiffViewportVariable, 200))
 
   // document resize hendler
   $(window).on(
@@ -305,6 +293,6 @@ $(function () {
       if ($(window).width() >= 980 && $('body').hasClass('menu_opened')) {
         closeMenu()
       }
-    }, 50)
+    }, 200)
   )
 })
