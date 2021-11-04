@@ -2,7 +2,6 @@ const glob = require('glob').sync
 const path = require('path')
 const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 // const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
@@ -64,7 +63,13 @@ module.exports = {
         test: /\.sass$/,
         use: [
           'style-loader',
-          MiniCssExtractPlugin.loader,
+          // MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../../', // path to director where assets folder is located
+            },
+          },
           {
             loader: 'css-loader',
             options: { sourceMap: true },
@@ -91,7 +96,12 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../../', // path to director where assets folder is located
+            },
+          },
           {
             loader: 'css-loader',
             options: { sourceMap: true },
@@ -121,15 +131,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}css/[name].[hash].css`,
     }),
-    new CopyWebpackPlugin([
-      { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
-      {
-        from: `${PATHS.src}/${PATHS.assets}icons`,
-        to: `${PATHS.assets}img/icons`,
-      },
-      { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
-      { from: `${PATHS.src}/static`, to: '' },
-    ]),
 
     // Automatic creation any html pages (Don't forget to RERUN dev server)
     ...PAGES.map((page) => {

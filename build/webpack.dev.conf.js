@@ -1,13 +1,8 @@
 const webpack = require('webpack')
-const fs = require('fs')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 
 const PATHS = baseWebpackConfig.externals.paths
-const PAGES_DIR = `${PATHS.src}/templates`
-const PAGES = fs
-  .readdirSync(PAGES_DIR)
-  .filter((fileName) => fileName.endsWith('.html'))
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   // DEV config
@@ -31,7 +26,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]',
+          name(resourcePath) {
+            return resourcePath.slice(resourcePath.indexOf('assets'))
+          },
         },
       },
       {

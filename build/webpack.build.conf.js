@@ -1,6 +1,9 @@
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
+const PATHS = baseWebpackConfig.externals.paths
 
 const buildWebpackConfig = merge(baseWebpackConfig, {
   // BUILD config
@@ -27,7 +30,19 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
       },
     ],
   },
-  plugins: [new CleanWebpackPlugin()],
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
+      // {
+      //   from: `${PATHS.src}/${PATHS.assets}videos`,
+      //   to: `${PATHS.assets}videos`,
+      // },
+      { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
+      { from: `${PATHS.src}/static`, to: '' },
+    ]),
+
+    new CleanWebpackPlugin(),
+  ],
 })
 
 module.exports = new Promise((resolve, reject) => {
