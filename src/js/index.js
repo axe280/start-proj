@@ -80,7 +80,9 @@ $(function () {
     removalDelay: 300,
     callbacks: {
       buildControls: function () {
-        this.contentContainer.append(this.arrowLeft.add(this.arrowRight))
+        if (this.arrowLeft) {
+          this.contentContainer.append(this.arrowLeft.add(this.arrowRight))
+        }
       },
     },
   })

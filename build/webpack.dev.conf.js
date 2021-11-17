@@ -11,8 +11,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   devServer: {
     contentBase: PATHS.dist,
     open: true,
-    host: '192.168.0.111',
-    // host: 'localhost',
+    // host: '192.168.0.111',
+    host: 'localhost',
     disableHostCheck: true,
     port: 3000,
     overlay: {
@@ -35,7 +35,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         test: /\.(woff(2)?|ttf|eot|otf)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader',
         options: {
-          name: '../fonts/[name].[ext]',
+          name(resourcePath) {
+            return resourcePath.slice(resourcePath.indexOf('assets'))
+          },
         },
       },
     ],
