@@ -1,90 +1,80 @@
-.header_sticky
-  .header-inner
-    position: fixed
-    left: 0
-    top: 0
-    right: 0
-    z-index: 200
-    box-shadow: var(--shadow-z2)
-    animation: .25s slideInDown ease
+.header
+  &._sticky
+    .header-inner
+      height: var(--header-sticky-diff)
+      padding-top: 0
+      box-shadow: 0 0 10px rgba(#000, 0.1)
 
-    +breakpoint($lg)
-      padding: 10px 0
+    .header-top-panel
+      @media (min-width: $bp-min-lg)
+        transform: translateY(calc(var(--header-sticky-diff) * -1))
 
-  .header-top-panel
-    +breakpoint($lg)
-      display: none
+    .menu-wrapper-fixed
+      @media (max-width: $bp-max-lg)
+        padding-top: var(--header-sticky-diff)
 
 .header-top-panel
   color: #fff
 
-  +breakpoint($lg)
+  @media (min-width: $bp-min-lg)
     position: absolute
     top: 0
     left: 0
     width: 100%
     background-color: #000
+    transition: transform 0.2s linear
 
   .container
-    +breakpoint-max-width($m-lg)
+    @media (max-width: $bp-max-lg)
       padding: 0
 
-    +breakpoint($lg)
+    @media (min-width: $bp-min-lg)
       display: flex
       align-items: center
       justify-content: space-between
-      height: var(--header-top-panel-height)
+      height: var(--header-top-panel)
 
 .header
   position: relative
+  z-index: 800
   display: flex
   flex-direction: column
   height: var(--header-height)
 
-  +breakpoint($lg)
-    padding-top: var(--header-top-panel-height)
-
 .header-inner
-  background-color: var(--header-bg)
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
   flex-grow: 1
   display: flex
   align-items: center
+  height: var(--header-height)
+  background-color: var(--bg-header)
+  transition: height 0.2s linear, padding 0.2s linear, background-color 0.8s linear
 
-  +breakpoint($lg)
-    padding: 10px 0
-    // transition: transform .3s
+  @media (min-width: $bp-min-lg)
+    padding-top: var(--header-top-panel)
 
 .header-panel
+  display: flex
+  align-items: center
   flex-grow: 1
 
-  +breakpoint($lg)
+  @media (min-width: $bp-min-lg)
     display: flex
     align-items: center
     justify-content: space-between
 
-.header-mob-layer-wrapp
-  display: flex
-  align-items: center
-  justify-content: space-between
-
-  +breakpoint-max-width($m-lg)
-    position: relative
-    z-index: 40
-    padding: 10px 0
-
 .header-aside
   display: flex
   align-items: center
+  justify-content: flex-end
+  position: relative
 
-  +breakpoint-max-width($m-lg)
-    justify-content: flex-end
-    position: absolute
-    top: 0
-    height: var(--header-height)
-    right: 64px
-    left: 180px
-    z-index: 42
-    padding: 10px 0
+  @media (max-width: $bp-max-lg)
+    z-index: 40
+    flex-grow: 1
 
 .logo
   display: flex
@@ -92,43 +82,53 @@
   outline: none
   text-decoration: none
   transition: opacity .2s
+  margin-right: 40px
+
+  @media (max-width: $bp-max-lg)
+    position: relative
+    z-index: 40
 
   &:hover
-    opacity: .95
+    opacity: 0.95
 
   img
     width: 44px
     height: 44px
 
-  &__slogan
-    max-width: 80px
-    margin-left: 16px
-    font-size: 12px
-    line-height: 16px
-    color: #fff
-
 .dd-lang
   position: relative
-
-  +breakpoint($md)
-    margin-left: 40px
+  margin: 8px 16px
+  padding-left: 4px
+  padding-right: 4px
 
   &._opened
     .dd-lang-list
       display: block
 
+    .dd-lang-btn
+      .icon
+        transform: rotate(-180deg)
+
 .dd-lang-btn
+  position: relative
   display: flex
   align-items: center
+  color: var(--primary)
+
+  &::before
+    content: ''
+    position: absolute
+    left: -4px
+    right: -4px
+    top: -4px
+    bottom: -4px
+    z-index: 2
+    border: 1px solid #fff
 
   .icon
-    margin-left: 4px
-    width: var(--icon-xs)
-    height: var(--icon-xs)
-
-  &:hover
-    .dd-lang-active
-      color: var(--primary-hover)
+    margin-left: 8px
+    width: var(--icon-xxs)
+    height: var(--icon-xxs)
 
 .dd-lang-active,
 .dd-lang-list a
@@ -140,7 +140,7 @@
   text-transform: uppercase
   text-decoration: none
   color: var(--primary)
-  transition: color $transDefault
+  transition: color $transition-default
 
 .dd-lang-list
   display: none
@@ -148,6 +148,7 @@
   left: 0
   right: 0
   top: 100%
+  box-shadow: 0px 4px 6px rgba(#000, 0.05)
 
   li
     border-top: 1px solid var(--border)
@@ -157,3 +158,28 @@
 
     &:hover
       color: var(--primary-hover)
+
+.menu-wrapp
+  margin-top: auto
+  margin-bottom: auto
+
+.menu
+  @media (min-width: $bp-min-lg)
+    display: flex
+    align-items: center
+
+  li
+    margin-bottom: 20px
+    text-align: center
+
+    @media (min-width: $bp-min-lg)
+      margin: 0 20px
+
+  a
+    font-size: var(--text-lg)
+    line-height: var(--text-lh)
+    text-transform: uppercase
+    text-decoration: none
+
+    &._active
+      color: var(--secondary)

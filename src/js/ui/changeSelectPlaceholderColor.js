@@ -1,4 +1,4 @@
-const changeSelectPlaceholderColor = () => {
+export const changeSelectPlaceholderColor = () => {
   const $selectList = document.querySelectorAll('select')
 
   if ($selectList.length) {
@@ -19,5 +19,3 @@ const changeSelectPlaceholderColor = () => {
     })
   }
 }
-
-changeSelectPlaceholderColor()

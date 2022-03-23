@@ -13,37 +13,34 @@ button, .btn
   text-decoration: none
   text-align: center
   cursor: pointer
-  transition: background-color $transDefault, color $transDefault, border-color $transDefault, opacity $transDefault
+  transition: all $transition-default
 
   &:hover
     text-decoration: none
 
   .icon
-    transition: fill $transDefault, stroke $transDefault, opacity $transDefault
+    transition: all $transition-default
 
 
 // page buttons default with class
 .btn
-  height: var(--btn-default)
-  padding-left: 20px
-  padding-right: 20px
+  padding: var(--btn-size-default)
+  font-size: var(--btn-font-size)
+  line-height: 24px
   font-family: var(--site-font-family), sans-serif
-  font-weight: 600
-  font-size: var(--text-ui-md)
-  line-height: 1em
+  font-weight: 700
   color: var(--btn-color)
   border: 2px solid var(--btn-border)
   background-color: var(--btn-bg)
-  border-radius: var(--btn-radius-sm)
+  border-radius: var(--radius-xs)
 
   &:hover
-    color: var(--btn-color)
-    background-color: var(--btn-bg-hover)
-    border-color: var(--btn-bg-hover)
+    @media (min-width: $bp-min-lg)
+      background-color: var(--btn-border)
+      color: var(--tc-dark)
 
   &:active
-    background-color: var(--btn-bg-active)
-    border-color: var(--btn-bg-active)
+    opacity: 0.8
 
   .icon
     margin-right: 12px
@@ -52,130 +49,137 @@ button, .btn
       margin-right: 0
       margin-left: 12px
 
+  &._sm
+    padding: var(--btn-size-sm)
+
   // disabled
   &[disabled],
   &[disabled]:hover,
   &[disabled]:active
     cursor: default
-    color: var(--btn-color-disabled)
-    background-color: var(--btn-bg-disabled)
-    border-color: var(--btn-border-disabled)
-    opacity: .5
+    opacity: 0.6
+    background-color: var(--btn-bg)
 
-  // light / fill
-  &._light
-    --btn-bg-hover: var(--btn-light-color)
-    --btn-bg-active: var(--btn-light-active-bg)
-    --btn-border: var(--btn-light-color)
-    --btn-color: var(--btn-light-color)
-    --btn-color-disabled: var(--btn-light-color)
+  &._primary
+    border-color: var(--primary)
+    color: var(--primary)
 
     &:hover
-      --btn-color: var(--btn-light-hover-color)
+      @media (min-width: $bp-min-lg)
+        background-color: var(--primary)
+        color: var(--tc-white)
+        border-color: transparent
 
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled]:active
+      background-color: transparent
+      border-color: var(--border-primary)
+      color: var(--primary)
 
-  &._light-fill
-    --btn-bg: var(--btn-light-fill-bg)
-    --btn-bg-hover: var(--btn-light-fill-bg-hover)
-    --btn-bg-active: var(--btn-light-fill-bg)
-    --btn-bg-disabled: var(--btn-light-fill-bg)
-    --btn-color: var(--btn-light-fill-color)
-    --btn-color-disabled: var(--btn-light-fill-color)
-    --btn-border: transparent
-    --btn-border-disabled: transparent
+    &._fill
+      color: var(--tc-white)
+      border-color: transparent
+      background-color: var(--primary)
 
-  // xs
-  &._xs
-    height: var(--btn-xs)
-    padding: 0 12px
-    font-weight: normal
-    font-size: var(--text-ui-sm)
-    border-width: 1px
+      &:hover
+        @media (min-width: $bp-min-lg)
+          background-color: var(--primary-hover)
 
-    .icon
-      margin-right: 8px
+      &:active
+        background-color: var(--primary)
 
-      &:last-child
-        margin-left: 8px
-        margin-right: 0
+    &._light
+      color: var(--primary)
+      border-color: transparent
+      background-color: rgba(var(--primary-rgb), 0.1)
 
-  // sm
-  &._sm
-    height: var(--btn-sm)
-    padding: 0 16px
-    font-size: var(--text-ui-sm)
-    border-width: 1px
+      &:hover
+        @media (min-width: $bp-min-lg)
+          background-color: var(--primary-hover)
 
-    .icon
-      margin-right: 10px
+      &:active
+        color: var(--tc-white)
+        background-color: var(--primary)
 
-      &:last-child
-        margin-left: 10px
-        margin-right: 0
-
-  // md
-  &._md
-    height: var(--btn-md)
-    padding: 0 24px
-    font-size: var(--text-ui-md)
-
-  // lg
-  &._lg
-    height: var(--btn-lg)
-    padding: 0 30px
-    font-size: var(--text-ui-lg)
-
-  // btn icon
-  &.btn_icon
-    padding: 0
-    width: var(--btn-default)
-
-    &._round
-      border-radius: 50%
-
-    &._xs
-      width: var(--btn-xs)
-    &._sm
-      width: var(--btn-sm)
-    &._md
-      width: var(--btn-md)
-    &._lg
-      width: var(--btn-lg)
-
-    .icon,
-    .icon:last-child
-      margin: 0
-
-  // btn link
-  &.btn_link
-    --btn-bg-hover: transparent
-    --btn-bg-active: transparent
-    --btn-border: transparent
-    --btn-border-disabled: transparent
-    --btn-color: var(--link-color)
-    --btn-color-hover: var(--link-color-hover)
-    --btn-color-disabled: var(--link-color)
-
-
-  // colors
-  &._primary
-    +btnColor(primary)
   &._secondary
-    +btnColor(secondary)
-  &._danger
-    +btnColor(danger)
-  &._success
-    +btnColor(success)
-  &._warning
-    +btnColor(warning)
+    border-color: var(--border-secondary)
+    color: var(--secondary)
+
+    &:hover
+      @media (min-width: $bp-min-lg)
+        background-color: var(--secondary-hover)
+        color: var(--tc-white)
+        border-color: transparent
+
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled]:active
+      background-color: transparent
+      border-color: var(--border-secondary)
+      color: var(--secondary)
+
+    &._fill
+      color: var(--tc-white)
+      border-color: transparent
+      background-color: var(--secondary)
+
+      &:hover
+        @media (min-width: $bp-min-lg)
+          background-color: var(--secondary-hover)
+
+      &:active
+        background-color: var(--secondary)
+
+  &._light
+    border-color: var(--tc-white)
+    color: var(--tc-white)
+
+    &:hover
+      @media (min-width: $bp-min-lg)
+        background-color: var(--bg-white)
+        color: var(--btn-color)
+        border-color: transparent
+
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled]:active
+      background-color: transparent
+      border-color: var(--tc-white)
+      color: var(--tc-white)
+
+    &._fill
+      color: var(--btn-color)
+      border-color: transparent
+      background-color: var(--bg-white)
+
+      &:hover
+        @media (min-width: $bp-min-lg)
+          opacity: 0.9
+
+      &[disabled],
+      &[disabled]:hover,
+      &[disabled]:active
+        background-color: var(--bg-white)
+        border-color: var(--tc-white)
+        color: var(--btn-color)
+        opacity: 0.6
+
+  &._icon
+    width: var(--btn-icon-size-default)
+    height: var(--btn-icon-size-default)
+    padding: 0
+
+    .icon
+      margin: 0
 
   // btn width
   &._max
     width: 100%
 
   &._max-mobile
-    +breakpoint-max-width($m-md)
+    @media (max-width: $bp-max-md)
       width: 100%
 
   &._min-width
-    min-width: 140px
+    min-width: var(--btn-min-width)

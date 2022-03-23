@@ -1,88 +1,92 @@
 <!-- modals -->
-<div id="thanks" class="st-modal mfp-hide">
-  <div class="st-modal__head">
-    <div class="heading _h2">Спасибо!</div>
-  </div>
-  <div class="st-modal__body">
-    <p>
-      Ваше сообщение отправлено и в ближайшее время наши специалисты обработают
-      его и ответят Вам.
-    </p>
-  </div>
-</div>
+<div class="modal" id="feedback" aria-hidden="true">
+  <div class="modal-overlay" tabindex="-1" data-micromodal-close>
+    <div class="modal-container" role="dialog">
+      <button
+        class="modal-close"
+        aria-label="Close modal"
+        data-micromodal-close
+      >
+        <svg class="icon">
+          <use xlink:href="/assets/img/sprite.svg#close"></use>
+        </svg>
+      </button>
 
-<div id="feedback" class="st-modal mfp-hide">
-  <button type="button" class="mfp-close">
-    <svg class="icon icon-close">
-      <use xlink:href="/assets/img/sprite.svg#close"></use>
-    </svg>
-  </button>
+      <div class="modal-inner-wrapper">
+        <header class="modal-head">
+          <div class="heading _h2">Обратная связь</div>
+        </header>
 
-  <div class="st-modal__head">
-    <div class="heading _h2">Обратная связь</div>
-  </div>
+        <div class="modal-body">
+          <form class="st-form feedback-form">
+            <div class="form-group">
+              <label class="field-item">
+                <span class="field-item__label">Имя</span>
+                <span class="field-item__field">
+                  <input type="text" name="name" required />
+                </span>
+                <span class="field-item__message"
+                  >Пожалуйста заполните поле</span
+                >
+              </label>
+            </div>
 
-  <div class="st-modal__body">
-    <form class="st-form" action="#">
-      <div class="form-group">
-        <label class="field-item">
-          <span class="field-item__label">Имя</span>
-          <span class="field-item__field">
-            <input type="text" />
-          </span>
-          <span class="field-item__message">Пожалуйста заполните поле</span>
-        </label>
+            <div class="form-group">
+              <label class="field-item">
+                <span class="field-item__label">Фамилия</span>
+                <span class="field-item__field">
+                  <input type="text" name="surname" required />
+                </span>
+                <span class="field-item__message"
+                  >Пожалуйста заполните поле</span
+                >
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label class="field-item _error">
+                <span class="field-item__label">E-mail</span>
+                <span class="field-item__field">
+                  <input type="email" name="email" required />
+                </span>
+                <span class="field-item__message"
+                  >Пожалуйста заполните Email</span
+                >
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label class="field-item">
+                <span class="field-item__label">Телефон</span>
+                <span class="field-item__field">
+                  <input type="tel" name="phone" />
+                </span>
+                <span class="field-item__message"></span>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label class="field-item">
+                <span class="field-item__label">Сообщение</span>
+                <span class="field-item__field">
+                  <textarea name="message"></textarea>
+                </span>
+                <span class="field-item__message"></span>
+              </label>
+            </div>
+
+            <div class="_txt-center mb-24">
+              <button class="btn _primary _max" type="submit">Отправить</button>
+            </div>
+
+            <div class="text_xs _txt-center">
+              Нажиимая на кнопку я соглашаюсь <br />
+              <a href="#">с условиямии обработки персональных данных</a>
+            </div>
+          </form>
+        </div>
       </div>
-
-      <div class="form-group">
-        <label class="field-item">
-          <span class="field-item__label">Фамилия</span>
-          <span class="field-item__field">
-            <input type="text" />
-          </span>
-          <span class="field-item__message">Пожалуйста заполните поле</span>
-        </label>
-      </div>
-
-      <div class="form-group">
-        <label class="field-item _error">
-          <span class="field-item__label">E-mail</span>
-          <span class="field-item__field">
-            <input type="email" />
-          </span>
-          <span class="field-item__message">Пожалуйста заполните Email</span>
-        </label>
-      </div>
-
-      <div class="form-group">
-        <label class="field-item">
-          <span class="field-item__label">Телефон</span>
-          <span class="field-item__field">
-            <input type="tel" />
-          </span>
-          <span class="field-item__message"></span>
-        </label>
-      </div>
-
-      <div class="form-group">
-        <label class="field-item">
-          <span class="field-item__label">Сообщение</span>
-          <span class="field-item__field">
-            <textarea></textarea>
-          </span>
-          <span class="field-item__message"></span>
-        </label>
-      </div>
-
-      <div class="text_center mt-24 mb-24">
-        <button class="btn _primary _min-width" type="submit">Отправить</button>
-      </div>
-
-      <div class="text_xs text_center">
-        Нажиимая на кнопку я соглашаюсь <br />
-        <a href="#">с условиямии обработки персональных данных</a>
-      </div>
-    </form>
+    </div>
   </div>
 </div>
 <!-- end modals -->

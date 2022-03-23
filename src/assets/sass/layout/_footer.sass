@@ -1,26 +1,27 @@
 .footer
   background-color: var(--bg-dark)
-  color: rgba(#fff, .5)
+  color: rgba(var(--tc-white-rgb), 0.5)
 
   a
-    color: rgba(#fff, .5)
+    color: rgba(var(--tc-white-rgb), 0.5)
     text-decoration: none
 
     &:hover
-      color: var(--tc-light)
+      @media (min-width: $bp-min-lg)
+        color: var(--tc-white)
 
 .footer-main
   padding: 40px 0
 
-  +breakpoint($md)
+  @media (min-width: $bp-min-md)
     display: flex
     justify-content: space-between
 
 .footer-bottom
   padding: 28px 0
-  border-top: 1px solid var(--border)
+  border-top: 1px solid rgba(#fff, 0.3)
 
-  +breakpoint($md)
+  @media (min-width: $bp-min-md)
     .container
       display: flex
       justify-content: space-between
@@ -31,7 +32,7 @@
     font-size: var(--text-xs)
     line-height: 1.45em
 
-    +breakpoint($md)
+    @media (min-width: $bp-min-md)
       margin-bottom: 0
 
     &:last-child
@@ -48,4 +49,21 @@
 .footer-logo
   width: 100px
 
+.footer-main-col
+  @media (min-width: $bp-min-md)
+    flex-grow: 1
+    margin-right: auto
 
+.footer-menu
+  @media (min-width: $bp-min-md)
+    columns: 3
+    column-gap: 40px
+    max-width: 600px
+    margin: 0 auto
+
+  li
+    text-align: center
+    margin-bottom: 10px
+
+    @media (min-width: $bp-min-md)
+      text-align: left

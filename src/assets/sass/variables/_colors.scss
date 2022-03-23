@@ -1,0 +1,53 @@
+@function HexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+:root {
+  /* text */
+  --tc-dark: #1e1e1f;
+  --tc-dark-rgb: #{HexToRGB(#1e1e1f)};
+  --tc-light: #bfc1c7;
+  --tc-white: #ffffff;
+  --tc-white-rgb: #{HexToRGB(#ffffff)};
+  --tc-medium: #82848a;
+
+  /* link */
+  --link-color: #1c80bd;
+  --link-color-hover: #2597de;
+
+  /* background */
+  --bg-body: #f5f5f5;
+  --bg-header: #353535;
+
+  --bg-dark: #000000;
+  --bg-dark-rgb: #{HexToRGB(#000000)};
+  --bg-light: #f7f7f7;
+  --bg-white: #ffffff;
+  --bg-white-rgb: #{HexToRGB(#ffffff)};
+  --bg-medium: #82848a;
+
+  /* border */
+  --border: #e6e7eb;
+  --border-hover: #dad7d7;
+
+  /* main */
+  --primary: #2381bb;
+  --primary-rgb: #{HexToRGB(#2381bb)};
+  --primary-hover: rgba(#{HexToRGB(#2381bb)}, 0.95);
+
+  --secondary: #ce0eae;
+  --secondary-rgb: #{HexToRGB(#ce0eae)};
+  --secondary-hover: rgba(#{HexToRGB(#ce0eae)}, 0.95);
+
+  --success: #009a00;
+  --success-rgb: #{HexToRGB(#009a00)};
+  --success-hover: rgba(#{HexToRGB(#009a00)}, 0.95);
+
+  --danger: #ff4117;
+  --danger-rgb: #{HexToRGB(#ff4117)};
+  --danger-hover: rgba(#{HexToRGB(#ff4117)}, 0.95);
+
+  --warning: #ffae1a;
+  --warning-rgb: #{HexToRGB(#ffae1a)};
+  --warning-hover: rgba(#{HexToRGB(#ffae1a)}, 0.95);
+}

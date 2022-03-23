@@ -1,0 +1,63 @@
+/* transition */
+$transition-default: 0.2s ease;
+
+:root {
+  /* input, select */
+  --control-placeholder: #666666;
+  --control-color: #1e1e1f;
+  --control-border-color: var(--border);
+  --control-focus-color: var(--border-hover);
+  --control-bg: #ffffff;
+  --control-disabled: rgba(#ffffff, 0.5);
+
+  --control-height: 48px;
+  --control-space: 16px;
+
+  /* btn */
+  --btn-size-default: 10px 20px;
+  // --btn-size-md: 18px 20px;
+  --btn-size-sm: 6px 14px;
+  --btn-min-width: 160px;
+  --btn-icon-size-default: 48px;
+
+  --btn-font-size: 14px;
+  // --btn-font-size-md: 16px;
+
+  --btn-color: #1e1e1f;
+  --btn-bg: transparent;
+  --btn-border: var(--border);
+
+  /* icon size */
+  --icon-xxs: 10px;
+  --icon-xs: 16px;
+  --icon-sm: 18px;
+  --icon-md: 22px;
+  --icon-default: 24px;
+  --icon-lg: 30px;
+  --icon-xl: 40px;
+  --icon-2xl: 50px;
+  --icon-3xl: 60px;
+
+  /* THEME SHADOW */
+  --shadow-z1: 0 0 2px rgba(0, 0, 0, 0.05);
+  --shadow-z2: 0 0 4px rgba(0, 0, 0, 0.05);
+  --shadow-z3: 0 0 8px rgba(0, 0, 0, 0.05);
+
+  /* THEME RADIUS */
+  --radius-xs: 4px;
+  --radius-sm: 10px;
+  --radius-default: 18px;
+  --radius-md: 20px;
+  --radius-lg: 24px;
+}
+
+@media only screen and (min-width: $bp-min-md) {
+  :root {
+    /* input, select */
+    --control-space: 20px;
+
+    /* btn */
+    --btn-size-default: 14px 28px;
+    --btn-icon-size-default: 56px;
+  }
+}

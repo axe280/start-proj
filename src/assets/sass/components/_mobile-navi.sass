@@ -1,3 +1,21 @@
+.burger-menu-wrapp
+  position: relative
+  // z-index: 40
+  margin-left: 26px
+
+  @media (min-width: $bp-min-lg)
+    display: none
+
+  &::before
+    content: ''
+    position: absolute
+    left: -10px
+    top: -10px
+    right: -10px
+    bottom: -10px
+    z-index: -1
+    border: 1px solid #fff
+
 .burger-menu,
 .burger-menu-box
   &::before,
@@ -18,15 +36,11 @@
   align-items: center
   justify-content: flex-start
   position: relative
-  z-index: 40
   width: 24px
   height: 20px
   user-select: none
   cursor: pointer
   color: var(--tc-white)
-
-  +breakpoint($lg)
-    display: none
 
   &::before
     top: 0
@@ -43,16 +57,16 @@
   height: 2px
   position: relative
 
-
 // opened menu
 .menu_opened
+  @media (max-width: $bp-max-lg)
+    background-color: var(--bg-header)
+    transition: background-color 0.5s linear
+
   .burger-menu
     &::before,
     &::after
       width: 0
-
-  .header-mob-layer-wrapp
-    // background-color: #911212
 
   .burger-menu-box
     &:before
@@ -62,19 +76,20 @@
       transform: rotate(45deg)
 
 
-@media only screen and (max-width: $m-lg)
+@media (max-width: $bp-max-lg)
   .menu-wrapper-fixed
     position: fixed
     left: 0
     top: 0
     bottom: 0
+    width: 100%
     height: 100vh
     z-index: 30
     padding-top: var(--header-height)
     padding-bottom: var(--viewport-height-diff)
-    background-color: var(--header-bg)
+    background-color: var(--bg-header)
     transform: translate(-100%)
-    transition: transform .35s cubic-bezier(0.25, 1, 0.5, 1), padding-bottom $transDefault
+    transition: transform .35s cubic-bezier(0.25, 1, 0.5, 1), padding-bottom $transition-default
 
   .menu-open-wrapper
     display: flex
@@ -84,105 +99,16 @@
     height: 100%
     overflow: auto
 
-  .menu-close-overlay
-    position: absolute
-    cursor: pointer
-    left: 0
-    top: 0
-    height: 100%
-    z-index: -1
-    display: none
-
   // fade
   ._menu-mob-fade
     .menu-wrapper-fixed
-      right: 0
       opacity: 0
 
-  .menu_opened
-    ._menu-mob-fade
-      .menu-wrapper-fixed
-        opacity: 1
-        transition: opacity .3s ease-in, padding-bottom $transDefault
-
-  // // left
-  // ._menu-mob-left
-  //   .menu-wrapper-fixed
-  //     right: 0
-
-  // // right
-  // ._menu-mob-right
-  //   .menu-wrapper-fixed
-  //     left: 0
-  //     right: 0
-  //     transform: translate(100%)
-
-  //   .menu-close-overlay
-  //     right: 0
-  //     left: auto
-
-  // // top
-  // ._menu-mob-top
-  //   .header-mob-layer-wrapp
-  //     background-color: var(--header-bg)
-  //     padding-left: var(--container-space)
-  //     padding-right: var(--container-space)
-  //     margin: 0 calc(var(--container-space) * -1)
-
-    // .menu-wrapper-fixed
-    //   left: 0
-    //   right: 0
-    //   transform: translateY(-100%)
-    //   background-color: var(--header-bg)
-
-    // .menu-close-overlay
-    //   top: 100%
-    //   left: 0
-
-    // menu top one more version
-    .menu-wrapper-fixed
-      left: 0
-      right: 0
-      transform: translateY(-100%)
-      background: none
-
-    .menu-close-overlay
-      top: 0
-      left: 0
-
-    .menu-open-wrapper
-      height: auto
-      max-height: 100%
-      background-color: var(--header-bg)
-
-  // opened menu
   .menu_opened
     .menu-wrapper-fixed
       transform: translate(0)
 
-    .menu-close-overlay
-      width: 2000px
-      background-color: rgba(#000000, .15)
-      transition: background-color .2s ease-in .35s
-
-// @media only screen and (max-width: $m-md)
-//   // left
-//   ._mob-left
-//     .menu-wrapper-fixed
-//       right: 25%
-
-//   // right
-//   ._mob-right
-//     .menu-wrapper-fixed
-//       left: 25%
-
-// @media only screen and (max-width: $m-mobile-s)
-//   // left
-//   ._mob-left
-//     .menu-wrapper-fixed
-//       right: 62px
-
-//   // right
-//   ._mob-right
-//     .menu-wrapper-fixed
-//       left: 62px
+    ._menu-mob-fade
+      .menu-wrapper-fixed
+        opacity: 1
+        transition: opacity 0.1s linear, padding-bottom $transition-default

@@ -15,8 +15,11 @@ body
   padding: 0
   background-color: var(--bg-body)
 
+// loading="lazy" polyfill
+img[data-lazy-src]
+  will-change: contents
+
 .site-wrapper
-  overflow: hidden
   flex: 1 0 auto
   // padding-top: var(--header-height)
 
@@ -36,7 +39,7 @@ body
   padding-top: 20px
   padding-bottom: 20px
 
-  +breakpoint($md)
+  @media (min-width: $bp-min-md)
     padding-top: 40px
     padding-bottom: 40px
 
@@ -45,43 +48,82 @@ body
   padding: 0 var(--container-space)
   margin: 0 auto
 
-  &._max-width
-    max-width: 100%
-
-._negative-spaces
-  margin: 0 calc(var(--container-space) * -1)
-  padding: 0 var(--container-space)
-
+// hidden classes
 .hidden-mobile
-  display: none
+  @media (max-width: $bp-max-md)
+    display: none
 
-  +breakpoint($md)
-    display: block
+.hidden-tablet-desk
+  @media (min-width: $bp-min-md)
+    display: none
 
 .hidden-tablet
-  +breakpoint($md)
+  @media (min-width: $bp-min-md) and (max-width: $bp-max-lg)
     display: none
-
-  +breakpoint($lg)
-    display: block
 
 .hidden-devices
-  display: none
-
-  +breakpoint($lg)
-    display: block
-
-.hidden-desktop
-  +breakpoint($lg)
+  @media (max-width: $bp-max-lg)
     display: none
 
-@media only screen and (min-width: $lg)
-  .site-columns
-    display: grid
-    grid-template-columns: 1fr 270px
-    gap: var(--col-space-between)
+.hidden-desktop
+  @media (min-width: $bp-min-lg)
+    display: none
 
-  .text-bl-grid
-    display: grid
-    grid-template-columns: 1fr 1fr
-    gap: var(--col-space-between)
+// full section bg
+.full-section-bg
+  position: relative
+  display: flex
+  flex-direction: column
+
+  &__head
+    position: relative
+    z-index: 10
+    padding: 40px 0
+
+  &__inner
+    position: relative
+    z-index: 10
+    padding: 40px 0
+
+    &._center
+      margin-top: auto
+      margin-bottom: auto
+
+    &._bottom
+      margin-top: auto
+
+// full image size
+.full-image-bg
+  position: absolute
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  z-index: 5
+
+  &._cover
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      right: 0
+      bottom: 0
+      z-index: 2
+      background-color: rgba(#000, 0.4)
+
+  img, video
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+    object-position: 50% 50%
+    z-index: 1
+
+// anchor bl
+.anchor-bl
+  position: relative
+  top: calc(var(--header-height) * -1)
+  left: 0

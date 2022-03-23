@@ -1,7 +1,5 @@
 {
-  "name": "webpacktemplate",
-  "version": "2.0.0",
-  "description": "My template",
+  "name": "project",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --config ./build/webpack.dev.conf.js",
@@ -11,59 +9,39 @@
   "browserslist": [
     "last 2 version"
   ],
-  "author": "https://github.com/vedees",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vedees/webpack-template.git"
-  },
-  "bugs": {
-    "url": "https://github.com/vedees/webpack-template/issues"
-  },
-  "keywords": [
-    "webpack",
-    "webpack4",
-    "merge",
-    "bable",
-    "bable7",
-    "scss"
-  ],
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
-    "autoprefixer": "^9.7.0",
-    "babel-loader": "^8.0.6",
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.4",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^3.2.0",
-    "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
     "eslint-config-rallycoding": "^3.2.0",
     "expose-loader": "^1.0.0",
     "file-loader": "^4.2.0",
     "html-loader": "^1.3.2",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^4.5.2",
     "mini-css-extract-plugin": "^0.8.0",
-    "node-sass": "^4.13.0",
-    "postcss-combine-media-query": "^1.0.1",
+    "node-sass": "^4.14.1",
     "postcss-loader": "^3.0.0",
     "prettier": "2.4.1",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
-    "surge": "^0.21.6",
-    "svgo": "^1.3.2",
-    "svgo-loader": "^2.2.1",
-    "webpack": "^4.41.2",
+    "surge": "^0.23.1",
+    "webpack": "^4.46.0",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.9.0",
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "jquery": "^3.5.1",
-    "magnific-popup": "^1.1.0",
-    "normalize.css": "^8.0.1",
-    "owl.carousel2": "^2.2.1",
-    "swiper": "^6.1.3"
+    "imask": "^6.4.2",
+    "loading-attribute-polyfill": "^2.0.1",
+    "micromodal": "^0.4.10",
+    "photoswipe": "^4.1.3",
+    "smoothscroll-polyfill": "^0.4.4",
+    "swiper": "^8.0.7"
   }
 }

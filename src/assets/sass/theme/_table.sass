@@ -1,0 +1,41 @@
+table
+  width: 100%
+  text-align: left
+  border: none
+  border-collapse: collapse
+  font-size: var(--text-sm)
+  line-height: 1.25em
+
+  @media (min-width: $bp-min-md)
+    font-size: var(--text-md)
+    line-height: var(--text-lh)
+
+  tbody
+    tr
+      &:nth-child(even)
+        td
+          // background-color: rgba(#fbfbfb, 0.8)
+
+      &:last-child
+        td
+          border: none
+
+  th, td
+    padding: 12px 10px
+    border: none
+    border-bottom: 1px solid var(--border)
+
+    @media (min-width: $bp-min-md)
+      padding: 18px 20px
+
+    &:first-child
+      padding-left: 0
+
+    &:last-child
+      padding-right: 0
+
+  th
+    padding-top: 0
+    vertical-align: bottom
+    font-weight: 700
+

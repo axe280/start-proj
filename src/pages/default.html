@@ -4,12 +4,13 @@
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1 maximum-scale=1"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
     />
-    <title>Project name</title>
+    <title>Project</title>
     <meta name="keywords" content="Описание проекта" />
     <meta name="description" content="" />
     <meta name="format-detection" content="telephone=no" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <!-- <meta name="theme-color" content="#000000" /> safari 15 -->
     <style>
       .h2 {
@@ -29,7 +30,7 @@
     </style>
   </head>
 
-  <body data-theme="">
+  <body>
     <!-- site main wrapper -->
     <div class="site-wrapper">
       <%=require('html-loader?minimize=false!../partials/header.html')%>
@@ -37,252 +38,10 @@
       <main class="main">
         <section class="section-st">
           <div class="container">
-            <h2 class="h2">Colors</h2>
-            <h4 class="h4">Background</h4>
-            <div
-              style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr"
-            >
-              <div>
-                <div class="_bg-primary">
-                  <div style="padding: 5px 20px">primary</div>
-                </div>
-                <br />
-                <div class="_bg-secondary">
-                  <div style="padding: 5px 20px">secondary</div>
-                </div>
-                <br />
-                <div class="_bg-danger">
-                  <div style="padding: 5px 20px">danger</div>
-                </div>
-                <br />
-                <div class="_bg-success">
-                  <div style="padding: 5px 20px">success</div>
-                </div>
-                <br />
-                <div class="_bg-dark">
-                  <div style="padding: 5px 20px">dark</div>
-                </div>
-              </div>
-
-              <div>
-                <div class="_bg-light">
-                  <div style="padding: 5px 20px">light</div>
-                </div>
-                <br />
-                <div class="_bg-medium">
-                  <div style="padding: 5px 20px">medium</div>
-                </div>
-                <br />
-                <div class="_bg-white">
-                  <div style="padding: 5px 20px">white</div>
-                </div>
-                <br />
-                <div class="_bg-grey">
-                  <div style="padding: 5px 20px">grey</div>
-                </div>
-                <br />
-                <div class="_bg-disabled">
-                  <div style="padding: 5px 20px">disabled</div>
-                </div>
-              </div>
-            </div>
-
-            <br />
-            <br />
-            <br />
-
-            <h4 class="h4">Text</h4>
-            <div
-              style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr"
-            >
-              <div>
-                <div class="text_700 text_primary">primary</div>
-                <br />
-                <div class="text_700 text_secondary">secondary</div>
-                <br />
-                <div class="text_700 text_success">success</div>
-                <br />
-                <div class="text_700 text_danger">danger</div>
-                <br />
-              </div>
-              <div>
-                <div class="text_700 text_dark">dark</div>
-                <br />
-                <div class="text_700 text_light">light</div>
-                <br />
-                <div class="text_700 text_white">white</div>
-                <br />
-                <div class="text_700 text_medium">medium</div>
-                <br />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="section-st">
-          <div class="container">
-            <h2 class="h2">
-              Heading <span style="margin: 0 20px">|</span> Heading div / span
-            </h2>
-            <div
-              style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr"
-            >
-              <div>
-                <h1>Heading h1</h1>
-                <br />
-                <h2>Heading h2</h2>
-                <br />
-                <h3>Heading h3</h3>
-                <br />
-                <h4>Heading h4</h4>
-                <br />
-                <h5>Heading h5</h5>
-                <br />
-                <h6>Heading h6</h6>
-              </div>
-              <div>
-                <div class="heading _h1">Heading _h1</div>
-                <br />
-                <div class="heading _h2">Heading _h2</div>
-                <br />
-                <div class="heading _h3">Heading _h3</div>
-                <br />
-                <div class="heading _h4">Heading _h4</div>
-                <br />
-                <div class="heading _h5">Heading _h5</div>
-                <br />
-                <div class="heading _h6">Heading _h6</div>
-                <br />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="section-st">
-          <div class="container">
-            <h2 class="h2">
-              Text <span style="margin: 0 20px">|</span> Text UI
-            </h2>
-            <h4 class="h4">Sizes</h4>
-            <div
-              style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr"
-            >
-              <div>
-                <div>
-                  <span class="text_xs">text_xs</span>
-                  <span class="text_xs" style="margin: 0 20px">|</span>
-                  <span class="text_xs text_700">text_xs 700</span>
-                  <span class="text_xs" style="margin: 0 20px">|</span>
-                  <span class="text_xs text_700 _uppercase"
-                    >text_xs 700 uppercase</span
-                  >
-                </div>
-                <br />
-                <div>
-                  <span class="text_sm">text_sm</span>
-                  <span class="text_sm" style="margin: 0 20px">|</span>
-                  <span class="text_sm text_700">text_sm 700</span>
-                  <span class="text_sm" style="margin: 0 20px">|</span>
-                  <span class="text_sm text_700 _uppercase"
-                    >text_sm 700 uppercase</span
-                  >
-                </div>
-                <br />
-                <div>
-                  <span class="text_md">text_md</span>
-                  <span class="text_md" style="margin: 0 20px">|</span>
-                  <span class="text_md text_700">text_md 700</span>
-                  <span class="text_md" style="margin: 0 20px">|</span>
-                  <span class="text_md text_700 _uppercase"
-                    >text_md 700 uppercase</span
-                  >
-                </div>
-                <br />
-                <div>
-                  <span class="text_lg">text_lg</span>
-                  <span class="text_lg" style="margin: 0 20px">|</span>
-                  <span class="text_lg text_700">text_lg 700</span>
-                  <span class="text_lg" style="margin: 0 20px">|</span>
-                  <span class="text_lg text_700 _uppercase"
-                    >text_lg 700 uppercase</span
-                  >
-                </div>
-                <br />
-                <div>
-                  <span class="text_xl">text_xl</span>
-                  <span class="text_xl" style="margin: 0 20px">|</span>
-                  <span class="text_xl text_700">text_xl 700</span>
-                  <span class="text_xl" style="margin: 0 20px">|</span>
-                  <span class="text_xl text_700 _uppercase"
-                    >text_xl 700 uppercase</span
-                  >
-                </div>
-                <br />
-                <div>
-                  <span class="text_2xl">text_2xl</span>
-                  <span class="text_2xl" style="margin: 0 20px">|</span>
-                  <span class="text_2xl text_700">text_2xl 700</span>
-                </div>
-                <br />
-                <div>
-                  <span class="text_3xl">text_3xl</span>
-                  <span class="text_3xl" style="margin: 0 20px">|</span>
-                  <span class="text_3xl text_700">text_3xl 700</span>
-                </div>
-              </div>
-
-              <div>
-                <div>
-                  <span class="text_ui-xs">text_ui-xs</span>
-                  <span class="text_ui-xs" style="margin: 0 20px">|</span>
-                  <span class="text_ui-xs text_700">text_ui-xs 700</span>
-                </div>
-                <br />
-                <div>
-                  <span class="text_ui-sm">text_ui-sm</span>
-                  <span class="text_ui-sm" style="margin: 0 20px">|</span>
-                  <span class="text_ui-sm text_700">text_ui-sm 700</span>
-                </div>
-                <br />
-                <div>
-                  <span class="text_ui-md">text_ui-md</span>
-                  <span class="text_ui-md" style="margin: 0 20px">|</span>
-                  <span class="text_ui-md text_700">text_ui-md 700</span>
-                </div>
-                <br />
-                <div>
-                  <span class="text_ui-lg">text_ui-lg</span>
-                  <span class="text_ui-lg" style="margin: 0 20px">|</span>
-                  <span class="text_ui-lg text_700">text_ui-lg 700</span>
-                </div>
-                <br />
-                <div>
-                  <span class="text_ui-xl">text_ui-xl</span>
-                  <span class="text_ui-xl" style="margin: 0 20px">|</span>
-                  <span class="text_ui-xl text_700">text_ui-xl 700</span>
-                </div>
-                <br />
-                <div>
-                  <span class="text_ui-2xl">text_ui-2xl</span>
-                  <span class="text_ui-2xl" style="margin: 0 20px">|</span>
-                  <span class="text_ui-2xl text_700">text_ui-2xl 700</span>
-                </div>
-                <br />
-                <div>
-                  <span class="text_ui-3xl">text_ui-3xl</span>
-                  <span class="text_ui-3xl" style="margin: 0 20px">|</span>
-                  <span class="text_ui-3xl text_700">text_ui-3xl 700</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section data-aos="fade-up" id="pagination" class="section-st">
-          <div class="container">
+            <span id="components" class="anchor-bl"></span>
             <h2 class="h2">Components</h2>
 
-            <h4 class="h4">Bread crumbs</h4>
+            <h4 class="h4 animation-trigger fadeInUp">Bread crumbs</h4>
             <br />
             <ul class="bread-crumbs">
               <li><a href="#">Main</a></li>
@@ -299,23 +58,23 @@
             <br />
             <ol class="pagination">
               <li class="pagination__prev">
-                <a href="#" aria-label="на одну страницу назад">
+                <a href="#" aria-label="previous page">
                   <svg class="icon">
-                    <use xlink:href="assets/img/sprite.svg#chevron-left"></use>
+                    <use xlink:href="/assets/img/sprite.svg#chevron-left"></use>
                   </svg>
                 </a>
               </li>
               <li class="pagination__active"><a href="#">1</a></li>
               <li><a href="#">2</a></li>
               <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
               <li><a href="#">...</a></li>
               <li><a href="#">15</a></li>
               <li class="pagination__next">
-                <a href="#" aria-label="на одну страницу вперед">
+                <a href="#" aria-label="next page">
                   <svg class="icon">
-                    <use xlink:href="assets/img/sprite.svg#chevron-right"></use>
+                    <use
+                      xlink:href="/assets/img/sprite.svg#chevron-right"
+                    ></use>
                   </svg>
                 </a>
               </li>
@@ -325,45 +84,122 @@
             <br />
             <br />
 
+            <h4 class="h4">Tabs</h4>
+            <br />
+
+            <div class="tabs-wrapp">
+              <div class="scroll-wrapper">
+                <ul class="tabs-nav">
+                  <li class="current">Tab item</li>
+                  <li>Tab item</li>
+                  <li>Lorem, ipsum dolor.</li>
+                </ul>
+              </div>
+
+              <div class="tabs-boxes">
+                <div class="tabs-box _visible">
+                  <p>Lorem ipsum dolor sit amet consectetur.</p>
+                  <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+                <div class="tabs-box">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Porro repellendus ipsum alias harum aut, ea et dolor
+                    voluptate rem ex expedita. Reiciendis!
+                  </p>
+                </div>
+                <div class="tabs-box">
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Possimus architecto laborum quaerat.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <br />
+            <br />
+            <br />
+
+            <h4 class="h4">Tooltip hover</h4>
+            <br />
+            <div class="tooltip-wrapp">
+              <button class="btn _primary" type="button">Button tooltip</button>
+              <span class="tooltip">Tooltip text</span>
+            </div>
+            <div class="tooltip-wrapp">
+              <button class="btn _primary _fill" type="button">
+                Button tooltip
+              </button>
+              <span class="tooltip"
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptas, rem!</span
+              >
+            </div>
+            <br /><br />
+            <div class="tooltip-wrapp">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                quisquam dolorum error? Sit facilis consequuntur suscipit
+                molestiae impedit aspernatur libero!
+              </p>
+              <span class="tooltip">Tooltip text</span>
+            </div>
+
+            <br />
+            <br />
+            <br />
+
+            <h4 class="h4">Copy button</h4>
+            <br />
+            <div class="copy-btn-wrapp">
+              <input
+                type="text"
+                readonly
+                value="121ny213bdwjuTNOhunthOuthu2uhonethuNUHOu2"
+              />
+              <button
+                class="btn _icon _primary _fill"
+                type="button"
+                data-copy-text="121ny213bdwjuTNOhunthOuthu2uhonethuNUHOu2"
+              >
+                <svg class="icon _lg">
+                  <use xlink:href="/assets/img/sprite.svg#copy"></use>
+                </svg>
+                <span class="copy-tooltip tooltip">Скопировано</span>
+              </button>
+            </div>
+
+            <br /><br /><br />
+
             <h4 class="h4">Social inline</h4>
             <br />
             <ul class="social-inline">
               <li>
-                <a href="#" aria-label="фейсбук">
+                <a href="#" aria-label="facebook">
                   <svg class="icon">
-                    <use xlink:href="assets/img/sprite.svg#fb"></use>
+                    <use xlink:href="/assets/img/sprite.svg#fb"></use>
                   </svg>
                 </a>
               </li>
-
               <li>
-                <a href="#" aria-label="вконтакте">
+                <a href="#" aria-label="instagram">
                   <svg class="icon">
-                    <use xlink:href="assets/img/sprite.svg#vk"></use>
+                    <use xlink:href="/assets/img/sprite.svg#insta"></use>
                   </svg>
                 </a>
               </li>
-
               <li>
-                <a href="#" aria-label="инстаграм">
+                <a href="#" aria-label="youtube">
                   <svg class="icon">
-                    <use xlink:href="assets/img/sprite.svg#insta"></use>
+                    <use xlink:href="/assets/img/sprite.svg#youtube"></use>
                   </svg>
                 </a>
               </li>
-
-              <li>
-                <a href="#" aria-label="ютуб">
-                  <svg class="icon">
-                    <use xlink:href="assets/img/sprite.svg#youtube"></use>
-                  </svg>
-                </a>
-              </li>
-
               <li>
                 <a href="#">
-                  <svg class="icon" aria-label="телеграм">
-                    <use xlink:href="assets/img/sprite.svg#telegram"></use>
+                  <svg class="icon" aria-label="telegram">
+                    <use xlink:href="/assets/img/sprite.svg#telegram"></use>
                   </svg>
                 </a>
               </li>
@@ -384,7 +220,7 @@
               <div class="st-avatar">
                 <div class="st-avatar__img">
                   <svg class="icon">
-                    <use xlink:href="assets/img/sprite.svg#user"></use>
+                    <use xlink:href="/assets/img/sprite.svg#user"></use>
                   </svg>
                 </div>
                 <div class="st-avatar__about">
@@ -397,16 +233,9 @@
 
               <div class="st-avatar _flex-ai-start">
                 <div class="st-avatar__img">
-                  <img src="assets/img/img1.png" alt="" />
+                  <img src="/assets/img/img1.png" alt="" />
                 </div>
                 <div class="st-avatar__about">
-                  <div class="rating-stars">
-                    <span class="rating-stars__item _selected"></span>
-                    <span class="rating-stars__item _selected"></span>
-                    <span class="rating-stars__item _selected"></span>
-                    <span class="rating-stars__item _selected"></span>
-                    <span class="rating-stars__item"></span>
-                  </div>
                   <div class="text_ui-xl text_700">Иванов Иван</div>
                   <div class="text_ui-md">Шеф повар</div>
                 </div>
@@ -416,7 +245,7 @@
 
               <div class="st-avatar _vertical-lg">
                 <div class="st-avatar__img">
-                  <img src="assets/img/img1.png" alt="" />
+                  <img src="/assets/img/img1.png" alt="" />
                 </div>
                 <div class="st-avatar__about">
                   <div class="text_ui-xl text_700">Иванов Иван</div>
@@ -428,7 +257,7 @@
 
               <div class="st-avatar _sm">
                 <div class="st-avatar__img">
-                  <img src="assets/img/img1.png" alt="" />
+                  <img src="/assets/img/img1.png" alt="" />
                 </div>
                 <div class="st-avatar__about">
                   <div class="text_ui-sm text_700">МеGатоп</div>
@@ -438,424 +267,113 @@
           </div>
         </section>
 
-        <section data-aos="fade-up" id="pagination" class="section-st">
+        <section class="section-st">
           <div class="container">
             <h2 class="h2">Modals</h2>
 
             <button
               type="button"
-              data-mfp-src="#feedback"
-              class="btn _min-width open-modal-btn"
+              data-micromodal-trigger="feedback"
+              class="btn _min-width"
             >
               Feedback
-            </button>
-
-            <button
-              type="button"
-              data-mfp-src="#thanks"
-              class="btn _min-width open-modal-btn"
-            >
-              Thanks
             </button>
           </div>
         </section>
 
-        <section data-aos="fade-up" id="buttons" class="section-st">
+        <section class="section-st">
+          <span id="buttons" class="anchor-bl"></span>
           <div class="container">
             <h2 class="h2">Buttons</h2>
-            <div class="text-bl-grid">
-              <div class="text-bl-grid__half-col">
-                <h5 class="h5">
-                  Default
-                  <span class="text_primary">class="btn"</span>
-                </h5>
-                <button type="button" class="btn">Button</button>
-                <button type="button" class="btn">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                  <span>Button</span>
-                </button>
-                <button type="button" class="btn" disabled>
-                  <span>Disabled button</span>
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
+            <h5 class="h5 animation-trigger fadeInUp">
+              Default
+              <span class="text_primary">class="btn"</span>
+            </h5>
+            <button type="button" class="btn">Button</button>
+            <button type="button" class="btn">
+              <svg class="icon _xs">
+                <use xlink:href="/assets/img/sprite.svg#close"></use>
+              </svg>
+              <span>Button</span>
+            </button>
+            <button type="button" class="btn" disabled>
+              <span>Disabled button</span>
+              <svg class="icon _xs">
+                <use xlink:href="/assets/img/sprite.svg#close"></use>
+              </svg>
+            </button>
 
-                <br />
-                <br />
-                <br />
+            <br />
+            <br />
+            <br />
 
-                <h5 class="h5">
-                  Link
-                  <span class="text_primary">class="btn btn_link"</span>
-                </h5>
-                <button type="button" class="btn btn_link">Button</button>
-                <button type="button" class="btn btn_link">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                  <span>Button</span>
-                </button>
-                <button type="button" class="btn btn_link" disabled>
-                  <span>Disabled button</span>
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
+            <h5 class="h5">
+              Primary
+              <span class="text_primary">class="btn _primary"</span>
+            </h5>
+            <button type="button" class="btn _primary">Button</button>
+            <button type="button" class="btn _primary _fill">
+              <svg class="icon _xs">
+                <use xlink:href="/assets/img/sprite.svg#close"></use>
+              </svg>
+              <span>button fill</span>
+            </button>
+            <button type="button" class="btn _primary" disabled>
+              <span>Disabled button</span>
+              <svg class="icon _xs">
+                <use xlink:href="/assets/img/sprite.svg#close"></use>
+              </svg>
+            </button>
 
-                <br />
-                <br />
-                <br />
+            <br />
+            <br />
+            <br />
 
-                <h5 class="h5">
-                  Xs
-                  <span class="text_primary">class="btn _xs"</span>
-                </h5>
+            <h5 class="h5">
+              Secondary
+              <span class="text_primary">class="btn _secondary"</span>
+            </h5>
+            <button type="button" class="btn _secondary">Button</button>
+            <button type="button" class="btn _secondary _fill">
+              <svg class="icon _xs">
+                <use xlink:href="/assets/img/sprite.svg#close"></use>
+              </svg>
+              <span>Button</span>
+            </button>
+            <button type="button" class="btn _secondary" disabled>
+              <span>Disabled button</span>
+              <svg class="icon _xs">
+                <use xlink:href="/assets/img/sprite.svg#close"></use>
+              </svg>
+            </button>
 
-                <a class="btn _xs" href="#">Xs button</a>
-                <a class="btn _xs" href="#">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                  <span>Xs button</span>
-                </a>
-                <a class="btn _xs" href="#" disabled>
-                  <span>Xs button</span>
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </a>
+            <br />
+            <br />
+            <br />
 
-                <br />
-                <br />
-                <br />
+            <h5 class="h5">
+              Btn icon
+              <span class="text_primary">class="btn _icon"</span>
+            </h5>
 
-                <h5 class="h5">
-                  Sm
-                  <span class="text_primary">class="btn _sm"</span>
-                </h5>
+            <button class="btn _icon" type="button">
+              <svg class="icon _xs">
+                <use xlink:href="/assets/img/sprite.svg#close"></use>
+              </svg>
+            </button>
 
-                <a class="btn _sm" href="#">Sm button</a>
-                <a class="btn _sm" href="#">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                  <span>Sm button</span>
-                </a>
-                <a class="btn _sm" href="#" disabled>
-                  <span>Sm button</span>
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </a>
+            <button class="btn _icon _primary" type="button">
+              <svg class="icon _xs">
+                <use xlink:href="/assets/img/sprite.svg#close"></use>
+              </svg>
+            </button>
 
-                <br />
-                <br />
-                <br />
-
-                <h5 class="h5">
-                  Md
-                  <span class="text_primary">class="btn _md"</span>
-                </h5>
-
-                <a class="btn _md" href="#">Md button</a>
-                <a class="btn _md" href="#">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                  <span>Md button</span>
-                </a>
-                <a class="btn _md" href="#" disabled>
-                  <span>Md button</span>
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </a>
-
-                <br />
-                <br />
-                <br />
-
-                <h5 class="h5">
-                  Lg
-                  <span class="text_primary">class="btn _lg"</span>
-                </h5>
-
-                <a class="btn _lg" href="#">Lg button</a>
-                <a class="btn _lg" href="#">
-                  <svg class="icon _sm">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                  <span>Lg button</span>
-                </a>
-                <a class="btn _lg" href="#" disabled>
-                  <span>Lg button</span>
-                  <svg class="icon _sm">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </a>
-
-                <br />
-                <br />
-                <br />
-
-                <h5 class="h5">
-                  Max width
-                  <span class="text_primary">class="btn _max"</span><br />
-                </h5>
-                <a class="btn _max">Button</a>
-
-                <br />
-                <br />
-                <br />
-
-                <h5 class="h5">
-                  Mobile max width
-                  <span class="text_primary">class="btn _max-mobile"</span
-                  ><br />
-                </h5>
-                <a class="btn _max-mobile">Button</a>
-              </div>
-
-              <div class="text-bl-grid__half-col">
-                <h5 class="h5">
-                  Primary
-                  <span class="text_primary">class="btn _primary"</span>
-                </h5>
-                <button type="button" class="btn _primary">Button</button>
-                <button type="button" class="btn _primary">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                  <span>Lg button</span>
-                </button>
-                <button type="button" class="btn _primary" disabled>
-                  <span>Disabled button</span>
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <br />
-                <br />
-                <br />
-
-                <h5 class="h5">
-                  Secondary
-                  <span class="text_primary">class="btn _secondary"</span>
-                </h5>
-                <button type="button" class="btn _secondary">Button</button>
-                <button type="button" class="btn _secondary">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                  <span>Button</span>
-                </button>
-                <button type="button" class="btn _secondary" disabled>
-                  <span>Disabled button</span>
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <br />
-                <br />
-                <br />
-
-                <h5 class="h5">
-                  Danger
-                  <span class="text_primary">class="btn _danger"</span>
-                </h5>
-                <button type="button" class="btn _danger">Button</button>
-                <button type="button" class="btn _danger">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                  <span>Button</span>
-                </button>
-                <button type="button" class="btn _danger" disabled>
-                  <span>Disabled button</span>
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <br />
-                <br />
-                <br />
-
-                <h5 class="h5">
-                  Success
-                  <span class="text_primary">class="btn _success"</span>
-                </h5>
-                <button type="button" class="btn _success">Button</button>
-                <button type="button" class="btn _success">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                  <span>Button</span>
-                </button>
-                <button type="button" class="btn _success" disabled>
-                  <span>Disabled button</span>
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <br />
-                <br />
-                <br />
-
-                <h5 class="h5">
-                  Warning
-                  <span class="text_primary">class="btn _warning"</span>
-                </h5>
-                <button type="button" class="btn _warning">Button</button>
-                <button type="button" class="btn _warning">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                  <span>Button</span>
-                </button>
-                <button type="button" class="btn _warning" disabled>
-                  <span>Disabled button</span>
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <br />
-                <br />
-                <br />
-
-                <h5 class="h5">
-                  Btn icon
-                  <span class="text_primary">class="btn btn_icon"</span>
-                </h5>
-
-                <button class="btn btn_icon" type="button">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <button class="btn btn_icon _primary" type="button">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <button class="btn btn_icon btn_link" type="button">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <button class="btn btn_icon" type="button" disabled>
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <button class="btn _primary btn_icon" type="button" disabled>
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <button class="btn btn_link btn_icon" type="button" disabled>
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <br />
-                <br />
-                <br />
-
-                <h5 class="h5">
-                  Btn icon
-                  <span class="text_primary"
-                    >class="btn btn_icon _xs _sm _md _lg"</span
-                  >
-                </h5>
-
-                <button class="btn btn_icon _xs" type="button">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <button class="btn btn_icon _sm" type="button">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <button class="btn btn_icon" type="button">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <button class="btn btn_icon _md" type="button">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <button class="btn btn_icon _lg" type="button">
-                  <svg class="icon _md">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <br />
-                <br />
-                <br />
-
-                <h5 class="h5">
-                  Btn icon round
-                  <span class="text_primary"
-                    >class="btn btn_icon _round _xs _sm _md _lg"</span
-                  >
-                </h5>
-
-                <button class="btn btn_icon _round _xs" type="button">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <button class="btn btn_icon _round _sm" type="button">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <button class="btn btn_icon _round" type="button">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <button class="btn btn_icon _round _md" type="button">
-                  <svg class="icon _xs">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-
-                <button class="btn btn_icon _round _lg" type="button">
-                  <svg class="icon _md">
-                    <use xlink:href="assets/img/sprite.svg#close"></use>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <br /><br />
+            <button class="btn _icon _primary _fill" type="button">
+              <svg class="icon _xs">
+                <use xlink:href="/assets/img/sprite.svg#close"></use>
+              </svg>
+            </button>
+            <br /><br /><br />
 
             <h2 class="h2">Buttons light</h2>
             <div style="background-color: #000; padding: 30px">
@@ -864,78 +382,47 @@
                 <span class="text_primary">class="btn _light"</span>
               </h5>
               <button type="button" class="btn _light">Button</button>
-              <button type="button" class="btn _light">
-                <svg class="icon _xs">
-                  <use xlink:href="assets/img/sprite.svg#close"></use>
-                </svg>
-                <span>Button</span>
-              </button>
               <button type="button" class="btn _light" disabled>
                 <span>Disabled button</span>
                 <svg class="icon _xs">
-                  <use xlink:href="assets/img/sprite.svg#close"></use>
+                  <use xlink:href="/assets/img/sprite.svg#close"></use>
                 </svg>
               </button>
-              <button class="btn _light btn_icon" type="button">
+              <button class="btn _light _icon" type="button">
                 <svg class="icon _xs">
-                  <use xlink:href="assets/img/sprite.svg#close"></use>
-                </svg>
-              </button>
-              <button class="btn _light btn_icon" type="button" disabled>
-                <svg class="icon _xs">
-                  <use xlink:href="assets/img/sprite.svg#close"></use>
-                </svg>
-              </button>
-              <button class="btn _light btn_icon _round" type="button">
-                <svg class="icon _xs">
-                  <use xlink:href="assets/img/sprite.svg#close"></use>
+                  <use xlink:href="/assets/img/sprite.svg#close"></use>
                 </svg>
               </button>
 
               <br /><br />
               <h5 class="text_light h5">
                 Btn light fill
-                <span class="text_primary">class="btn _light_fill"</span>
+                <span class="text_primary">class="btn _light _fill"</span>
               </h5>
 
-              <button type="button" class="btn _light-fill">Button</button>
-              <button type="button" class="btn _light-fill">
-                <svg class="icon _xs">
-                  <use xlink:href="assets/img/sprite.svg#close"></use>
-                </svg>
-                <span>Button</span>
-              </button>
-              <button type="button" class="btn _light-fill" disabled>
+              <button type="button" class="btn _light _fill">Button</button>
+              <button type="button" class="btn _light _fill" disabled>
                 <span>Disabled button</span>
                 <svg class="icon _xs">
-                  <use xlink:href="assets/img/sprite.svg#close"></use>
+                  <use xlink:href="/assets/img/sprite.svg#close"></use>
                 </svg>
               </button>
-              <button class="btn _light-fill btn_icon" type="button">
+              <button class="btn _light _fill _icon" type="button">
                 <svg class="icon _xs">
-                  <use xlink:href="assets/img/sprite.svg#close"></use>
-                </svg>
-              </button>
-              <button class="btn _light-fill btn_icon" type="button" disabled>
-                <svg class="icon _xs">
-                  <use xlink:href="assets/img/sprite.svg#close"></use>
-                </svg>
-              </button>
-              <button class="btn _light-fill btn_icon _round" type="button">
-                <svg class="icon _xs">
-                  <use xlink:href="assets/img/sprite.svg#close"></use>
+                  <use xlink:href="/assets/img/sprite.svg#close"></use>
                 </svg>
               </button>
             </div>
           </div>
         </section>
 
-        <section data-aos="fade-up" id="form" class="section-st">
+        <section class="section-st">
+          <span id="form" class="anchor-bl"></span>
           <div class="container">
-            <form class="st-form" action="#" name="default-form">
+            <form class="st-form feedback-form" action="#" name="default-form">
               <h2 class="h2">Form</h2>
 
-              <h5 class="h5">Radio and checkbox</h5>
+              <h5 class="h5 animation-trigger fadeInUp">Radio and checkbox</h5>
               <br />
               <div
                 style="
@@ -1005,7 +492,7 @@
                   <span class="field-item__field _icon">
                     <input type="text" required value="my-name" />
                     <svg class="icon icon-user">
-                      <use xlink:href="assets/img/sprite.svg#user"></use>
+                      <use xlink:href="/assets/img/sprite.svg#user"></use>
                     </svg>
                   </span>
                   <span class="field-item__message">Error message</span>
@@ -1014,7 +501,7 @@
 
               <div class="form-group">
                 <label class="field-item _animation-label">
-                  <span class="field-item__label">password</span>
+                  <span class="field-item__label mb-10">password</span>
                   <span class="field-item__field">
                     <input type="password" autocomplete="off" required />
                   </span>
@@ -1034,7 +521,7 @@
                       value="test@email.com"
                     />
                     <svg class="icon icon-user">
-                      <use xlink:href="assets/img/sprite.svg#user"></use>
+                      <use xlink:href="/assets/img/sprite.svg#user"></use>
                     </svg>
                   </span>
                   <span class="field-item__message">Success message</span>
@@ -1055,7 +542,7 @@
                 <label class="field-item _animation-label">
                   <span class="field-item__label">Phone</span>
                   <span class="field-item__field">
-                    <input type="tel" required />
+                    <input type="tel" />
                   </span>
                   <span class="field-item__message"></span>
                 </label>
@@ -1074,7 +561,7 @@
                       required
                     />
                     <svg class="icon icon-user">
-                      <use xlink:href="assets/img/sprite.svg#user"></use>
+                      <use xlink:href="/assets/img/sprite.svg#user"></use>
                     </svg>
                   </span>
                   <span class="field-item__message"></span>
@@ -1085,7 +572,7 @@
                 <label class="field-item">
                   <span class="field-item__label">Phone</span>
                   <span class="field-item__field">
-                    <input type="tel" required placeholder="+7" />
+                    <input type="tel" />
                   </span>
                   <span class="field-item__message"></span>
                 </label>
@@ -1157,7 +644,7 @@
                 <label class="field-item _inline">
                   <span class="field-item__label">Phone</span>
                   <span class="field-item__field">
-                    <input type="tel" placeholder="+7" required />
+                    <input type="tel" />
                   </span>
                 </label>
                 <span class="field-item__message"></span>
@@ -1290,25 +777,23 @@
                 </div>
               </div>
 
-              <div class="form-group text_center">
+              <div class="form-group _text-center">
                 <button class="btn _primary _md _min-width" type="submit">
                   Submit
                 </button>
               </div>
             </form>
-          </div>
-        </section>
-
-        <section class="section-st">
-          <div class="container">
+            <br />
             <%=require('html-loader?minimize=false!../partials/form.html')%>
           </div>
         </section>
 
-        <section data-aos="fade-up" id="text" class="section-st">
+        <section class="section-st">
+          <span id="text" class="anchor-bl"></span>
           <div class="container">
-            <h2 class="h2">Text</h2>
-            <div class="text-bl">
+            <h2 class="h2">Rich Text Block</h2>
+            <div class="rich-text-bl">
+              <h1>Heading h1</h1>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Assumenda reiciendis, sint quam iste dicta quasi sapiente ipsum
@@ -1316,7 +801,7 @@
                 totam, dolore aliquam temporibus quidem commodi.
               </p>
 
-              <h2>Title</h2>
+              <h2>Hedaing h2</h2>
               <p>rubl ₽</p>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -1325,37 +810,14 @@
                 totam, dolore aliquam temporibus quidem commodi.
               </p>
 
-              <div class="text_center">
-                <h2>Text center</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Assumenda reiciendis, sint quam iste dicta quasi sapiente
-                  ipsum blanditiis voluptatum repellat delectus, veniam eligendi
-                  non totam, dolore aliquam temporibus quidem commodi.
-                </p>
-              </div>
+              <figure>
+                <img src="https://fakeimg.pl/600x400/" alt="" />
+                <figcaption>
+                  figcaption desc Lorem ipsum dolor sit amet.
+                </figcaption>
+              </figure>
 
-              <div class="text_right">
-                <h2>h3 text right</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Assumenda reiciendis, sint quam iste dicta quasi sapiente
-                  ipsum blanditiis voluptatum repellat delectus, veniam eligendi
-                  non totam, dolore aliquam temporibus quidem commodi.
-                </p>
-              </div>
-
-              <div class="_uppercase">
-                <h2>text uppercase</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Assumenda reiciendis, sint quam iste dicta quasi sapiente
-                  ipsum blanditiis voluptatum repellat delectus, veniam eligendi
-                  non totam, dolore aliquam temporibus quidem commodi.
-                </p>
-              </div>
-
-              <h2>Lorem ipsum dolor sit amet, consectetur adipisicing.</h2>
+              <h3>Heading h3</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Assumenda reiciendis, sint quam iste dicta quasi sapiente ipsum
@@ -1363,7 +825,79 @@
                 totam, dolore aliquam temporibus quidem commodi.
               </p>
 
-              <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+              <blockquote>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde
+                rem laudantium quis odit. Quibusdam, fugit perferendis? Ratione
+                incidunt explicabo fugit consequatur ad quisquam facilis rem!
+                Eveniet commodi magni nostrum perferendis!
+              </blockquote>
+
+              <ul>
+                <li>list item 1</li>
+                <li>list item 2</li>
+                <li>list item 3</li>
+              </ul>
+
+              <ol>
+                <li>list item 1</li>
+                <li>list item 2</li>
+                <li>list item 3</li>
+              </ol>
+
+              <h4>Hedaing h4</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Assumenda reiciendis, sint quam iste dicta quasi sapiente ipsum
+                blanditiis voluptatum repellat delectus, veniam eligendi non
+                totam, dolore aliquam temporibus quidem commodi.
+              </p>
+
+              <h5>Heading h5</h5>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Assumenda reiciendis, sint quam iste dicta quasi sapiente ipsum
+                blanditiis voluptatum repellat delectus, veniam eligendi non
+                totam, dolore aliquam temporibus quidem commodi.
+              </p>
+
+              <table>
+                <thead>
+                  <tr>
+                    <th>Lorem, ipsum dolor.</th>
+                    <th>Title 2</th>
+                    <th>Title 3</th>
+                    <th>Title 4</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>field</td>
+                    <td>Lorem ipsum dolor sit.</td>
+                    <td>Lorem ipsum dolor sit.</td>
+                    <td>Lorem ipsum dolor sit.</td>
+                  </tr>
+                  <tr>
+                    <td>field</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                  </tr>
+                  <tr>
+                    <td>field</td>
+                    <td>Lorem ipsum dolor sit amet.</td>
+                    <td>Lorem ipsum dolor sit amet.</td>
+                    <td>Lorem ipsum dolor sit amet.</td>
+                  </tr>
+                  <tr>
+                    <td>field</td>
+                    <td>value</td>
+                    <td>value</td>
+                    <td>value</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h6>Heading h6</h6>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure,
                 similique. Architecto quo cum, sunt consequuntur quaerat,
@@ -1380,108 +914,210 @@
                 optio, possimus beatae rem ex. Unde.
               </p>
 
-              <h2 class="h2">Table</h2>
-              <div class="scroll-wrapper">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Заголовок</th>
-                      <th>Заголовок</th>
-                      <th>Заголовок</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Поле</td>
-                      <td>Значение</td>
-                      <td>Значение</td>
-                    </tr>
-                    <tr>
-                      <td>Поле</td>
-                      <td>Значение</td>
-                      <td>Значение</td>
-                    </tr>
-                    <tr>
-                      <td>Поле</td>
-                      <td>Значение</td>
-                      <td>Значение</td>
-                    </tr>
-                    <tr>
-                      <td>Поле</td>
-                      <td>Значение</td>
-                      <td>Значение</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Lorem, ipsum dolor.</th>
+                    <th>Title unohonhuonhuo onh</th>
+                    <th>Title 3</th>
+                    <th>Title 4</th>
+                    <th>Title 5</th>
+                    <th>Title 6</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>field</td>
+                    <td>Lorem ipsum dolor sit.</td>
+                    <td>Lorem ipsum dolor sit.</td>
+                    <td>Lorem ipsum dolor sit.</td>
+                    <td>Lorem ipsum dolor sit.</td>
+                    <td>Lorem ipsum dolor sit.</td>
+                  </tr>
+                  <tr>
+                    <td>field</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                  </tr>
+                  <tr>
+                    <td>field</td>
+                    <td>Lorem ipsum dolor sit amet.</td>
+                    <td>Lorem ipsum dolor sit amet.</td>
+                    <td>Lorem ipsum dolor sit amet.</td>
+                    <td>Lorem ipsumdolor sit amet.</td>
+                    <td>Lorem ipsum dolor sit amet.</td>
+                  </tr>
+                  <tr>
+                    <td>field</td>
+                    <td>value</td>
+                    <td>value</td>
+                    <td>value</td>
+                    <td>value</td>
+                    <td>value</td>
+                  </tr>
+                </tbody>
+              </table>
 
-              <h2 class="h2">Lists</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Perspiciatis harum voluptatibus inventore.
+              </p>
 
-              <ul>
-                <li>Пример списка</li>
-                <li>Пример списка</li>
-                <li>Пример списка</li>
-              </ul>
-
-              <ol>
-                <li>Пример списка</li>
-                <li>Пример списка</li>
-                <li>Пример списка</li>
-              </ol>
-            </div>
-
-            <h2 class="h2">Two column text</h2>
-
-            <div class="text-bl-grid">
-              <div class="text-bl text-bl-grid__half-col">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
-                  sapiente nemo, eligendi facilis accusamus sequi est hic rerum
-                  et repellendus voluptas provident. Nisi, nihil qui earum a,
-                  pariatur esse, fuga nobis possimus quisquam repudiandae
-                  nostrum placeat ipsa itaque? Veniam cumque laboriosam
-                  repudiandae, totam nihil doloremque explicabo. Recusandae
-                  voluptatibus, tenetur praesentium sed cum dicta a tempora.
-                  Esse delectus commodi totam enim, laborum a excepturi
-                  assumenda sit voluptatum consequatur accusantium impedit ea
-                  quisquam libero. Ipsa, molestiae fugit neque ut, adipisci est
-                  iusto dicta aliquam maiores nulla tempora consequatur amet
-                  alias, eveniet nam numquam ab iste non possimus similique?
-                  Quia quo esse distinctio.
-                </p>
-              </div>
-              <div class="text-bl text-bl-grid__half-col">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Omnis, non consequuntur harum aliquam quibusdam placeat. Ipsam
-                  alias consequuntur, iure vitae ad. Quas error ut dolorum vero
-                  et commodi voluptatum. Distinctio perferendis fuga, excepturi?
-                  Tempore, corporis architecto! Pariatur hic dignissimos libero
-                  ullam. Molestiae ullam, voluptatibus sunt labore. Consequuntur
-                  et sapiente maxime harum esse aperiam, rem amet est numquam
-                  quos nobis optio veniam maiores neque repellat minima, debitis
-                  blanditiis odio. Quam molestiae non nobis hic qui et explicabo
-                  sit, debitis, accusantium laboriosam illum blanditiis. Amet
-                  explicabo a vitae quos praesentium doloribus, modi
-                  consequatur? Velit dolores officia libero vel sapiente beatae,
-                  quibusdam! Fugiat.
-                </p>
-              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Exercitationem numquam pariatur ut aperiam quibusdam, architecto
+                debitis modi obcaecati rem, corporis eum recusandae cum.
+              </p>
             </div>
           </div>
         </section>
 
-        <section class="section-st magnific-gallery">
+        <section class="section-st">
+          <div class="container">
+            <h2 class="h2">Rich Text And Sticky Sidebar</h2>
+            <div class="main-wrapper">
+              <div class="main-inner">
+                <div class="rich-text-bl">
+                  <h1>Heading h1</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Assumenda reiciendis, sint quam iste dicta quasi sapiente
+                    ipsum blanditiis voluptatum repellat delectus, veniam
+                    eligendi non totam, dolore aliquam temporibus quidem
+                    commodi.
+                  </p>
+
+                  <h2>Hedaing h2</h2>
+                  <p>rubl ₽</p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Assumenda reiciendis, sint quam iste dicta quasi sapiente
+                    ipsum blanditiis voluptatum repellat delectus, veniam
+                    eligendi non totam, dolore aliquam temporibus quidem
+                    commodi.
+                  </p>
+
+                  <h3>Heading h3</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Assumenda reiciendis, sint quam iste dicta quasi sapiente
+                    ipsum blanditiis voluptatum repellat delectus, veniam
+                    eligendi non totam, dolore aliquam temporibus quidem
+                    commodi.
+                  </p>
+
+                  <blockquote>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Unde rem laudantium quis odit. Quibusdam, fugit perferendis?
+                    Ratione incidunt explicabo fugit consequatur ad quisquam
+                    facilis rem! Eveniet commodi magni nostrum perferendis!
+                  </blockquote>
+
+                  <ul>
+                    <li>list item 1</li>
+                    <li>list item 2</li>
+                    <li>list item 3</li>
+                  </ul>
+
+                  <ol>
+                    <li>list item 1</li>
+                    <li>list item 2</li>
+                    <li>list item 3</li>
+                  </ol>
+
+                  <h4>Hedaing h4</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Assumenda reiciendis, sint quam iste dicta quasi sapiente
+                    ipsum blanditiis voluptatum repellat delectus, veniam
+                    eligendi non totam, dolore aliquam temporibus quidem
+                    commodi.
+                  </p>
+
+                  <h5>Heading h5</h5>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Assumenda reiciendis, sint quam iste dicta quasi sapiente
+                    ipsum blanditiis voluptatum repellat delectus, veniam
+                    eligendi non totam, dolore aliquam temporibus quidem
+                    commodi.
+                  </p>
+
+                  <h6>Heading h6</h6>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Iure, similique. Architecto quo cum, sunt consequuntur
+                    quaerat, commodi ratione natus laboriosam deserunt error
+                    numquam et optio, possimus beatae rem ex. Unde.
+                  </p>
+
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Iure, similique. Architecto quo cum, sunt consequuntur
+                    quaerat, commodi ratione natus laboriosam deserunt error
+                    numquam et optio, possimus beatae rem ex. Unde.
+                  </p>
+
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Perspiciatis harum voluptatibus inventore.
+                  </p>
+
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Exercitationem numquam pariatur ut aperiam quibusdam,
+                    architecto debitis modi obcaecati rem, corporis eum
+                    recusandae cum.
+                  </p>
+                </div>
+              </div>
+
+              <aside class="sidebar">
+                <div class="sidebar-component">
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Numquam, ipsam?
+                  </p>
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Labore, asperiores.
+                  </p>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-st">
           <div class="container">
             <h2 class="h2">Cards</h2>
 
             <div class="st-cards">
-              <a href="assets/img/img1.png" class="st-card">
+              <a href="#" class="st-card animation-trigger fadeIn">
                 <div class="st-card__image">
-                  <div class="full-image-bg _cover">
+                  <div class="full-image-bg">
                     <picture>
-                      <source srcset="assets/img/img1.webp" />
-                      <img srcset="assets/img/img1.png" alt="" />
+                      <source srcset="/assets/img/img2.webp" />
+                      <img srcset="/assets/img/img2.jpg" alt="" />
+                    </picture>
+                  </div>
+                </div>
+                <div class="st-card__info">
+                  <div class="text_lg text_uppercase text_700">
+                    Dualsense Lorem, ipsum dolor.
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="st-card animation-trigger fadeIn">
+                <div class="st-card__image">
+                  <div class="full-image-bg">
+                    <picture>
+                      <source srcset="/assets/img/img1.webp" />
+                      <img srcset="/assets/img/img1.png" alt="" />
                     </picture>
                   </div>
                 </div>
@@ -1493,12 +1129,28 @@
                 </div>
               </a>
 
-              <a href="assets/img/img2.jpg" class="st-card">
+              <a href="#" class="st-card animation-trigger fadeIn">
                 <div class="st-card__image">
-                  <div class="full-image-bg _cover">
+                  <div class="full-image-bg">
+                    <!-- <noscript class="loading-lazy"> -->
+                    <img srcset="/assets/img/img3.jpg" alt="" loading="lazy" />
+                    <!-- </noscript> -->
+                  </div>
+                </div>
+                <div class="st-card__info">
+                  <div class="text_lg text_uppercase text_700">
+                    Dualsense Lorem, ipsum dolor.
+                  </div>
+                  <div class="text_md">Lorem, ipsum dolor.</div>
+                </div>
+              </a>
+
+              <a href="#" class="st-card animation-trigger fadeIn">
+                <div class="st-card__image">
+                  <div class="full-image-bg">
                     <picture>
-                      <source srcset="assets/img/img2.webp" />
-                      <img srcset="assets/img/img2.jpg" alt="" />
+                      <source srcset="/assets/img/img1.webp" />
+                      <img srcset="/assets/img/img1.png" alt="" />
                     </picture>
                   </div>
                 </div>
@@ -1509,29 +1161,12 @@
                 </div>
               </a>
 
-              <a href="assets/img/img1.png" class="st-card">
+              <a href="#" class="st-card animation-trigger fadeIn">
                 <div class="st-card__image">
-                  <div class="full-image-bg _cover">
-                    <picture>
-                      <source srcset="assets/img/img1.webp" />
-                      <img srcset="assets/img/img1.png" alt="" />
-                    </picture>
-                  </div>
-                </div>
-                <div class="st-card__info">
-                  <div class="text_lg text_uppercase text_700">
-                    Dualsense Lorem, ipsum dolor.
-                  </div>
-                </div>
-              </a>
-
-              <a href="assets/img/img3.jpg" class="st-card">
-                <div class="st-card__image">
-                  <div class="full-image-bg _cover">
-                    <picture>
-                      <source srcset="assets/img/img3.webp" />
-                      <img srcset="assets/img/img3.jpg" alt="" />
-                    </picture>
+                  <div class="full-image-bg">
+                    <!-- <noscript class="loading-lazy"> -->
+                    <img srcset="/assets/img/img3.jpg" alt="" loading="lazy" />
+                    <!-- </noscript> -->
                   </div>
                 </div>
                 <div class="st-card__info">
@@ -1546,33 +1181,177 @@
         </section>
 
         <section class="section-st">
+          <span id="lightbox" class="anchor-bl"></span>
+          <div class="container">
+            <h2 class="h2">Lightbox</h2>
+
+            <div class="lightbox-gallery">
+              <figure class="lightbox-item">
+                <a href="/assets/img/img2.jpg" data-size="800x533">
+                  <noscript class="loading-lazy">
+                    <img src="/assets/img/img2.jpg" alt="" loading="lazy" />
+                  </noscript>
+                </a>
+                <figcaption>Lorem ipsum dolor sit amet.</figcaption>
+              </figure>
+              <figure class="lightbox-item">
+                <a href="/assets/img/img1.png" data-size="600x600">
+                  <noscript class="loading-lazy">
+                    <img src="/assets/img/img1.png" alt="" loading="lazy" />
+                  </noscript>
+                </a>
+                <figcaption>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Blanditiis perspiciatis eius dolores omnis in aspernatur.
+                  Reprehenderit debitis quod maxime possimus commodi,
+                  repellendus unde iure error necessitatibus odio atque. Sed,
+                  ratione?
+                </figcaption>
+              </figure>
+              <figure class="lightbox-item">
+                <a href="/assets/img/img3-mob.jpg" data-size="900x720">
+                  <noscript class="loading-lazy">
+                    <img src="/assets/img/img3-mob.jpg" alt="" loading="lazy" />
+                  </noscript>
+                </a>
+                <figcaption>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Neque, non.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-st">
+          <span id="swiper" class="anchor-bl"></span>
+          <div class="container">
+            <h2 class="h2">Swiper</h2>
+            <div class="swiper st-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="st-card">
+                    <div class="st-card__image">
+                      <div class="full-image-bg">
+                        <img srcset="/assets/img/img3.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="st-card__info">
+                      <div class="text_lg text_uppercase text_700">
+                        Dualsense Lorem, ipsum dolor.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="st-card">
+                    <div class="st-card__image">
+                      <div class="full-image-bg">
+                        <img srcset="/assets/img/img2.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="st-card__info">
+                      <div class="text_lg text_uppercase text_700">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eos voluptatibus mollitia hic?
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="st-card">
+                    <div class="st-card__image">
+                      <div class="full-image-bg">
+                        <img srcset="/assets/img/img1.png" alt="" />
+                      </div>
+                    </div>
+                    <div class="st-card__info">
+                      <div class="text_lg text_uppercase text_700">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="st-card">
+                    <div class="st-card__image">
+                      <div class="full-image-bg">
+                        <img srcset="/assets/img/img2.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="st-card__info">
+                      <div class="text_lg text_uppercase text_700">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eos voluptatibus mollitia hic?
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="st-card">
+                    <div class="st-card__image">
+                      <div class="full-image-bg">
+                        <img srcset="/assets/img/img1.png" alt="" />
+                      </div>
+                    </div>
+                    <div class="st-card__info">
+                      <div class="text_lg text_uppercase text_700">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-pagination"></div>
+
+              <div class="swiper-scrollbar"></div>
+
+              <div class="swiper-nav">
+                <div class="swiper-button-prev">
+                  <svg class="icon">
+                    <use xlink:href="/assets/img/sprite.svg#chevron-left"></use>
+                  </svg>
+                </div>
+                <div class="swiper-button-next">
+                  <svg class="icon">
+                    <use
+                      xlink:href="/assets/img/sprite.svg#chevron-right"
+                    ></use>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-st" style="padding-bottom: 0">
           <div class="container">
             <h2 class="h2">Full Section Bg</h2>
           </div>
 
           <div class="full-section-bg _height-700">
             <div class="full-image-bg _cover _cover-04 _cover-grad-bottom">
+              <!-- <noscript class="loading-lazy"> -->
               <picture>
                 <source
-                  srcset="assets/img/img3.webp"
+                  srcset="/assets/img/img3.jpg"
                   media="(min-width: 980px)"
                 />
                 <source
-                  srcset="assets/img/img3.jpg"
-                  media="(min-width: 980px)"
-                />
-                <source
-                  srcset="assets/img/img3-tablet.webp"
+                  srcset="/assets/img/img3-tablet.jpg"
                   media="(min-width: 500px)"
                 />
-                <source
-                  srcset="assets/img/img3-tablet.jpg"
-                  media="(min-width: 500px)"
-                />
-                <source srcset="assets/img/img3-mob.webp" />
-                <source srcset="assets/img/img3-mob.jpg" />
-                <img srcset="assets/img/img3.jpg" alt="" />
+                <source srcset="/assets/img/img3-mob.jpg" />
+                <img srcset="/assets/img/img3.jpg" loading="lazy" alt="" />
               </picture>
+              <!-- </noscript> -->
             </div>
 
             <div class="full-section-bg__head">
@@ -1594,7 +1373,7 @@
               <div class="container">
                 <div class="max-w-400-md text_white">
                   <div class="mb-20">
-                    <h1>Heading text</h1>
+                    <h1>Footer text</h1>
                   </div>
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -1606,43 +1385,24 @@
             </div>
           </div>
         </section>
-
-        <section class="section-st">
-          <div class="container">
-            <h2 class="h2">Full Image Bg</h2>
-          </div>
-
-          <div class="full-image-bg-wrapp">
-            <div class="full-image-bg _cover">
-              <picture>
-                <source
-                  srcset="assets/img/img3.webp"
-                  media="(min-width: 980px)"
-                />
-                <source
-                  srcset="assets/img/img3.jpg"
-                  media="(min-width: 980px)"
-                />
-                <source
-                  srcset="assets/img/img3-tablet.webp"
-                  media="(min-width: 500px)"
-                />
-                <source
-                  srcset="assets/img/img3-tablet.jpg"
-                  media="(min-width: 500px)"
-                />
-                <source srcset="assets/img/img3-mob.webp" />
-                <source srcset="assets/img/img3-mob.jpg" />
-                <img srcset="assets/img/img3.jpg" alt="" />
-              </picture>
-            </div>
-          </div>
-        </section>
       </main>
+
+      <div class="scroll-btn-up">
+        <button
+          href="#header"
+          type="button"
+          class="scrollto-js btn _icon _fill _light"
+        >
+          <svg class="icon _sm">
+            <use xlink:href="/assets/img/sprite.svg#chevron-up"></use>
+          </svg>
+        </button>
+      </div>
     </div>
     <!-- end site main wrapper -->
 
     <%=require('html-loader?minimize=false!../partials/footer.html')%>
     <%=require('html-loader?minimize=false!../partials/modals.html')%>
+    <%=require('html-loader?minimize=false!../partials/lightbox.html')%>
   </body>
 </html>

@@ -1,0 +1,45 @@
+:root {
+  /* THEME OFFSETS */
+  --viewport-height-diff: 0;
+  --container-width: 580px;
+
+  --container-space: 20px;
+  --container-negative-space: calc(var(--container-space) * -1);
+  --layout-margin-offset: 60px;
+  --layout-padding-offset-top: 60px;
+  --col-space-between: 20px;
+
+  // sticky sidebar
+  --sidebar-space: 40px;
+  --sidebar-top-offset: calc(var(--sidebar-space) + var(--header-sticky-diff));
+
+  // header
+  --header-height: 70px;
+  --header-sticky-diff: calc(var(--header-height) - 14px);
+  --header-top-panel: 34px;
+
+  // modals
+  --modal-size-sm: 520px;
+  --modal-default-size: 660px;
+  --modal-size-lg: 860px;
+}
+
+@media (min-width: $bp-min-md) {
+  :root {
+    --container-width: 1200px;
+
+    --container-space: 40px;
+    --layout-margin-offset: 80px;
+    --layout-padding-offset-top: 80px;
+
+    // header
+    --header-height: 120px;
+    --header-sticky-diff: calc(var(--header-height) - 50px);
+  }
+}
+
+@media (min-width: $bp-min-lg) {
+  :root {
+    --container-space: 60px;
+  }
+}

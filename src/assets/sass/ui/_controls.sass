@@ -12,40 +12,40 @@ input[type="password"]::-webkit-contacts-auto-fill-button
   opacity: 1
 
 input[type="search"]
-  &::-webkit-search-decoration,
-  &::-webkit-search-cancel-button,
-  &::-webkit-search-results-button,
-  &::-webkit-search-results-decoration
-    -webkit-appearance: none
-
-input,
-textarea,
-select
-  position: relative
-  height: var(--control-height)
-  width: 100%
-  padding: 0 var(--control-space)
-  border: 1px solid var(--control-border-color)
-  font-family: var(--site-font-family), sans-serif
-  font-size: var(--text-sm)
-  color: var(--control-color)
-  background-color: var(--control-bg)
-  outline: none
-  border-radius: var(--control-radius-xs)
+  appearance: none
   -webkit-appearance: none
-  box-shadow: none
 
-  &:disabled
-    background-color: var(--control-disabled)
-    cursor: auto
-
-input[type="search"]
   &::-webkit-search-decoration,
   &::-webkit-search-cancel-button,
   &::-webkit-search-results-button,
   &::-webkit-search-results-decoration
     appearance: none
     -webkit-appearance: none
+
+input,
+textarea,
+select
+  position: relative
+  width: 100%
+  height: var(--control-height)
+  padding: 0 var(--control-space)
+  border: 1px solid var(--control-border-color)
+  font-family: var(--site-font-family), sans-serif
+  font-size: var(--text-sm)
+  text-overflow: ellipsis
+  color: var(--control-color)
+  background-color: var(--control-bg)
+  outline: none
+  border-radius: var(--radius-xs)
+  -webkit-appearance: none
+  box-shadow: none
+
+  &:focus:not([readonly])
+    border-color: var(--control-focus-color)
+
+  &:disabled
+    background-color: var(--control-disabled)
+    cursor: auto
 
 select
   --control-color: var(--control-placeholder)
@@ -68,5 +68,82 @@ select
 textarea
   vertical-align: top
   height: 130px
-  padding: 10px var(--control-space)
+  padding: 14px var(--control-space)
   resize: none
+
+// light
+// controls
+.st-form
+  &._light
+    input,
+    textarea,
+    select
+      --control-color: #ffffff
+      --control-border-color: rgba(255, 255, 255, 0.2)
+      --control-placeholder: #ffffff
+      --control-bg: transparent
+
+      &:focus
+        --control-border-color: rgba(255, 255, 255, 0.5)
+
+// checkbox
+// and
+// radio
+.ui-st-radio,
+.ui-st-checkbox
+  position: relative
+  padding-left: 34px
+  font-size: var(--text-sm)
+  line-height: 28px
+
+  label
+    display: block
+    cursor: pointer
+
+  input
+    width: 0
+    height: 0
+    visibility: hidden
+    position: absolute
+    left: 0
+    top: 0
+
+  input:checked ~ .fake-control
+    &::before
+      transform: scale(1)
+
+.fake-control
+  position: absolute
+  left: 0
+  top: 2px
+  width: 20px
+  height: 20px
+  border: 1px solid var(--border)
+  transition: all $transition-default
+  cursor: pointer
+
+  &::before
+    content: ''
+    position: absolute
+    left: 4px
+    top: 4px
+    right: 4px
+    bottom: 4px
+    background-color: var(--primary)
+    transform: scale(0)
+    transition: all $transition-default
+
+.ui-st-radio
+  .fake-control
+    border-radius: 50%
+
+    &::before
+      border-radius: 50%
+
+.ui-st-checkbox
+  input:checked ~ .fake-control
+    // background-color: var(--secondary)
+    // background-image: url('../img/arrow-down.svg')
+    // background-repeat: no-repeat
+    // background-position: 50% 50%
+    // background-size: 70% 70%

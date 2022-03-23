@@ -2,10 +2,10 @@
   display: grid
   gap: var(--col-space-between)
 
-  +breakpoint($md)
+  @media (min-width: $bp-min-md)
     grid-template-columns: repeat(2, 1fr)
 
-  +breakpoint($lg)
+  @media (min-width: $bp-min-lg)
     grid-template-columns: repeat(3, 1fr)
 
 a.st-card
@@ -18,10 +18,8 @@ a.st-card
   text-decoration: none
 
   &:hover
-    .full-image-bg
-      &._cover
-        &::before
-          background-color: rgba(#000, .1)
+    @media (min-width: $bp-min-lg)
+      opacity: 0.95
 
   &__image
     position: relative

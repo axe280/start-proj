@@ -1,5 +1,3 @@
-@import 'const';
-
 @mixin placeholder-color($color-pl) {
   &:-moz-placeholder,
   &::-moz-placeholder {
@@ -22,27 +20,4 @@
       opacity: 0;
     }
   }
-}
-
-@mixin breakpoint($bp) {
-  @media (min-width: $bp) {
-    @content;
-  }
-}
-
-@mixin breakpoint-max-width($bp) {
-  @media (max-width: $bp) {
-    @content;
-  }
-}
-
-@mixin btnColor($name) {
-  --btn-bg: var(--#{$name});
-  --btn-bg-hover: var(--#{$name}-hover);
-  --btn-bg-active: var(--#{$name});
-  --btn-bg-disabled: var(--#{$name});
-  --btn-color: var(--tc-white);
-  --btn-color-disabled: var(--tc-white);
-  --btn-border: transparent;
-  --btn-border-disabled: transparent;
 }

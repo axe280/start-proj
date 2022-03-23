@@ -1,9 +1,12 @@
-<form class="st-form" action="#">
+<h5 class="h5">Form template</h5>
+<br />
+
+<form class="st-form feedback-form">
   <div class="form-group">
     <label class="field-item">
       <span class="field-item__label">Имя</span>
       <span class="field-item__field">
-        <input type="text" />
+        <input type="text" name="name" />
       </span>
       <span class="field-item__message">Пожалуйста заполните поле</span>
     </label>
@@ -13,7 +16,7 @@
     <label class="field-item">
       <span class="field-item__label">Фамилия</span>
       <span class="field-item__field">
-        <input type="text" />
+        <input type="text" name="surname" />
       </span>
       <span class="field-item__message">Пожалуйста заполните поле</span>
     </label>
@@ -23,7 +26,7 @@
     <label class="field-item _error">
       <span class="field-item__label">E-mail</span>
       <span class="field-item__field">
-        <input type="email" />
+        <input type="email" name="email" />
       </span>
       <span class="field-item__message">Пожалуйста заполните Email</span>
     </label>
@@ -33,7 +36,7 @@
     <label class="field-item">
       <span class="field-item__label">Телефон</span>
       <span class="field-item__field">
-        <input type="tel" />
+        <input type="tel" name="phone" />
       </span>
       <span class="field-item__message"></span>
     </label>
@@ -43,17 +46,17 @@
     <label class="field-item">
       <span class="field-item__label">Сообщение</span>
       <span class="field-item__field">
-        <textarea></textarea>
+        <textarea name="message"></textarea>
       </span>
       <span class="field-item__message"></span>
     </label>
   </div>
 
-  <div class="text_center mt-24 mb-24">
-    <button class="btn _primary _min-width" type="submit">Отправить</button>
+  <div class="_txt-center mb-24">
+    <button class="btn _primary _max" type="submit">Отправить</button>
   </div>
 
-  <div class="text_xs text_center">
+  <div class="text_xs _txt-center">
     Нажиимая на кнопку я соглашаюсь <br />
     <a href="#">с условиямии обработки персональных данных</a>
   </div>

@@ -1,0 +1,29 @@
+.lightbox-gallery
+  display: grid
+  gap: var(--col-space-between)
+
+  @media (min-width: $bp-min-md)
+    grid-template-columns: repeat(2, 1fr)
+
+  @media (min-width: $bp-min-lg)
+    grid-template-columns: repeat(3, 1fr)
+
+.lightbox-item
+  a
+    display: block
+    overflow: hidden
+    position: relative
+    height: 300px
+    text-decoration: none
+
+  img
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+    object-position: 50% 50%
+
+  figcaption
+    display: none

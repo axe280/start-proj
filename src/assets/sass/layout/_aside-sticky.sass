@@ -1,0 +1,19 @@
+.main-wrapper
+  @media (min-width: $bp-min-lg)
+    display: flex
+
+.main-inner
+  @media (min-width: $bp-min-lg)
+    flex-grow: 1
+    margin-right: 40px
+
+.sidebar
+  @media (min-width: $bp-min-lg)
+    flex-shrink: 0
+    width: 260px
+    position: sticky
+    top: var(--sidebar-top-offset)
+    align-self: start
+    max-height: calc(100vh - var(--sidebar-top-offset) - var(--sidebar-space))
+    overflow-y: auto
+

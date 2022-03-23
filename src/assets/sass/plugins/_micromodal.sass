@@ -1,0 +1,114 @@
+.modal-overlay
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 900
+  background-color: rgba(#000000, 0.6)
+  display: flex
+  flex-direction: column
+  align-items: center
+  overflow-y: auto
+  overflow-x: hidden
+  padding: 0
+  will-change: transform
+  padding: 10px
+
+  @media (min-width: $bp-min-sm)
+    padding: var(--container-space)
+
+.modal
+  display: none
+
+  &.is-open
+    display: block
+
+.modal-head
+  padding-right: 44px
+  margin-bottom: 20px
+
+  @media (min-width: $bp-min-md)
+    padding-right: 78px
+
+  .heading
+    line-height: var(--heading-lh-min)
+
+.modal-inner-wrapper
+  padding: 30px 20px
+
+  @media (min-width: $bp-min-md)
+    padding: 40px
+
+.modal-container
+  position: relative
+  width: 100%
+  margin: auto
+  background-color: var(--bg-white)
+  max-width: var(--modal-size-sm)
+  box-shadow: 0px 4px 4px rgba(#000000, 0.15)
+  will-change: transform
+  border-radius: var(--radius-xs)
+
+.modal-close
+  width: 44px
+  height: 44px
+  position: absolute
+  right: 10px
+  top: 10px
+  color: var(--tc-dark)
+  background-color: transparent
+  border: 0
+  transition: all $transition-default
+
+  @media (min-width: $bp-min-md)
+    right: 28px
+    top: 28px
+
+  &:hover
+    @media (min-width: $bp-min-lg)
+      opacity: 0.8
+
+  &::before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    z-index: 2
+
+  .icon
+    position: relative
+    z-index: -1
+    width: var(--icon-sm)
+    height: var(--icon-sm)
+
+    @media (min-width: $bp-min-md)
+      width: var(--icon-md)
+      height: var(--icon-md)
+
+.modal[aria-hidden="false"] .modal-overlay
+  animation: fadeIn 0.1s linear
+
+  @media (min-width: $bp-min-md)
+    animation: none
+
+// .modal[aria-hidden="true"] .modal-overlay
+//   animation: fadeOut 0.1s linear
+
+.modal[aria-hidden="false"] .modal-container
+  // animation: fadeIn 0.2s linear
+
+  @media (min-width: $bp-min-md)
+    animation: modalSlideInUp 0.25s ease-out
+
+// .modal[aria-hidden="true"] .modal-container
+  // animation: fadeOut 0.2s ease-out
+
+@keyframes modalSlideInUp
+  from
+    transform: translateY(30px)
+
+  to
+    transform: translateY(0)

@@ -1,0 +1,131 @@
+@media (min-width: $bp-min-md) {
+  .animation-trigger.fadeInUp,
+  .animation-trigger.fadeInLeft,
+  .animation-trigger.fadeInRight,
+  .animation-trigger.fadeIn {
+    opacity: 0;
+  }
+
+  .animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+
+  .st-card.animated {
+    &:nth-child(2n - 1) {
+      animation-delay: 0.1s;
+    }
+    &:nth-child(2n) {
+      animation-delay: 0.2s;
+    }
+  }
+}
+
+@media (min-width: $bp-min-lg) {
+  .st-card.animated {
+    &:nth-child(3n - 2) {
+      animation-delay: 0.1s;
+    }
+    &:nth-child(3n - 1) {
+      animation-delay: 0.2s;
+    }
+    &:nth-child(3n) {
+      animation-delay: 0.3s;
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animated.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(20%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animated.fadeInRight {
+  animation-name: fadeInRight;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-20%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animated.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.02, 1.02, 1.02);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.animated.pulse {
+  animation-name: pulse;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animated.fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.animated.fadeOut {
+  animation-name: fadeOut;
+}

@@ -4,13 +4,14 @@
 
   &__img
     position: relative
-    flex: 0 0 60px
+    flex-shrink: 0
     height: 60px
     width: 60px
     margin-right: 16px
     border-radius: 50%
     overflow: hidden
     background-color: var(--bg-dark)
+    color: var(--tc-white)
 
     .icon
       position: absolute
@@ -19,8 +20,6 @@
       transform: translate(-50%, -50%)
       width: var(--icon-sm)
       height: var(--icon-sm)
-      fill: var(--tc-white)
-      stroke: var(--tc-white)
 
     img
       position: absolute
@@ -39,7 +38,7 @@
 
   // vertical
   &._vertical-lg
-    +breakpoint($lg)
+    @media (min-width: $bp-min-lg)
       flex-direction: column
       align-items: flex-start
 
@@ -50,7 +49,7 @@
   &._sm
     .st-avatar
       &__img
-        flex: 0 0 40px
+        flex-shrink: 0
         height: 40px
         width: 40px
         margin-right: 10px

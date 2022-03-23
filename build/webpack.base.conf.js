@@ -48,11 +48,27 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   test: require.resolve('jquery'),
+      //   loader: 'expose-loader',
+      //   options: {
+      //     exposes: ['$', 'jQuery'],
+      //   },
+      // },
       {
-        test: require.resolve('jquery'),
-        loader: 'expose-loader',
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'file-loader',
         options: {
-          exposes: ['$', 'jQuery'],
+          name: '[name].[ext]',
+          outputPath: '/assets/img',
+        },
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|otf)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: '/assets/fonts',
         },
       },
       {
@@ -124,10 +140,10 @@ module.exports = {
     },
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-    }),
+    // new webpack.ProvidePlugin({
+    //   $: 'jquery',
+    //   jQuery: 'jquery',
+    // }),
 
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}css/[name].[hash].css`,
@@ -135,10 +151,10 @@ module.exports = {
 
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
-      // {
-      //   from: `${PATHS.src}/${PATHS.assets}videos`,
-      //   to: `${PATHS.assets}videos`,
-      // },
+      {
+        from: `${PATHS.src}/${PATHS.assets}videos`,
+        to: `${PATHS.assets}videos`,
+      },
       { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
       { from: `${PATHS.src}/static`, to: '' },
     ]),
