@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta
@@ -1331,6 +1331,12 @@
           </div>
         </section>
 
+        <section class="section-st">
+          <div class="container">
+            <div id="map"></div>
+          </div>
+        </section>
+
         <section class="section-st" style="padding-bottom: 0">
           <div class="container">
             <h2 class="h2">Full Section Bg</h2>
@@ -1404,5 +1410,134 @@
     <%=require('html-loader?minimize=false!../partials/footer.html')%>
     <%=require('html-loader?minimize=false!../partials/modals.html')%>
     <%=require('html-loader?minimize=false!../partials/lightbox.html')%>
+
+    <script>
+      function initMap() {
+        const map = new google.maps.Map(document.getElementById('map'), {
+          disableDefaultUI: true,
+        });
+
+        const markersInfo = [
+          {
+            lat: 42.708678,
+            lng: 19.37439,
+            title: 'Літній англомовний табір в Карпатах',
+            info: 'Для дітей - 8-17 років',
+            link: 'link 1',
+            isActive: true,
+          },
+          {
+            lat: 42.708678,
+            lng: 19.87439,
+            title: 'Літній англомовний табір в Карпатах',
+            info: 'Для дітей - 9-18 років',
+            link: 'link 2',
+            isActive: false,
+          },
+          {
+            lat: 44.708678,
+            lng: 19.87439,
+            title: 'Літній англомовний табір в Карпатах',
+            info: 'Для дітей - 10-16 років',
+            link: 'link 3',
+            isActive: false,
+          },
+        ];
+
+        const bounds = new google.maps.LatLngBounds();
+        let infowindow = null;
+
+        for (let i = 0; i < markersInfo.length; i++) {
+          const markerInfo = markersInfo[i];
+          const position = new google.maps.LatLng(
+            markerInfo.lat,
+            markerInfo.lng
+          );
+          const marker = new google.maps.Marker({
+            // icon: markerInfo.isActive
+            //   ? '/assets/img/icons/marker-hover.svg'
+            //   : '/assets/img/icons/marker.svg',
+            position,
+            map,
+          });
+
+          bounds.extend(marker.position);
+
+          google.maps.event.addListener(marker, 'click', () => {
+            if (infowindow) infowindow.close();
+
+            infowindow = new google.maps.InfoWindow({
+              pixelOffset: new google.maps.Size(0, -5),
+              content: `<div class="map-dialog">
+                <div class="map-dialog__title">${markerInfo.title}</div>
+                <div class="map-dialog__info">${markerInfo.info}</div>
+                <a href="${
+                  markerInfo.link
+                }" class="def-card__bottom">${'Детальніше'}</a>
+              </div>`,
+            });
+
+            infowindow.open({ anchor: marker, map, shouldFocus: true });
+          });
+
+          // google.maps.event.addListener(marker, 'mouseover', () => {
+          //   marker.setIcon('/assets/img/icons/marker-hover.svg')
+          // })
+
+          // google.maps.event.addListener(marker, 'mouseout', () => {
+          //   if (markerInfo.isActive) return
+          //   marker.setIcon('/assets/img/icons/marker.svg')
+          // })
+        }
+
+        map.fitBounds(bounds);
+
+        google.maps.event.addListener(map, 'click', () => {
+          if (infowindow) infowindow.close();
+        });
+
+        google.maps.event.addListener(map, 'zoom_changed', () => {
+          google.maps.event.addListenerOnce(
+            map,
+            'bounds_changed',
+            function (event) {
+              if (this.getZoom() > 9 && this.initialZoom == true) {
+                // Change max/min zoom here
+                this.setZoom(9);
+                this.initialZoom = false;
+              }
+            }
+          );
+        });
+
+        // modalObserver()
+
+        // function modalObserver(params) {
+        //   var target = document.getElementById('mapModal')
+        //   const config = { attributes: true }
+
+        //   const callback = function (mutationsList, observer) {
+        //     for (let mutation of mutationsList) {
+        //       if (mutation.type === 'attributes') {
+        //         if (mutation.target.ariaHidden === 'false') {
+        //           map.fitBounds(bounds)
+        //           map.initialZoom = true
+        //         } else {
+        //           if (infowindow) infowindow.close()
+        //         }
+        //       }
+        //     }
+        //   }
+
+        //   const observer = new MutationObserver(callback)
+        //   observer.observe(target, config)
+        // }
+      }
+    </script>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?AIzaSyDHDWHThQzHzW-MavFSLjV0sjsSfDJZ31I&callback=initMap"
+      async
+    ></script>
   </body>
 </html>

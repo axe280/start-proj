@@ -129,3 +129,23 @@
 .animated.fadeOut {
   animation-name: fadeOut;
 }
+
+@keyframes modalSlideInUp {
+  from {
+    transform: translateY(30px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalSlideInDown {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(30px);
+  }
+}

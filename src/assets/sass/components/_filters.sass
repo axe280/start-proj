@@ -1,0 +1,250 @@
+.filter-head-row
+  margin-bottom: 30px
+
+  @media (min-width: $bp-min-md)
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 60px
+
+.filter-head-main
+  font-size: var(--text-sm)
+  line-height: var(--text-lh-min)
+
+  @media (min-width: $bp-min-md)
+    display: flex
+    align-items: center
+
+.filter-head-aside
+  @media (min-width: $bp-min-md)
+    margin-left: 20px
+
+.filter-head-btns
+  display: flex
+  flex-wrap: wrap
+  margin-left: -18px
+
+  @media (min-width: $bp-min-md)
+    margin-top: -15px
+    margin-left: 10px
+
+  @media (min-width: $bp-min-lg)
+    margin-left: 45px
+
+  button, a
+    margin-left: 18px
+    margin-top: 15px
+
+    @media (min-width: $bp-min-lg)
+      margin-left: 15px
+
+    &._primary._fill
+      &:hover
+        @media (min-width: $bp-min-lg)
+          background-color: var(--primary-hover)
+
+.filter-view-row
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-top: 30px
+
+  @media (min-width: $bp-min-md)
+    margin-top: 0
+
+.filter-view-btns
+  display: flex
+  align-items: center
+
+  @media (min-width: $bp-min-md)
+    margin-left: 10px
+
+  @media (min-width: $bp-min-lg)
+    margin-left: 30px
+
+  button, a
+    text-decoration: none
+    margin-left: 30px
+    color: var(--tc-medium)
+
+    @media (min-width: $bp-min-md)
+      margin-left: 20px
+
+    @media (min-width: $bp-min-lg)
+      margin-left: 30px
+
+    &:hover
+      @media (min-width: $bp-min-lg)
+        color: var(--primary)
+        text-decoration: none
+
+    &.active
+      color: var(--primary)
+      cursor: default
+
+.filter-sort-btn
+  font-size: var(--text-sm)
+
+  @media (max-width: $bp-max-md)
+    display: flex
+    justify-content: flex-start
+    flex-direction: row-reverse
+    width: calc(100% + var(--container-space) * 2)
+    margin: 30px var(--container-negative-space) 0
+    padding: 10px 20px
+    background-color: var(--bg-light)
+    color: var(--tc-medium-dark)
+    font-weight: 500
+
+  &:hover
+    @media (min-width: $bp-min-lg)
+      color: var(--primary-hover)
+
+  .icon
+    margin-right: 15px
+    width: var(--icon-xs)
+    height: var(--icon-xs)
+
+    @media (min-width: $bp-min-md)
+      margin-left: 15px
+      margin-right: 0
+
+.filter-products
+  @media (max-width: $bp-max-lg)
+    margin-left: var(--container-negative-space)
+    margin-right: var(--container-negative-space)
+    padding: 0 var(--container-space)
+    background-color: var(--bg-light)
+
+  &._opened
+    .filter-products-aside
+      display: block
+
+  .filter-head-btns
+    margin-left: -10px
+    margin-top: -30px
+
+    button
+      margin-left: 10px
+
+      &.btn._sm._min-width
+        @media (min-width: $bp-min-lg)
+          min-width: 62px
+
+.filter-products-head
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  padding: 10px 0
+  color: var(--tc-medium-dark)
+  font-weight: 500
+  font-size: var(--text-sm)
+  line-height: var(--text-lh)
+  cursor: pointer
+  user-select: none
+
+  @media (min-width: $bp-min-lg)
+    display: none
+
+  .icon
+    margin-right: 16px
+    transform: rotate(-180deg)
+
+  span
+    min-width: 100px
+
+.filter-products-aside
+  display: none
+  padding-top: 20px
+  padding-bottom: 60px
+
+  @media (min-width: $bp-min-lg)
+    width: 300px
+    padding-top: 40px
+    padding-bottom: 80px
+
+  @media (min-width: $bp-min-lg)
+    display: block
+    padding: 0
+
+.filter-products-item
+  margin-bottom: 60px
+
+  @media (min-width: $bp-min-md)
+    margin-bottom: 30px
+
+  @media (min-width: $bp-min-lg)
+    margin-bottom: 60px
+
+  &__tt
+    display: block
+    margin-bottom: 30px
+    font-size: var(--text-md)
+    line-height: var(--text-lh-min)
+
+  sup
+    font-size: 12px
+
+.filter-products-buttons
+  display: grid
+  gap: 20px
+
+  @media (min-width: $bp-min-md)
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 38px
+    margin-top: 60px
+
+  @media (min-width: $bp-min-lg)
+    grid-template-columns: 1fr
+    gap: 30px
+    margin-top: 100px
+
+  .btn
+    width: 100%
+
+.filter-products-slider
+  &__bottom
+    display: flex
+    justify-content: space-between
+    margin-bottom: 15px
+    font-weight: 600
+    font-size: var(--text-sm)
+    line-height: var(--text-lh-min)
+
+.product-sort-filter
+  @media (max-width: $bp-max-lg)
+    margin-top: 1px
+    margin-left: var(--container-negative-space)
+    margin-right: var(--container-negative-space)
+    padding: 0 var(--container-space)
+    background-color: var(--bg-light)
+
+  @media (min-width: $bp-min-lg)
+    margin-bottom: 60px
+    order: -1
+    grid-column: 2 span
+
+  &._sorted
+    .product-filter-head
+      .icon
+        transform: rotate(-180deg)
+
+  .product-filter-head
+    @media (min-width: $bp-min-lg)
+      display: flex
+      justify-content: flex-start
+      flex-direction: row-reverse
+      color: var(--tc-dark)
+      font-weight: 400
+      padding: 0
+
+    &:hover
+      @media (min-width: $bp-min-lg)
+        color: var(--primary-hover)
+
+    .icon
+      transform: rotate(0)
+
+      @media (min-width: $bp-min-lg)
+        margin: 0 0 0 15px

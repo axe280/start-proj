@@ -1,3 +1,22 @@
+// ------------------------- common
+.st-radius
+  border-radius: var(--radius-default)
+
+  &._xxs
+    border-radius: var(--radius-xxs)
+
+  &._xs
+    border-radius: var(--radius-xs)
+
+  &._sm
+    border-radius: var(--radius-sm)
+
+  &._md
+    border-radius: var(--radius-md)
+
+  &._lg
+    border-radius: var(--radius-lg)
+
 // ------------------------- space
 .mb-4
   margin-bottom: 4px
@@ -44,133 +63,118 @@
 .mb-100
   margin-bottom: 100px
 
-// ------------------------- max-width
-.max-w-300-md
-  max-width: 300px
-
-.max-w-600-md
-  max-width: 600px
-
-// ------------------------- height block
-._height-600
-  min-height: 600px
-
-._height-700
-  min-height: 700px
-
 
 // ------------------------- colors
-.text_primary
+.text-primary
   color: var(--primary)
 
-.text_secondary
+.text-secondary
   color: var(--secondary)
 
-.text_success
+.text-success
   color: var(--success)
 
-.text_danger
+.text-danger
   color: var(--danger)
 
-.text_dark
+.text-dark
   color: var(--tc-dark)
 
-.text_light
+.text-light
   color: var(--tc-light)
 
-.text_white
+.text-white
   color: var(--tc-white)
 
-.text_medium
+.text-medium
   color: var(--tc-medium)
 
-._bg-primary
+.bg-primary
   background-color: var(--primary)
+  color: var(--tc-white)
 
-._bg-secondary
+.bg-secondary
   background-color: var(--secondary)
 
-._bg-danger
+.bg-danger
   background-color: var(--danger)
 
-._bg-success
+.bg-success
   background-color: var(--success)
 
-._bg-dark
+.bg-dark
   background-color: var(--bg-dark)
   color: var(--tc-white)
 
-._bg-light
+.bg-light
   background-color: var(--bg-light)
 
-._bg-medium
+.bg-medium
   background-color: var(--bg-medium)
 
-._bg-white
+.bg-white
   background-color: var(--bg-white)
 
-._bg-grey
+.bg-grey
   background-color: var(--bg-grey)
 
 
 // ------------------------- text
-.text_xs
+.text-xs
   font-size: var(--text-xs)
   line-height: var(--text-lh)
 
-.text_sm
+.text-sm
   font-size: var(--text-sm)
   line-height: var(--text-lh)
 
-.text_md
+.text-md
   font-size: var(--text-md)
   line-height: var(--text-lh)
 
-.text_lg
+.text-lg
   font-size: var(--text-lg)
   line-height: var(--text-lh)
 
-.text_xl
+.text-xl
   font-size: var(--text-xl)
   line-height: var(--text-lh)
 
-.text_2xl
+.text-2xl
   font-size: var(--text-2xl)
   line-height: var(--text-lh)
 
-.text_3xl
+.text-3xl
   font-size: var(--text-3xl)
   line-height: var(--text-lh)
 
-._txt-center
+.text-center
   text-align: center
 
-._txt_left
+.text-left
   text-align: left
 
-._txt_right
+.text-right
   text-align: right
 
-._txt_uppercase
+.text-uppercase
   text-transform: uppercase
 
-._txt_500
+.text-500
   font-weight: 500
 
-._txt_600
+.text-600
   font-weight: 600
 
-._txt_700
+.text-700
   font-weight: 700
 
 // ------------------------- icons
 .icon
-  // colors
   &._light
     fill: var(--tc-light)
     stroke: var(--tc-light)
 
-  // sizes
   &._xxs
     width: var(--icon-xxs)
     height: var(--icon-xxs)

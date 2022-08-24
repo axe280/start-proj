@@ -14,6 +14,8 @@ button, .btn
   text-align: center
   cursor: pointer
   transition: all $transition-default
+  color: currentColor
+  font-variant-numeric: lining-nums
 
   &:hover
     text-decoration: none
@@ -166,9 +168,7 @@ button, .btn
         opacity: 0.6
 
   &._icon
-    width: var(--btn-icon-size-default)
-    height: var(--btn-icon-size-default)
-    padding: 0
+    padding: 12px
 
     .icon
       margin: 0

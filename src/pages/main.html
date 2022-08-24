@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <%=require('html-loader?minimize=false!../partials/head.html')%>
 
   <body>
@@ -7,15 +7,14 @@
       <%=require('html-loader?minimize=false!../partials/header.html')%>
 
       <main class="main">
-        <section class="main-section">
+        <section class="section-st">
           <div class="container">
-            <%=require('html-loader?minimize=false!../partials/form.html')%>
+            <div id="app"></div>
           </div>
         </section>
       </main>
     </div>
 
     <%=require('html-loader?minimize=false!../partials/footer.html')%>
-    <%=require('html-loader?minimize=false!../partials/modals.html')%>
   </body>
 </html>

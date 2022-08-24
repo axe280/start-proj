@@ -1,8 +1,8 @@
-const webpack = require('webpack')
-const merge = require('webpack-merge')
-const baseWebpackConfig = require('./webpack.base.conf')
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const baseWebpackConfig = require('./webpack.base.conf');
 
-const PATHS = baseWebpackConfig.externals.paths
+const PATHS = baseWebpackConfig.externals.paths;
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   // DEV config
@@ -11,7 +11,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   devServer: {
     contentBase: PATHS.dist,
     open: true,
-    // host: '192.168.0.105',
+    // host: '192.168.1.131',
     host: 'localhost',
     disableHostCheck: true,
     port: 3000,
@@ -25,8 +25,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       filename: '[file].map',
     }),
   ],
-})
+});
 
 module.exports = new Promise((resolve, reject) => {
-  resolve(devWebpackConfig)
-})
+  resolve(devWebpackConfig);
+});

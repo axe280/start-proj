@@ -19,9 +19,9 @@
   --header-top-panel: 34px;
 
   // modals
-  --modal-size-sm: 520px;
-  --modal-default-size: 660px;
-  --modal-size-lg: 860px;
+  --modal-sm: 520px;
+  --modal-default: 660px;
+  --modal-lg: 860px;
 }
 
 @media (min-width: $bp-min-md) {

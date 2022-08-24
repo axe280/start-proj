@@ -1,5 +1,5 @@
 // import Swiper from 'swiper/swiper-bundle'
-import Swiper, { Navigation, Pagination, Scrollbar } from 'swiper'
+import Swiper, { Navigation, Pagination, Scrollbar } from 'swiper';
 
 export const initSwipers = () => {
   new Swiper('.st-swiper', {
@@ -33,5 +33,5 @@ export const initSwipers = () => {
         spaceBetween: 20,
       },
     },
-  })
-}
+  });
+};

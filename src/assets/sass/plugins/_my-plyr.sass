@@ -1,0 +1,42 @@
+// paly btn
+.plyr--full-ui.plyr--video .plyr__control--overlaid
+  display: flex
+
+.plyr__controls
+  height: auto
+  visibility: visible
+
+.plyr.plyr--stopped .plyr__controls
+  display: none
+
+.plyr__poster
+  background-size: cover
+
+.btn-play,
+.plyr .plyr__control--overlaid
+  position: absolute
+  z-index: 10
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  display: flex
+  align-items: center
+  justify-content: center
+  padding-left: 4px
+  padding: 0
+  width: 116px
+  height: 116px
+  background-color: rgba(var(--primary-rgb), 0.8)
+  color: var(--tc-white)
+  border-radius: 50%
+  transition: all $transition-default
+
+  &:hover
+    @media (min-width: $bp-min-lg)
+      background-color: var(--primary)
+
+  .icon, svg
+    width: 40px
+    height: 40px
+    left: 0
+    margin-left: 4px

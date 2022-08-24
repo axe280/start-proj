@@ -56,6 +56,7 @@
   &__next
     a
       // width: auto
+      padding: 0
       background-color: transparent
       color: var(--tc-dark)
 
@@ -63,7 +64,8 @@
         color: var(--secondary)
         background-color: transparent
 
-  &__active
+  &__active,
+  li.active
     a
       background-color: var(--secondary)
       cursor: default
@@ -224,3 +226,38 @@
   @media (min-width: $bp-min-sm)
     right: 50%
     transform: translate(50%)
+
+
+// label
+.label-list
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  margin-top: -15px
+  margin-left: -15px
+
+  .label
+    margin-left: 15px
+    margin-top: 15px
+
+
+.label
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  padding: 5px 10px
+  border: 1px solid var(--danger)
+  font-size: var(--text-sm)
+  line-height: var(--text-lh-min)
+  border-radius: var(--radius-md)
+
+  &._primary
+    border-color: var(--primary)
+
+    &:hover
+      @media (min-width: $bp-min-lg)
+        background-color: var(--primary-hover-light)
+
+    &._fill
+      background-color: var(--primary)
+      color: var(--tc-white)

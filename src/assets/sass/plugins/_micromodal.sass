@@ -45,7 +45,7 @@
   width: 100%
   margin: auto
   background-color: var(--bg-white)
-  max-width: var(--modal-size-sm)
+  max-width: var(--modal-sm)
   box-shadow: 0px 4px 4px rgba(#000000, 0.15)
   will-change: transform
   border-radius: var(--radius-xs)
@@ -91,24 +91,20 @@
 .modal[aria-hidden="false"] .modal-overlay
   animation: fadeIn 0.1s linear
 
-  @media (min-width: $bp-min-md)
-    animation: none
+  // @media (min-width: $bp-min-md)
+  //   animation: none
 
-// .modal[aria-hidden="true"] .modal-overlay
-//   animation: fadeOut 0.1s linear
+.modal[aria-hidden="true"] .modal-overlay
+  animation: fadeOut 0.1s linear
 
 .modal[aria-hidden="false"] .modal-container
-  // animation: fadeIn 0.2s linear
+  animation: fadeIn 0.15s linear
 
   @media (min-width: $bp-min-md)
-    animation: modalSlideInUp 0.25s ease-out
+    animation: modalSlideInUp 0.15s ease-out
 
-// .modal[aria-hidden="true"] .modal-container
-  // animation: fadeOut 0.2s ease-out
+.modal[aria-hidden="true"] .modal-container
+  animation: fadeOut 0.15s ease-out
 
-@keyframes modalSlideInUp
-  from
-    transform: translateY(30px)
-
-  to
-    transform: translateY(0)
+  @media (min-width: $bp-min-md)
+    animation: modalSlideInDown 0.15s ease-out

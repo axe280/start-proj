@@ -1,25 +1,24 @@
-const glob = require('glob').sync
-const path = require('path')
-const fs = require('fs')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpack = require('webpack')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-// const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
-// const SpritesmithPlugin = require('webpack-spritesmith')
+const glob = require('glob').sync;
+const path = require('path');
+const fs = require('fs');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 // Main const
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
   assets: 'assets/',
-}
+};
 
 // Pages const for HtmlWebpackPlugin
-const PAGES_DIR = `${PATHS.src}/pages`
+const PAGES_DIR = `${PATHS.src}/pages`;
 const PAGES = fs
   .readdirSync(PAGES_DIR)
-  .filter((fileName) => fileName.endsWith('.html'))
+  .filter((fileName) => fileName.endsWith('.html'));
 
 module.exports = {
   // BASE config
@@ -75,6 +74,10 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
       },
       {
         test: /\.sass$/,
@@ -145,6 +148,8 @@ module.exports = {
     //   jQuery: 'jquery',
     // }),
 
+    new VueLoaderPlugin(),
+
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}css/[name].[hash].css`,
     }),
@@ -164,7 +169,8 @@ module.exports = {
       return new HtmlWebpackPlugin({
         template: `${PAGES_DIR}/${page}`,
         filename: `./${page}`,
-      })
+        minify: false,
+      });
     }),
   ],
-}
+};
